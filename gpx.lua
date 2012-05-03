@@ -26,33 +26,29 @@ for trk in gpx:nodes("trk") do
    trk.name = trk:find("name")
    for trkseg in trk:nodes("trkseg") do
 
+      local tp1 = {}
       local i = 1
-      tp1 = {}
-      tp2 = {}
       for trkpt in trkseg:nodes("trkpt") do
          if i == 1 then
             tp1.lat = trkpt.lat
             tp1.lon = trkpt.lon
             tp1.time = trkpt:find("time")[1]
          else
+            local tp2 = {}
             tp2.lat = trkpt.lat
             tp2.lon = trkpt.lon
             tp2.time = trkpt:find("time")[1]
          
-            -- Do calculations
-            print(tp2.time, tp2.time - tp1.time, tp2.lat, tp2.lon)
+            if tp2.time ~= tp1.time then
+               -- Do calculations
+               print(tp2.time, tp1.time, tp2.lat, tp2.lon)
+            end
             
             tp1 = tp2
          end
+         i = i + 1
       end
    end
 end
 
-
-
-t = gpx_trackpoints(gpx)
-for i = 2, #t do 
-   tp = t[i]
-   print(i, tp.time, tp.lat, tp.lon)
-end
 
