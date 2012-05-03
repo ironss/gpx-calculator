@@ -40,8 +40,21 @@ function rad_from_deg(deg)
 end
 
 
+function timetable(year, month, day, hour, min, sec)
+   local t = {}
+   t.year = year
+   t.month = month
+   t.day = day
+   t.hour = hour
+   t.min = min
+   t.sec = sec
+   return t
+end
+
 function time_from_str(str)
-   return str
+   local tt = timetable(string.match(str, "(%d+)-(%d+)-(%d+)T(%d+):(%d+):(%d+)Z"))
+   local t = os.time(tt)
+   return t
 end
 
 
@@ -64,7 +77,7 @@ for trk in gpx:nodes("trk") do
          
             if tp2.time ~= tp1.time then
                -- Do calculations
-               print(tp2.time, tp1.time, tp2.lat, tp2.lon, f(tp2.lat, tp2.lon, tp1.lat, tp1.lon, spheroid))
+               print(tp2.time, tp2.lat, tp2.lon, f(tp2.lat, tp2.lon, tp1.lat, tp1.lon, spheroid))
             end
             
             tp1 = tp2
