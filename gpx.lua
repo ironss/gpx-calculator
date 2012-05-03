@@ -2,7 +2,7 @@
 
 require("LuaXml")
 
-file=xml.load("/home/ironss/Dropbox/sailing/gpx/test/2012-04-30-0830-holux-opencpn.gpx")
+file=xml.load(arg[1])
 gpx = file:find("gpx")
 
 function nodes(t, name)
@@ -22,22 +22,15 @@ function nodes(t, name)
 end
 
 
-
-for n in nodes(gpx, "trk") do
-   trk = n:find("trk")
+for trk in nodes(gpx, "trk") do
    trk.name = trk:find("name")
    print(trk.name)
    
-   for n in nodes(trk, "trkseg") do
-      trkseg = n:find("trkseg")
-      if trkseg ~= nil then
-         for n in nodes(trkseg, "trkpt") do
-            trkpt = n:find("trkpt")
-            trkpt.time = trkpt:find("time")
-            print(trkpt.time)
-         end
+   for trkseg in nodes(trk, "trkseg") do
+      for trkpt in nodes(trkseg, "trkpt") do
+         trkpt.time = trkpt:find("time")[1]
+         print(trkpt.time, trkpt.lat, trkpt.lon)
       end
    end
 end
-
 
