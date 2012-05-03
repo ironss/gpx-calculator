@@ -2,6 +2,8 @@
 
 require("LuaXml")
 geo = require("geocalcs")
+dateparse = require("interfaceware-dateparse")
+
 
 -- Iterator for searching for nodes with a specific tag
 function xml.nodes(t, tag)
@@ -51,7 +53,7 @@ function calculate_points(trkseg, t_interval, d_interval)
       if i == 1 then
          tp1.lat = geo.rad_from_deg(trkpt.lat)
          tp1.lon = geo.rad_from_deg(trkpt.lon)
-         tp1.time = time_from_iso8601_str(trkpt:find("time")[1])
+         tp1.time = dateparse.parse(trkpt:find("time")[1])
       else
          local tp2 = {}
          tp2.lat = geo.rad_from_deg(trkpt.lat)
