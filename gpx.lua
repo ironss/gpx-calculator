@@ -22,6 +22,29 @@ function xml.nodes(t, tag)
 end
 
 
+spheroid = {}
+spheroid.r = 6378100
+
+function haversine(theta)
+   return math.sin(theta / 2) ^ 2
+end
+
+function f(lat1, lon1, lat2, lon2, sph)
+   local d = sph.r * 2 * math.asin(math.sqrt(haversine(lat2 - lat1) + math.cos(lat1) * math.cos(lat2) * haversine(lon2 - lon1)))
+   return d
+end
+
+
+function rad_from_deg(deg)
+   return deg * 2 * math.pi / 360
+end
+
+
+function time_from_str(str)
+   return str
+end
+
+
 for trk in gpx:nodes("trk") do
    trk.name = trk:find("name")
    for trkseg in trk:nodes("trkseg") do
@@ -30,18 +53,18 @@ for trk in gpx:nodes("trk") do
       local i = 1
       for trkpt in trkseg:nodes("trkpt") do
          if i == 1 then
-            tp1.lat = trkpt.lat
-            tp1.lon = trkpt.lon
-            tp1.time = trkpt:find("time")[1]
+            tp1.lat = rad_from_deg(trkpt.lat)
+            tp1.lon = rad_from_deg(trkpt.lon)
+            tp1.time = time_from_str(trkpt:find("time")[1])
          else
             local tp2 = {}
-            tp2.lat = trkpt.lat
-            tp2.lon = trkpt.lon
-            tp2.time = trkpt:find("time")[1]
+            tp2.lat = rad_from_deg(trkpt.lat)
+            tp2.lon = rad_from_deg(trkpt.lon)
+            tp2.time = time_from_str(trkpt:find("time")[1])
          
             if tp2.time ~= tp1.time then
                -- Do calculations
-               print(tp2.time, tp1.time, tp2.lat, tp2.lon, tp2.lon - tp1.lon)
+               print(tp2.time, tp1.time, tp2.lat, tp2.lon, f(tp2.lat, tp2.lon, tp1.lat, tp1.lon, spheroid))
             end
             
             tp1 = tp2
