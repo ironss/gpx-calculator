@@ -58,38 +58,36 @@ function time_from_iso8601_str(str)
 end
 
 
-
-function do_calculations(tp1, tp2)
-   local distance = f(tp2.lat, tp2.lon, tp1.lat, tp1.lon, spheroid)
-   print(tp2.time, tp2.time - tp1.time, distance)
+function calculate_points(trkseg)
+   local tp1 = {}
+   local i = 1
+   for trkpt in trkseg:nodes("trkpt") do
+      if i == 1 then
+         tp1.lat = rad_from_deg(trkpt.lat)
+         tp1.lon = rad_from_deg(trkpt.lon)
+         tp1.time = time_from_iso8601_str(trkpt:find("time")[1])
+      else
+         local tp2 = {}
+         tp2.lat = rad_from_deg(trkpt.lat)
+         tp2.lon = rad_from_deg(trkpt.lon)
+         tp2.time = time_from_iso8601_str(trkpt:find("time")[1])
+      
+         if tp2.time ~= tp1.time then
+            local distance = f(tp2.lat, tp2.lon, tp1.lat, tp1.lon, spheroid)
+            print(tp2.time, tp2.time - tp1.time, distance)
+         end
+         
+         tp1 = tp2
+      end
+      i = i + 1
+   end
 end
 
 
 for trk in gpx:nodes("trk") do
    trk.name = trk:find("name")
    for trkseg in trk:nodes("trkseg") do
-
-      local tp1 = {}
-      local i = 1
-      for trkpt in trkseg:nodes("trkpt") do
-         if i == 1 then
-            tp1.lat = rad_from_deg(trkpt.lat)
-            tp1.lon = rad_from_deg(trkpt.lon)
-            tp1.time = time_from_iso8601_str(trkpt:find("time")[1])
-         else
-            local tp2 = {}
-            tp2.lat = rad_from_deg(trkpt.lat)
-            tp2.lon = rad_from_deg(trkpt.lon)
-            tp2.time = time_from_iso8601_str(trkpt:find("time")[1])
-         
-            if tp2.time ~= tp1.time then
-               do_calculations(tp1, tp2)
-            end
-            
-            tp1 = tp2
-         end
-         i = i + 1
-      end
+      t_points, d_points = calculate_points(trkseg, interval)
    end
 end
 
