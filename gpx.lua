@@ -22,22 +22,30 @@ function xml.nodes(t, tag)
 end
 
 
-function gpx_trackpoints(gpx)
-   local t = {}
-   for trk in gpx:nodes("trk") do
-      trk.name = trk:find("name")
-      
-      for trkseg in trk:nodes("trkseg") do
-         for trkpt in trkseg:nodes("trkpt") do
-            tp = {}
-            tp.lat = trkpt.lat
-            tp.lon = trkpt.lon
-            tp.time = trkpt:find("time")[1]
-            t[#t+1] = tp
+for trk in gpx:nodes("trk") do
+   trk.name = trk:find("name")
+   for trkseg in trk:nodes("trkseg") do
+
+      local i = 1
+      tp1 = {}
+      tp2 = {}
+      for trkpt in trkseg:nodes("trkpt") do
+         if i == 1 then
+            tp1.lat = trkpt.lat
+            tp1.lon = trkpt.lon
+            tp1.time = trkpt:find("time")[1]
+         else
+            tp2.lat = trkpt.lat
+            tp2.lon = trkpt.lon
+            tp2.time = trkpt:find("time")[1]
+         
+            -- Do calculations
+            print(tp2.time, tp2.time - tp1.time, tp2.lat, tp2.lon)
+            
+            tp1 = tp2
          end
       end
    end
-   return t
 end
 
 
