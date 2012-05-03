@@ -41,7 +41,7 @@ for trk in gpx:nodes("trk") do
          
             if tp2.time ~= tp1.time then
                -- Do calculations
-               print(tp2.time, tp1.time, tp2.lat, tp2.lon)
+               print(tp2.time, tp1.time, tp2.lat, tp2.lon, tp2.lon - tp1.lon)
             end
             
             tp1 = tp2
