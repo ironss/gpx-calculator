@@ -1,7 +1,7 @@
 #! /usr/bin/lua
 
 require("LuaXml")
-require("geocalcs")
+geo = require("geocalcs")
 
 -- Iterator for searching for nodes with a specific tag
 function xml.nodes(t, tag)
@@ -49,19 +49,19 @@ function calculate_points(trkseg, t_interval, d_interval)
    
    for trkpt in trkseg:nodes("trkpt") do
       if i == 1 then
-         tp1.lat = rad_from_deg(trkpt.lat)
-         tp1.lon = rad_from_deg(trkpt.lon)
+         tp1.lat = geo.rad_from_deg(trkpt.lat)
+         tp1.lon = geo.rad_from_deg(trkpt.lon)
          tp1.time = time_from_iso8601_str(trkpt:find("time")[1])
       else
          local tp2 = {}
-         tp2.lat = rad_from_deg(trkpt.lat)
-         tp2.lon = rad_from_deg(trkpt.lon)
+         tp2.lat = geo.rad_from_deg(trkpt.lat)
+         tp2.lon = geo.rad_from_deg(trkpt.lon)
          tp2.time = time_from_iso8601_str(trkpt:find("time")[1])
       
          if tp2.time ~= tp1.time then
             local delta_t = tp2.time - tp1.time
-            local delta_d = distance_between(tp1.lat, tp1.lon, tp2.lat, tp2.lon, spheroid)
-            local bearing = bearing(tp1.lat, tp1.lon, tp2.lat, tp2.lon, spheroid)
+            local delta_d = geo.distance_between(tp1.lat, tp1.lon, tp2.lat, tp2.lon, geo.spheroid)
+            local bearing = geo.bearing(tp1.lat, tp1.lon, tp2.lat, tp2.lon, geo.spheroid)
             
             if rounded_d >= total_d and rounded_d < total_d + delta_d then
                -- Rounded point is this far along this segment
@@ -69,7 +69,7 @@ function calculate_points(trkseg, t_interval, d_interval)
                print(tp2.time, "*", "*", partial_d, rounded_d)
                rounded_d = rounded_d + d_interval
             end
-            print(tp2.time, total_t, delta_t, total_t + delta_t, total_d, delta_d, deg_from_rad(bearing))
+            print(tp2.time, total_t, delta_t, total_t + delta_t, total_d, delta_d, geo.deg_from_rad(bearing))
 
             total_d = total_d + delta_d
             total_t = total_t + delta_t
