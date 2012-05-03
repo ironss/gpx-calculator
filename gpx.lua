@@ -22,24 +22,6 @@ function xml.nodes(t, tag)
 end
 
 
-function timetable(year, month, day, hour, min, sec)
-   local t = {}
-   t.year = year
-   t.month = month
-   t.day = day
-   t.hour = hour
-   t.min = min
-   t.sec = sec
-   return t
-end
-
-function time_from_iso8601_str(str)
-   local tt = timetable(string.match(str, "(%d+)-(%d+)-(%d+)T(%d+):(%d+):(%d+)Z"))
-   local t = os.time(tt)
-   return t
-end
-
-
 function calculate_points(trkseg, t_interval, d_interval)
    local tp1 = {}
    local i = 1
@@ -58,7 +40,7 @@ function calculate_points(trkseg, t_interval, d_interval)
          local tp2 = {}
          tp2.lat = geo.rad_from_deg(trkpt.lat)
          tp2.lon = geo.rad_from_deg(trkpt.lon)
-         tp2.time = time_from_iso8601_str(trkpt:find("time")[1])
+         tp2.time = dateparse.parse(trkpt:find("time")[1])
       
          if tp2.time ~= tp1.time then
             local delta_t = tp2.time - tp1.time
