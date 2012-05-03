@@ -3,9 +3,6 @@
 require("LuaXml")
 
 
-file=xml.load(arg[1])
-gpx = file:find("gpx")
-
 -- Iterator for searching for nodes with a specific tag
 function xml.nodes(t, tag)
    local i = 0
@@ -115,6 +112,10 @@ function calculate_points(trkseg, t_interval, d_interval)
    end
 end
 
+
+
+file=xml.load(arg[1])
+gpx = file:find("gpx")
 
 for trk in gpx:nodes("trk") do
    trk.name = trk:find("name")
