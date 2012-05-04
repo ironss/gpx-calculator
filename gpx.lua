@@ -66,9 +66,11 @@ function calculate_points(name, trkseg, t_interval, d_interval)
          
          local tp3 = {}
          tp3.lat, tp3.lon = tp1.lat, tp1.lon
-         tp3.time = 0
+         tp3.time = tp1.time
+         tp3.trktime = 0
          tp3.distance = 0
          d_points[#d_points+1] = tp3
+         t_points[#t_points+1] = tp3
          
       else
          local tp2 = {}
