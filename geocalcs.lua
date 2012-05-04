@@ -20,6 +20,14 @@ function M.haversin(theta)
    return sin_theta2 * sin_theta2
 end
 
+-- Functions to compute the following
+-- * distance between two points (lat1, lon1) and (lat2, lon2)
+-- * initial bearing of second point (lat2, lon2) from first point (lat1, lon2)
+-- * position of second point (lat2, lon2) a given distance and bearing from first point (lat1, lon1)
+--
+-- Thanks to http://www.movable-type.co.uk/scripts/latlong.html for the Javascript that these
+-- were based on.
+
 
 function M.distance_between(lat1, lon1, lat2, lon2, geoid)
    local d = geoid.a * 2 * asin(math.sqrt(M.haversin(lat2 - lat1) + cos(lat1) * cos(lat2) * M.haversin(lon2 - lon1)))
