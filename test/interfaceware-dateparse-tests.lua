@@ -3,5 +3,5 @@
 dateparse = require("interfaceware-dateparse")
 parsedate = dateparse.parse
 
-require("dateparse-tests")
+require("test/dateparse-tests")
 
