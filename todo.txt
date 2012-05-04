@@ -2,7 +2,7 @@
 
 2. Tests for bearing()          -- DONE
 
-3. Tests for destination()
+3. Tests for destination()      -- DONE
 
 4. Tests for date parser        -- DONE
 
