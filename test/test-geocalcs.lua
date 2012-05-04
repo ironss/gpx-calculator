@@ -19,7 +19,7 @@ function Test_geocalcs:test_distance_between()
 end
 
 
-function Test_geocalcs:test_bearing_to()
+function Test_geocalcs:test_bearing()
    assert_close(geo.bearing(0.0, 0.0,  0.1,  0.0, geo.spheroid), math.rad(0) , eps)
    assert_close(geo.bearing(0.0, 0.0,  0.0,  0.1, geo.spheroid), math.rad(90), eps)
    assert_close(geo.bearing(0.0, 0.0, -0.1,  0.0, geo.spheroid), math.rad(180), eps)
@@ -30,6 +30,24 @@ function Test_geocalcs:test_bearing_to()
                             math.rad(228.87976757496), eps)
 end
 
+
+function Test_geocalcs:test_destination()
+   lat, lon = geo.destination(0.0, 0.0,  637810,  math.rad(0), geo.spheroid)
+   assert_close(lat, 0.1, eps)
+   assert_close(lon, 0.0, eps)
+
+   lat, lon = geo.destination(0.0, 0.0,  637810,  math.rad(90), geo.spheroid)
+   assert_close(lat, 0.0, eps)
+   assert_close(lon, 0.1, eps)
+
+   lat, lon = geo.destination(0.0, 0.0,  637810,  math.rad(180), geo.spheroid)
+   assert_close(lat, -0.1, eps)
+   assert_close(lon,  0.0, eps)
+
+   lat, lon = geo.destination(0.0, 0.0,  637810,  math.rad(270), geo.spheroid)
+   assert_close(lat,  0.0, eps)
+   assert_close(lon, -0.1, eps)
+end
 
 LuaUnit:run()
 

@@ -1,6 +1,6 @@
-1. Tests for distance_between()
+1. Tests for distance_between() -- DONE
 
-2. Tests for bearing()
+2. Tests for bearing()          -- DONE
 
 3. Tests for destination()
 
