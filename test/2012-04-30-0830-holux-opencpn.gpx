@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<gpx version="1.1" creator="OpenCPN" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.topografix.com/GPX/1/1" xmlns:gpxx="http://www.garmin.com/xmlschemas/GpxExtensions/v3" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd" xmlns:opencpn="http://www.opencpn.org">
+    <trk>
+       <name>Holux OpenCPN</name>
+        <extensions>
+            <opencpn:start></opencpn:start>
+            <opencpn:end></opencpn:end>
+            <opencpn:viz>1</opencpn:viz>
+            <opencpn:guid>691c6b41-1757-45dd-a916-c786205f3010</opencpn:guid>
+        </extensions>
+        <trkseg>
+            <trkpt lat="-43.493803333" lon="172.579360000">
+                <time>2012-04-29T20:05:51Z</time>
+                <name>001</name>
+            </trkpt>
+            <trkpt lat="-43.493803333" lon="172.579315000">
+                <time>2012-04-29T20:05:52Z</time>
+                <name>002</name>
+            </trkpt>
+            <trkpt lat="-43.493818333" lon="172.579431667">
+                <time>2012-04-29T20:06:52Z</time>
+                <name>003</name>
+            </trkpt>
+            <trkpt lat="-43.493783333" lon="172.579336667">
+                <time>2012-04-29T20:07:52Z</time>
+                <name>004</name>
+            </trkpt>
+            <trkpt lat="-43.493413333" lon="172.578901667">
+                <time>2012-04-29T20:08:52Z</time>
+                <name>005</name>
+            </trkpt>
+            <trkpt lat="-43.492693333" lon="172.579018333">
+                <time>2012-04-29T20:09:56Z</time>
+                <name>006</name>
+            </trkpt>
+            <trkpt lat="-43.492080000" lon="172.578261667">
+                <time>2012-04-29T20:10:56Z</time>
+                <name>007</name>
+            </trkpt>
+            <trkpt lat="-43.491513333" lon="172.577613333">
+                <time>2012-04-29T20:11:56Z</time>
+                <name>008</name>
+            </trkpt>
+            <trkpt lat="-43.490788333" lon="172.577726667">
+                <time>2012-04-29T20:12:56Z</time>
+                <name>009</name>
+            </trkpt>
+            <trkpt lat="-43.490291667" lon="172.576945000">
+                <time>2012-04-29T20:13:56Z</time>
+                <name>010</name>
+            </trkpt>
+            <trkpt lat="-43.490790000" lon="172.576181667">
+                <time>2012-04-29T20:14:59Z</time>
+                <name>011</name>
+            </trkpt>
+            <trkpt lat="-43.490378333" lon="172.575295000">
+                <time>2012-04-29T20:15:59Z</time>
+                <name>012</name>
+            </trkpt>
+            <trkpt lat="-43.489716667" lon="172.575156667">
+                <time>2012-04-29T20:16:59Z</time>
+                <name>013</name>
+            </trkpt>
+            <trkpt lat="-43.489271667" lon="172.574220000">
+                <time>2012-04-29T20:17:59Z</time>
+                <name>014</name>
+            </trkpt>
+            <trkpt lat="-43.488876667" lon="172.573235000">
+                <time>2012-04-29T20:18:59Z</time>
+                <name>015</name>
+            </trkpt>
+            <trkpt lat="-43.488433333" lon="172.572261667">
+                <time>2012-04-29T20:20:01Z</time>
+                <name>016</name>
+            </trkpt>
+            <trkpt lat="-43.488076667" lon="172.571445000">
+                <time>2012-04-29T20:21:02Z</time>
+                <name>017</name>
+            </trkpt>
+            <trkpt lat="-43.487781667" lon="172.570298333">
+                <time>2012-04-29T20:22:02Z</time>
+                <name>018</name>
+            </trkpt>
+            <trkpt lat="-43.487443333" lon="172.569330000">
+                <time>2012-04-29T20:23:02Z</time>
+                <name>019</name>
+            </trkpt>
+            <trkpt lat="-43.487036667" lon="172.568431667">
+                <time>2012-04-29T20:24:02Z</time>
+                <name>020</name>
+            </trkpt>
+            <trkpt lat="-43.487215000" lon="172.567543333">
+                <time>2012-04-29T20:25:04Z</time>
+                <name>021</name>
+            </trkpt>
+            <trkpt lat="-43.487850000" lon="172.566751667">
+                <time>2012-04-29T20:26:04Z</time>
+                <name>022</name>
+            </trkpt>
+            <trkpt lat="-43.488378333" lon="172.566281667">
+                <time>2012-04-29T20:27:05Z</time>
+                <name>023</name>
+            </trkpt>
+            <trkpt lat="-43.489055000" lon="172.565953333">
+                <time>2012-04-29T20:28:05Z</time>
+                <name>024</name>
+            </trkpt>
+            <trkpt lat="-43.489813333" lon="172.565293333">
+                <time>2012-04-29T20:29:05Z</time>
+                <name>025</name>
+            </trkpt>
+            <trkpt lat="-43.490101667" lon="172.565326667">
+                <time>2012-04-29T20:30:07Z</time>
+                <name>026</name>
+            </trkpt>
+            <trkpt lat="-43.490343333" lon="172.565380000">
+                <time>2012-04-29T20:31:07Z</time>
+                <name>027</name>
+            </trkpt>
+            <trkpt lat="-43.490550000" lon="172.565200000">
+                <time>2012-04-29T20:32:07Z</time>
+                <name>028</name>
+            </trkpt>
+            <trkpt lat="-43.490666667" lon="172.564753333">
+                <time>2012-04-29T20:33:02Z</time>
+                <name>029</name>
+            </trkpt>
+        </trkseg>
+    </trk>
+</gpx>
