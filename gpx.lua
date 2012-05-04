@@ -53,6 +53,7 @@ function calculate_points(name, trkseg, t_interval, d_interval)
    local rounded_d = d_interval
    local total_t = 0
    local partial_t = 0
+   local rounded_t = t_interval
    local t_points = {}
    local d_points = {}
    
@@ -79,12 +80,14 @@ function calculate_points(name, trkseg, t_interval, d_interval)
             local delta_t = tp2.time - tp1.time
             local delta_d = geo.distance_between(tp1.lat, tp1.lon, tp2.lat, tp2.lon, geo.spheroid)
             local bearing = geo.bearing(tp1.lat, tp1.lon, tp2.lat, tp2.lon, geo.spheroid)
+            local speed = delta_d / delta_t
             
             while rounded_d >= total_d and rounded_d < total_d + delta_d do
                -- Rounded point is this far along this segment
                partial_d = rounded_d - total_d
                local tp3 = {}
                tp3.lat, tp3.lon = geo.destination(tp1.lat, tp1.lon, partial_d, bearing, geo.spheroid)
+               tp3.trktime = 0
                tp3.time = 0
                tp3.distance = rounded_d
                d_points[#d_points+1] = tp3
@@ -92,6 +95,18 @@ function calculate_points(name, trkseg, t_interval, d_interval)
                rounded_d = rounded_d + d_interval
             end
 
+            while rounded_t >= total_t and rounded_t < total_t + delta_t do
+               partial_t = rounded_t - total_t
+               local partial_d = partial_t * speed
+               local tp4 = {}
+               tp4.lat, tp4.lon = geo.destination(tp1.lat, tp1.lon, partial_d, bearing, geo.spheroid)
+               tp4.trktime = rounded_t
+               tp4.time = tp1.time + partial_t
+               tp4.distance = 0
+               t_points[#t_points+1] = tp4
+               rounded_t = rounded_t + t_interval
+            end
+            
 --            print(tp2.time, total_t, delta_t, total_d, delta_d, math.deg(bearing))
 
             total_d = total_d + delta_d
@@ -103,9 +118,10 @@ function calculate_points(name, trkseg, t_interval, d_interval)
       i = i + 1
    end
    
-   d_wpts = create_wpts(name, d_points, 'distance', 'm')
-   
-   return t_wpts, d_wpts
+   local d_wpts = create_wpts(name, d_points, 'distance', 'm')
+   local t_wpts = create_wpts(name, t_points, 'trktime', 's')
+   local h_wpts = create_wpts(name, t_points, 'time', 's')
+   return t_wpts, d_wpts, h_wpts
 end
 
 
@@ -121,9 +137,10 @@ gpx = file:find("gpx")
 for trk in gpx:nodes("trk") do
    trk.name = trk:find("name")[1]
    for trkseg in trk:nodes("trkseg") do
-      t_points, d_points = calculate_points(trk.name, trkseg, 60, tonumber(distance))
+      t_points, d_points, h_points = calculate_points(trk.name, trkseg, tonumber(time), tonumber(distance))
    end
    d_points:save(trk.name .. '-' .. distance .. 'm.gpx')
---   t_points:save(trk.name .. '-' .. time .. 's.gpx')
+   t_points:save(trk.name .. '-' .. time .. 's-rel.gpx')
+   h_points:save(trk.name .. '-' .. time .. 's-abs.gpx')
 end
 
