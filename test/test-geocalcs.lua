@@ -6,7 +6,7 @@ require("luaunit")
 
 Test_geocalcs = {}
 
-local eps = 0.000000001
+local eps = 0.001
 
 function Test_geocalcs:test_distance_between()
    assert_close(geo.distance_between(0.0, 0.0, 0.0, 0.0, geo.spheroid),     0, eps)
