@@ -73,8 +73,32 @@ function assertEquals(actual, expected)
 	end
 end
 
+function assertClose(actual, expected, eps)
+	-- assert that two values are equal and calls error else
+	if  not(math.abs(actual - expected) < eps)  then
+		local function wrapValue( v )
+			if type(v) == 'string' then return "'"..v.."'" end
+			return tostring(v)
+		end
+		if not USE_EXPECTED_ACTUAL_IN_ASSERT_EQUALS then
+			expected, actual = actual, expected
+		end
+
+		local errorMsg
+		if type(expected) == 'string' then
+			errorMsg = "\nexpected: "..wrapValue(expected).."\n"..
+                             "actual  : "..wrapValue(actual).."\n"
+		else
+			errorMsg = "expected: "..wrapValue(expected)..", actual: "..wrapValue(actual)
+		end
+		print (errorMsg)
+		error( errorMsg, 2 )
+	end
+end
+
 assert_equals = assertEquals
 assert_error = assertError
+assert_close = assertClose
 
 function wrapFunctions(...)
 	-- Use me to wrap a set of functions into a Runnable test class:

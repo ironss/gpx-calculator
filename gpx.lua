@@ -47,6 +47,7 @@ function calculate_points(trkseg, t_interval, d_interval)
             local delta_d = geo.distance_between(tp1.lat, tp1.lon, tp2.lat, tp2.lon, geo.spheroid)
             local bearing = geo.bearing(tp1.lat, tp1.lon, tp2.lat, tp2.lon, geo.spheroid)
             
+            print("***", math.deg(tp1.lat), math.deg(tp1.lon), math.deg(tp2.lat), math.deg(tp2.lon), delta_d, math.deg(bearing))
             if rounded_d >= total_d and rounded_d < total_d + delta_d then
                -- Rounded point is this far along this segment
                partial_d = rounded_d - total_d
