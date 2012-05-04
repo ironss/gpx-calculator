@@ -1,15 +1,22 @@
-1. Tests for distance_between() -- DONE
+ 1. Tests for distance_between() -- DONE
 
-2. Tests for bearing()          -- DONE
+ 2. Tests for bearing()          -- DONE
 
-3. Tests for destination()      -- DONE
+ 3. Tests for destination()      -- DONE
 
-4. Tests for date parser        -- DONE
+ 4. Tests for date parser        -- DONE
 
-5. Tests for gpx calculations
+ 5. Tests for gpx calculations
 
-6. Use luaunit test framework   -- DONE
+ 6. Use luaunit test framework   -- DONE
 
-7. luaunit: hide stacktrace     -- DONE
+ 7. luaunit: hide stacktrace     -- DONE
 
+ 8. Generate time waypoints      -- DONE
+
+ 9. Generate distance waypoints  -- DONE
+
+10. Generate absolute-time waypoints -- needs work to start at rounded absolute time
+
+11. Verify that initial segment works correctly
 
