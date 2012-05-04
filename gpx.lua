@@ -21,6 +21,28 @@ function xml.nodes(t, tag)
    return f
 end
 
+function create_wpts(name, pts, value, unit)
+   local wpts = xml.new('gpx')
+   wpts.version = '1.1'
+   wpts.creator = arg[0]
+   
+   local n = xml.new('name')
+   n[#n+1] = name
+   wpts:append(n)
+   
+   for _, tp in ipairs(pts) do
+      local wp = xml.new('wpt')
+      wp.lat = math.deg(tp.lat)
+      wp.lon = math.deg(tp.lon)
+      local desc = xml.new('name')
+      desc[#desc+1] = tp[value] .. ' ' .. unit
+      wp:append(desc)
+      wpts:append(wp)
+   end
+   
+   return wpts
+end
+
 
 function calculate_points(name, trkseg, t_interval, d_interval)
    local tp1 = {}
@@ -80,28 +102,8 @@ function calculate_points(name, trkseg, t_interval, d_interval)
       end
       i = i + 1
    end
-
-   d_wpts = xml.new('gpx')
-   d_wpts.version = '1.1'
-   d_wpts.creator = arg[0]
    
-   local n = xml.new('name')
-   n[#n+1] = name
-   d_wpts:append(n)
-   
-   local rte = xml.new('rte')
-   rte:append(n)
-   d_wpts:append(rte)
-   
-   for _, tp in ipairs(d_points) do
-      local wp = xml.new('wpt')
-      wp.lat = math.deg(tp.lat)
-      wp.lon = math.deg(tp.lon)
-      local desc = xml.new('name')
-      desc[#desc+1] = tp.distance .. 'm'
-      wp:append(desc)
-      d_wpts:append(wp)
-   end
+   d_wpts = create_wpts(name, d_points, 'distance', 'm')
    
    return t_wpts, d_wpts
 end
@@ -109,7 +111,8 @@ end
 
 
 filename = arg[1]
-distance=arg[2]
+distance = arg[2]
+time = arg[3]
 
 file=xml.load(filename)
 gpx = file:find("gpx")
@@ -121,5 +124,6 @@ for trk in gpx:nodes("trk") do
       t_points, d_points = calculate_points(trk.name, trkseg, 60, tonumber(distance))
    end
    d_points:save(trk.name .. '-' .. distance .. 'm.gpx')
+--   t_points:save(trk.name .. '-' .. time .. 's.gpx')
 end
 
