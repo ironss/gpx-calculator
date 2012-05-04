@@ -2,7 +2,7 @@
 
 require("LuaXml")
 geo = require("geocalcs")
-dateparse = require("interfaceware-dateparse")
+dateparse = require("dateparse")
 
 
 -- Iterator for searching for nodes with a specific tag

@@ -1,6 +1,6 @@
 #! /usr/bin/lua
 
-dateparse = require("interfaceware-dateparse")
+dateparse = require("dateparse")
 parsedate = dateparse.parse
 
 require("test/dateparse-tests")
