@@ -172,16 +172,22 @@ UnitResult = { -- class
 	end
 
 	function UnitResult:displayOneFailedTest( failure )
-		testName, errorMsg = unpack( failure )
+		testName, errorMsg, stacktrace = unpack( failure )
 		print(">>> "..testName.." failed")
 		print( errorMsg )
+		if self.verbosity > 1 then
+			print(stacktrace)
+		end
+		
 	end
 
 	function UnitResult:displayFailedTests()
 		if table.getn( self.errorList ) == 0 then return end
 		print("Failed tests:")
 		print("-------------")
-		table.foreachi( self.errorList, self.displayOneFailedTest )
+		for _, v in ipairs(self.errorList) do
+			self:displayOneFailedTest(v)
+		end
 		print()
 	end
 
@@ -212,10 +218,10 @@ UnitResult = { -- class
 		self.testHasFailure = false
 	end
 
-	function UnitResult:addFailure( errorMsg )
+	function UnitResult:addFailure( errorMsg, stacktrace )
 		self.failureCount = self.failureCount + 1
 		self.testHasFailure = true
-		table.insert( self.errorList, { self.currentTestName, errorMsg } )
+		table.insert( self.errorList, { self.currentTestName, errorMsg, stacktrace } )
 		self:displayFailure( errorMsg )
 	end
 
@@ -291,8 +297,9 @@ LuaUnit = {
 		-- run testMethod()
         ok, errorMsg = xpcall( aMethod, err_handler )
 		if not ok then
-			errorMsg  = self.strip_luaunit_stack(errorMsg)
-			LuaUnit.result:addFailure( errorMsg )
+	        	errorMsg, stacktrace = string.match(errorMsg, "(.*)(stack traceback:.*)")
+			stacktrace  = self.strip_luaunit_stack(stacktrace)
+			LuaUnit.result:addFailure( errorMsg, stacktrace )
         end
 
 		-- lastly, run tearDown(if any)
