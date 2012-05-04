@@ -3,7 +3,10 @@
 local M = {}
 
 M.spheroid = {}
-M.spheroid.r = 6378100
+M.spheroid.a = 6378100  -- axis
+M.spheroid.f = 1        -- flattening
+M.spheroid.r = 0        -- reciprocal flattening
+
 
 function M.haversin(theta)
    local theta2 = theta / 2
@@ -11,12 +14,12 @@ function M.haversin(theta)
    return sin_theta2 * sin_theta2
 end
 
-function M.distance_between(lat1, lon1, lat2, lon2, sph)
-   local d = sph.r * 2 * math.asin(math.sqrt(M.haversin(lat2 - lat1) + math.cos(lat1) * math.cos(lat2) * M.haversin(lon2 - lon1)))
+function M.distance_between(lat1, lon1, lat2, lon2, geoid)
+   local d = geoid.a * 2 * math.asin(math.sqrt(M.haversin(lat2 - lat1) + math.cos(lat1) * math.cos(lat2) * M.haversin(lon2 - lon1)))
    return d
 end
 
-function M.bearing(lat1, lon1, lat2, lon2, sph)
+function M.bearing(lat1, lon1, lat2, lon2, geoid)
    local dlon = lon2 - lon1
    local y = math.sin(dlon) * math.cos(lat2)
    local x = math.cos(lat1) * math.sin(lat2) - math.sin(lat1) * math.cos(lat2) * math.cos(dlon)
