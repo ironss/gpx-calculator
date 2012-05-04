@@ -50,10 +50,12 @@ function calculate_points(trkseg, t_interval, d_interval)
             if rounded_d >= total_d and rounded_d < total_d + delta_d then
                -- Rounded point is this far along this segment
                partial_d = rounded_d - total_d
-               print(tp2.time, "*", "*", partial_d, rounded_d)
+               tp3 = {}
+               tp3.lat, tp3.lon = geo.destination(tp1.lat, tp1.lon, partial_d, bearing, geo.spheroid)
+               print(tp2.time, tp1.lat, tp1.lon, partial_d, bearing, tp3.lat, tp3.lon, rounded_d)
                rounded_d = rounded_d + d_interval
             end
-            print(tp2.time, total_t, delta_t, total_t + delta_t, total_d, delta_d, geo.deg_from_rad(bearing))
+            print(tp2.time, total_t, delta_t, total_d, delta_d, geo.deg_from_rad(bearing))
 
             total_d = total_d + delta_d
             total_t = total_t + delta_t
