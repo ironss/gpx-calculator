@@ -47,6 +47,11 @@ function Test_geocalcs:test_destination()
    lat, lon = geo.destination(0.0, 0.0,  637810,  math.rad(270), geo.spheroid)
    assert_close(lat,  0.0, eps)
    assert_close(lon, -0.1, eps)
+   
+   lat, lon = geo.destination(math.rad(-43.490587), math.rad(172.564695),
+                              9.6483874243976, math.rad(228.87976757496), geo.spheroid)
+   assert_close(math.deg(lat), -43.490644, 0.000001)
+   assert_close(math.deg(lon), 172.564605, 0.000001)
 end
 
 LuaUnit:run()
