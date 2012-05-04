@@ -42,14 +42,5 @@ function M.destination(lat1, lon1, distance, bearing, geoid)
    return lat2, lon2
 end
 
-
-function M.rad_from_deg(deg)
-   return deg * math.pi / 180
-end
-
-function M.deg_from_rad(rad)
-   return rad * 180 / math.pi
-end
-
 return M
 

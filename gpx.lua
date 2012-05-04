@@ -33,13 +33,13 @@ function calculate_points(trkseg, t_interval, d_interval)
    
    for trkpt in trkseg:nodes("trkpt") do
       if i == 1 then
-         tp1.lat = geo.rad_from_deg(trkpt.lat)
-         tp1.lon = geo.rad_from_deg(trkpt.lon)
+         tp1.lat = math.rad(trkpt.lat)
+         tp1.lon = math.rad(trkpt.lon)
          tp1.time = dateparse.parse(trkpt:find("time")[1])
       else
          local tp2 = {}
-         tp2.lat = geo.rad_from_deg(trkpt.lat)
-         tp2.lon = geo.rad_from_deg(trkpt.lon)
+         tp2.lat = math.rad(trkpt.lat)
+         tp2.lon = math.rad(trkpt.lon)
          tp2.time = dateparse.parse(trkpt:find("time")[1])
       
          if tp2.time ~= tp1.time then
@@ -55,7 +55,7 @@ function calculate_points(trkseg, t_interval, d_interval)
                print(tp2.time, tp1.lat, tp1.lon, partial_d, bearing, tp3.lat, tp3.lon, rounded_d)
                rounded_d = rounded_d + d_interval
             end
-            print(tp2.time, total_t, delta_t, total_d, delta_d, geo.deg_from_rad(bearing))
+            print(tp2.time, total_t, delta_t, total_d, delta_d, math.deg(bearing))
 
             total_d = total_d + delta_d
             total_t = total_t + delta_t
