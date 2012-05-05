@@ -24,7 +24,32 @@ end
 
 function M.load(filename)
    local file = xml.load(filename)
-   return file
+   local gpxdata = file:find("gpx")
+
+   local waypoints = {}
+   local tracks = {}
+   local routes = {}
+   
+   for trk in gpxdata:nodes("trk") do
+      track = {}
+      track.name = trk:find("name")[1]
+      
+      for trkseg in trk:nodes("trkseg") do
+         for trkpt in trkseg:nodes("trkpt") do
+            local tp = {}
+            tp.lat = math.rad(trkpt.lat)
+            tp.lon = math.rad(trkpt.lon)
+            tp.time = dateparse.parse(trkpt:find("time")[1])
+            
+            if #track == 0 or tp.time ~= track[#track].time then
+               track[#track+1] = tp
+            end
+         end
+      end
+      tracks[#tracks+1] = track
+   end
+
+   return waypoints, tracks, routes
 end
 
 
@@ -58,9 +83,8 @@ function M.append_trk(parent, name, points)
 
 end
 
-function M.read_gpx(filename)
 
-end
+
 
 function M.calculate_points(name, trkseg, t_interval, d_interval)
    local tp1 = {}

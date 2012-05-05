@@ -50,5 +50,77 @@ function M.destination(lat1, lon1, distance, bearing, geoid)
    return lat2, lon2
 end
 
+
+function M.calculate_d_points(trk, d_interval)
+   local tp1 = {}
+   local tp2 = {}
+   local total_d = 0
+   local partial_d = 0
+   local rounded_d = 0
+   local d_points = {}
+   local total_t = 0
+   local partial_t = 0
+   
+   for i = 1, #trk - 1 do
+      tp1 = trk[i]
+      tp2 = trk[i+1]
+      
+      while rounded_d < total_d + tp1.distance do
+         partial_d = rounded_d - total_d
+
+         local tp3 = {}
+         tp3.lat, tp3.lon = geo.destination(tp1.lat, tp1.lon, partial_d, tp1.bearing, geo.spheroid)
+         tp3.time = 0
+         tp3.trktime = 0
+         tp3.distance = rounded_d
+         
+         d_points[#d_points+1] = tp3
+
+         rounded_d = rounded_d + d_interval
+      end
+      
+      total_d = total_d + tp1.distance
+      total_t = total_t + tp1.duration
+   end
+
+   return d_points
+end
+
+function M.calculate_t_points(trk, t_interval)
+   local tp1 = {}
+   local tp2 = {}
+   local total_t = 0
+   local partial_t = 0
+   local rounded_t = 0
+   local total_d = 0
+   local partial_d = 0
+   local t_points = {}
+   
+   for i = 1, #trk - 1 do
+      tp1 = trk[i]
+      tp2 = trk[i+1]
+      
+      while rounded_t < total_t + tp1.duration do
+         partial_t = rounded_t - total_t
+         partial_d = partial_t * tp1.speed
+
+         local tp3 = {}
+         tp3.lat, tp3.lon = geo.destination(tp1.lat, tp1.lon, partial_d, tp1.bearing, geo.spheroid)
+         tp3.time = tp1.time + partial_d
+         tp3.trktime = total_t + partial_t
+         tp3.distance = total_d + partial_d
+         
+         t_points[#t_points+1] = tp3
+
+         rounded_t = rounded_t + t_interval
+      end
+      
+      total_t = total_t + tp1.duration
+      total_d = total_d + tp1.distance
+   end
+
+   return t_points
+end
+
 return M
 
