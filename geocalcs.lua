@@ -65,7 +65,7 @@ function M.calculate_d_points(trk, d_interval)
       tp1 = trk[i]
       tp2 = trk[i+1]
       
-      while rounded_d < total_d + tp1.distance do
+      while rounded_d <= total_d + tp1.distance do
          partial_d = rounded_d - total_d
          partial_t = partial_d / tp1.speed
 
@@ -87,12 +87,12 @@ function M.calculate_d_points(trk, d_interval)
    return d_points
 end
 
-function M.calculate_t_points(trk, t_interval)
+function M.calculate_t_points(trk, t_interval, start_time)
    local tp1 = {}
    local tp2 = {}
    local total_t = 0
    local partial_t = 0
-   local rounded_t = 0
+   local rounded_t = start_time or 0
    local total_d = 0
    local partial_d = 0
    local t_points = {}
@@ -101,7 +101,7 @@ function M.calculate_t_points(trk, t_interval)
       tp1 = trk[i]
       tp2 = trk[i+1]
       
-      while rounded_t < total_t + tp1.duration do
+      while rounded_t <= total_t + tp1.duration do
          partial_t = rounded_t - total_t
          partial_d = tp1.speed * partial_t
 

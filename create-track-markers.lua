@@ -5,8 +5,8 @@ geo = require('geocalcs')
 
 
 filename = arg[1]
-distance = arg[2]
-time = arg[3]
+distance = tonumber(arg[2])
+time = tonumber(arg[3])
 
 waypoints, tracks, routes = gpx.load(filename)
 
@@ -24,12 +24,16 @@ end
 
 for _, trk in ipairs(tracks) do
    print(trk.name)
-   local d_points = geo.calculate_d_points(trk, tonumber(distance))
+   local d_points = geo.calculate_d_points(trk, distance)
    local d_gpx = gpx.append_wpts(name, d_points, 'distance', 'm')
    d_gpx:save(trk.name .. '-' .. distance .. 'm.gpx')
  
-   local t_points = geo.calculate_t_points(trk, tonumber(time))
+   local t_points = geo.calculate_t_points(trk, time)
    local t_gpx = gpx.append_wpts(name, t_points, 'trktime', 's')
    t_gpx:save(trk.name .. '-' .. time .. 's.gpx')
+   
+   local h_points = geo.calculate_t_points(trk, time, time - math.fmod(trk[1].time, time))
+   local h_gpx = gpx.append_wpts(name, h_points, 'trktime', 's')
+   h_gpx:save(trk.name .. '-' .. time .. 's-abs.gpx')
 end
 
