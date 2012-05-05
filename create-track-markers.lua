@@ -18,8 +18,6 @@ for _, trk in ipairs(tracks) do
       tp1.bearing = geo.bearing(tp1.lat, tp1.lon, tp2.lat, tp2.lon, geo.spheroid)
       tp1.duration = tp2.time - tp1.time
       tp1.speed = tp1.distance / tp1.duration
-
---      print(tp1.lat, tp1.lon, tp1.time, tp1.distance, tp1.duration, tp1.speed, tp1.bearing)
    end
 end
 
@@ -33,11 +31,5 @@ for _, trk in ipairs(tracks) do
    local t_points = geo.calculate_t_points(trk, tonumber(time))
    local t_gpx = gpx.append_wpts(name, t_points, 'trktime', 's')
    t_gpx:save(trk.name .. '-' .. time .. 's.gpx')
-   
---   t_points = geo.calculate_t_points(trk, tonumber(time))
---      t_points, d_points, h_points = gpx.calculate_points(trk.name, trkseg, tonumber(time), tonumber(distance))
---   d_points:save(trk.name .. '-' .. distance .. 'm.gpx')
---   t_points:save(trk.name .. '-' .. time .. 's-rel.gpx')
---   h_points:save(trk.name .. '-' .. time .. 's-abs.gpx')
 end
 

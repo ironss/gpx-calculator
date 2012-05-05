@@ -67,11 +67,12 @@ function M.calculate_d_points(trk, d_interval)
       
       while rounded_d < total_d + tp1.distance do
          partial_d = rounded_d - total_d
+         partial_t = partial_d / tp1.speed
 
          local tp3 = {}
          tp3.lat, tp3.lon = geo.destination(tp1.lat, tp1.lon, partial_d, tp1.bearing, geo.spheroid)
-         tp3.time = 0
-         tp3.trktime = 0
+         tp3.time = tp1.time + partial_t
+         tp3.trktime = total_t + partial_t
          tp3.distance = rounded_d
          
          d_points[#d_points+1] = tp3
@@ -102,11 +103,11 @@ function M.calculate_t_points(trk, t_interval)
       
       while rounded_t < total_t + tp1.duration do
          partial_t = rounded_t - total_t
-         partial_d = partial_t * tp1.speed
+         partial_d = tp1.speed * partial_t
 
          local tp3 = {}
          tp3.lat, tp3.lon = geo.destination(tp1.lat, tp1.lon, partial_d, tp1.bearing, geo.spheroid)
-         tp3.time = tp1.time + partial_d
+         tp3.time = tp1.time + partial_t
          tp3.trktime = total_t + partial_t
          tp3.distance = total_d + partial_d
          
