@@ -75,10 +75,9 @@ function M.append_wpts(parent, pts, value, unit)
 --      wp:append(name)
       
       local desc = xml.new('name')
-      desc[#desc+1] = table.concat{os.date('%H:%M:%S', tp.time), 
+      desc[#desc+1] = table.concat{os.date('!%H:%M:%SZ', tp.time), 
                                    ' (', 
-                                   os.date('%H:%M:%S', tp.trktime - 12*60*60), ', ',
-                                   math.floor(tp.trktime + 0.5) , ', ',
+                                   os.date('!+%H:%M:%S', tp.trktime), ', ',
                                    math.floor(tp.distance + 0.5), 'm)'}
       wp:append(desc)
       

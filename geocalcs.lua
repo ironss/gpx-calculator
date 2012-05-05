@@ -4,8 +4,6 @@ local M = {}
 
 M.spheroid = {}
 M.spheroid.a = 6378100  -- axis
-M.spheroid.f = 1        -- flattening
-M.spheroid.r = 0        -- reciprocal flattening
 
 
 local sin = math.sin
@@ -26,7 +24,7 @@ end
 -- * position of second point (lat2, lon2) a given distance and bearing from first point (lat1, lon1)
 --
 -- Thanks to http://www.movable-type.co.uk/scripts/latlong.html for the Javascript that these
--- were based on.
+-- functions were based on.
 
 
 function M.distance_between(lat1, lon1, lat2, lon2, geoid)
@@ -50,6 +48,8 @@ function M.destination(lat1, lon1, distance, bearing, geoid)
    return lat2, lon2
 end
 
+
+-- Given a set of track points, calculate points at fixed distances along the track.
 
 function M.calculate_d_points(trk, d_interval)
    local tp1 = {}
@@ -87,7 +87,12 @@ function M.calculate_d_points(trk, d_interval)
    return d_points
 end
 
-function M.calculate_t_points(trk, t_interval, start_time)
+
+-- Given a set of track points, calculate a set of points at fixed times along the track.
+-- If start time is omitted or zero, then the points are relative to the start of the track.
+-- If the start time is calculated from the time of the first trackBy specifying the start time correctly, it is possible to ensure that the times
+-- 
+function M.calculate_t_points(trk, t_interval, abs_time)
    local tp1 = {}
    local tp2 = {}
    local total_t = 0
@@ -96,6 +101,10 @@ function M.calculate_t_points(trk, t_interval, start_time)
    local total_d = 0
    local partial_d = 0
    local t_points = {}
+   
+   if abs_time then
+      rounded_t = t_interval - math.fmod(trk[1].time, t_interval)
+   end
    
    for i = 1, #trk - 1 do
       tp1 = trk[i]
