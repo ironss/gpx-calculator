@@ -16,7 +16,9 @@
 
  9. Generate distance waypoints  -- DONE
 
-10. Generate absolute-time waypoints -- needs work to start at rounded absolute time
+10. Generate absolute-time waypoints -- DONE
 
-11. Verify that initial segment works correctly
+11. Verify that initial segment works correctly -- DONE
+
+12. Test for track calculations.
 
