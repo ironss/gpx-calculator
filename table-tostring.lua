@@ -13,7 +13,7 @@ local function table_print (tt, indent, done)
          table.insert(sb, string.rep (" ", indent)) -- indent it
 
          if type(key) == 'string' then
-            table.insert(sb, string.format('[\'%s\'] = ', tostring(key)))
+            table.insert(sb, string.format('["%s"] = ', tostring(key)))
          elseif type(key) == 'number' then
             table.insert(sb, string.format('[%s] = ', tonumber(key)))
          else
