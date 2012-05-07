@@ -20,7 +20,7 @@ local function collect(s)
   local ni,c,tag,xarg, empty
   local i, j = 1, 1
   while true do
-    ni,j,c,tag,xarg, empty = string.find(s, "<(%/?)([%w:]+)(.-)(%/?)>", i)
+    ni,j,c,tag,xarg, empty = string.find(s, "%s*<(%/?)([%w:]+)(.-)(%/?)>%s*", i)
     if not ni then break end
     local text = string.sub(s, i, ni-1)
     if not string.find(text, "^%s*$") then
@@ -59,13 +59,14 @@ local function collect(s)
   if #stack > 1 then
     error("unclosed "..stack[#stack][TAG])
   end
-  return stack[1]
+  return stack[1][1]
 end
 
 
 local function load(filename)
    local f = io.open(filename)
    local xdata = f:read('*all')
+   print(xdata)
    local t = collect(xdata)
    return t
 end
@@ -105,7 +106,7 @@ local function str(var,indent,tagValue)
   local tableStr=""
   
   if type(var)=="table" then
-    local tag = var[0] or tagValue or base.type(var)
+    local tag = var[0] or tagValue or type(var)
     local s = indentStr.."<"..tag
     for k,v in pairs(var) do -- attributes 
       if type(k)=="string" then
@@ -138,9 +139,6 @@ local function str(var,indent,tagValue)
   end
 end
 
-
-
-local t = require('table-tostring')
 
 local function save(data, filename)
   if not data then return end

@@ -25,6 +25,12 @@ function Test_xml_tostring:test_with_string_data()
    assertEquals(actual, '<test>Test data 1</test>\n')
 end
 
+function Test_xml_tostring:test_with_attribute_and_string_data()
+   local t1 = { [0]='test', 'Test data 1', name='Name' }
+   local actual = xml.tostring(t1)
+   assertEquals(actual, '<test name="Name">Test data 1</test>\n')
+end
+
 function Test_xml_tostring:test_with_nested_data()
    local t1 = { [0]='test' }
    local t2 = { [0]='nest' }
@@ -41,11 +47,14 @@ function Test_xml_tostring:test_with_all()
    local t1 = { [0]='test' }
    local t2 = { [0]='nest' }
    local t3 = { [0]='more', name='Name' }
+   local t4 = { [0]='again' }
    t1[1] = t2
    t1[2] = "Test data"
    t1[3] = "More data"
    t1[4] = t3
    t1[5] = "Still more"
+   t1[6] = t4
+   t4[1] = "Data again"
    local actual = xml.tostring(t1)
    assertEquals(actual, [[
 <test>
@@ -54,6 +63,7 @@ function Test_xml_tostring:test_with_all()
   More data 
   <more name="Name" />
   Still more 
+  <again>Data again</again>
 </test>
 ]])
 end
@@ -83,6 +93,61 @@ function Test_xml:test_append_nested()
 ]])
 end
 
+
+local function HACK(s)
+--   return '<table>\n  ' .. s .. '</table>\n'
+   return s
+end
+
+function Test_xml:test_parse_empty()
+   local s1 = '<test />\n'
+   local x1 = xml.parse(s1)
+   assertEquals(xml.tostring(x1), HACK(s1))
+end
+
+function Test_xml:test_parse_empty_with_attribute()
+   local s1 = '<test name="Name" />\n'
+   local x1 = xml.parse(s1)
+   assertEquals(xml.tostring(x1), HACK(s1))
+end
+
+
+function Test_xml:test_parse_string()
+   local s1 = '<test>Test data</test>\n'
+   local x1 = xml.parse(s1)
+   assertEquals(xml.tostring(x1), HACK(s1))
+end
+
+function Test_xml:test_parse_string_with_attribute()
+   local s1 = '<test name="Name">Test data</test>\n'
+   local x1 = xml.parse(s1)
+   assertEquals(xml.tostring(x1), HACK(s1))
+end
+
+function Test_xml:test_parse_nested_empty()
+   local s1 = [[
+<test name="Test">
+  Data 
+  <nest name="Nest" />
+  More 
+</test>
+]]
+   local x1 = xml.parse(s1)
+   assertEquals(xml.tostring(x1), HACK(s1))
+
+end
+
+function Test_xml:test_parse_nested()
+   local s1 = [[
+<test name="Test">
+  Data 
+  <nest name="Nest">Nested</nest>
+  More 
+</test>
+]]
+   local x1 = xml.parse(s1)
+   assertEquals(xml.tostring(x1), HACK(s1))
+end
 
 LuaUnit:run()
 
