@@ -95,8 +95,8 @@ end
 
 
 local function HACK(s)
---   return '<table>\n  ' .. s .. '</table>\n'
-   return s
+   return '<table>\n  ' .. s .. '</table>\n'
+--   return s
 end
 
 function Test_xml:test_parse_empty()

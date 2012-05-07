@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<gpx version="1.1" creator="MXMariner" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.topografix.com/GPX/1/1"
+xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd" xmlns:mxmariner="http://www.mxmariner.com">
+    <wpt lat="-43.497826" lon="172.576503"> 
+        <name></name> 
+        <desc></desc> 
+        <sym>Anchor</sym> 
+        <type>WPT</type> 
+    </wpt> 
+    <wpt lat="-43.48805" lon="172.571783"> 
+        <name></name> 
+        <desc></desc> 
+        <sym>Shark</sym> 
+        <type>WPT</type> 
+    </wpt> 
+<trk> 
+    <name>test/out/track1</name> 
+    <desc></desc> 
+    <trkseg> 
+        <trkpt lat="-43.493773" lon="172.579341"> 
+            <time>2012-04-30T08:04:45Z</time> 
+            <type>WPT</type> 
+        </trkpt>
+        <trkpt lat="-43.493472" lon="172.578879"> 
+            <time>2012-04-30T08:08:34Z</time> 
+            <type>WPT</type> 
+        </trkpt>
+        <trkpt lat="-43.493042" lon="172.579062"> 
+            <time>2012-04-30T08:09:10Z</time> 
+            <type>WPT</type> 
+        </trkpt>
+        <trkpt lat="-43.493042" lon="172.579062"> 
+            <time>2012-04-30T08:09:10Z</time> 
+            <type>WPT</type> 
+        </trkpt>
+        <trkpt lat="-43.49261" lon="172.578878"> 
+            <time>2012-04-30T08:09:57Z</time> 
+            <type>WPT</type> 
+        </trkpt>
+        <trkpt lat="-43.49231" lon="172.578411"> 
+            <time>2012-04-30T08:10:30Z</time> 
+            <type>WPT</type> 
+        </trkpt>
+        <trkpt lat="-43.49194" lon="172.578007"> 
+            <time>2012-04-30T08:10:57Z</time> 
+            <type>WPT</type> 
+        </trkpt>
+        <trkpt lat="-43.49158" lon="172.577594"> 
+            <time>2012-04-30T08:11:40Z</time> 
+            <type>WPT</type> 
+        </trkpt>
+        <trkpt lat="-43.491162" lon="172.577338"> 
+            <time>2012-04-30T08:12:11Z</time> 
+            <type>WPT</type> 
+        </trkpt>
+        <trkpt lat="-43.490749" lon="172.577599"> 
+            <time>2012-04-30T08:12:46Z</time> 
+            <type>WPT</type> 
+        </trkpt>
+        <trkpt lat="-43.490749" lon="172.577599"> 
+            <time>2012-04-30T08:12:46Z</time> 
+            <type>WPT</type> 
+        </trkpt>
+        <trkpt lat="-43.49036" lon="172.577285"> 
+            <time>2012-04-30T08:13:21Z</time> 
+            <type>WPT</type> 
+        </trkpt>
+        <trkpt lat="-43.490416" lon="172.576647"> 
+            <time>2012-04-30T08:14:00Z</time> 
+            <type>WPT</type> 
+        </trkpt>
+        <trkpt lat="-43.490416" lon="172.576647"> 
+            <time>2012-04-30T08:14:00Z</time> 
+            <type>WPT</type> 
+        </trkpt>
+        <trkpt lat="-43.490769" lon="172.576263"> 
+            <time>2012-04-30T08:14:39Z</time> 
+            <type>WPT</type> 
+        </trkpt>
+        <trkpt lat="-43.490658" lon="172.575653"> 
+            <time>2012-04-30T08:15:17Z</time> 
+            <type>WPT</type> 
+        </trkpt>
+        <trkpt lat="-43.490319" lon="172.575226"> 
+            <time>2012-04-30T08:15:51Z</time> 
+            <type>WPT</type> 
+        </trkpt>
+        <trkpt lat="-43.489897" lon="172.575459"> 
+            <time>2012-04-30T08:16:30Z</time> 
+            <type>WPT</type> 
+        </trkpt>
+        <trkpt lat="-43.489897" lon="172.575459"> 
+            <time>2012-04-30T08:16:30Z</time> 
+            <type>WPT</type> 
+        </trkpt>
+        <trkpt lat="-43.489594" lon="172.574788"> 
+            <time>2012-04-30T08:17:23Z</time> 
+            <type>WPT</type> 
+        </trkpt>
+        <trkpt lat="-43.489346" lon="172.57425"> 
+            <time>2012-04-30T08:17:47Z</time> 
+            <type>WPT</type> 
+        </trkpt>
+        <trkpt lat="-43.489079" lon="172.57373"> 
+            <time>2012-04-30T08:18:24Z</time> 
+            <type>WPT</type> 
+        </trkpt>
+        <trkpt lat="-43.488822" lon="172.573217"> 
+            <time>2012-04-30T08:18:49Z</time> 
+            <type>WPT</type> 
+        </trkpt>
+        <trkpt lat="-43.48862" lon="172.57265"> 
+            <time>2012-04-30T08:19:28Z</time> 
+            <type>WPT</type> 
+        </trkpt>
+        <trkpt lat="-43.488415" lon="172.57209"> 
+            <time>2012-04-30T08:20:05Z</time> 
+            <type>WPT</type> 
+        </trkpt>
+        <trkpt lat="-43.488152" lon="172.571571"> 
+            <time>2012-04-30T08:20:48Z</time> 
+            <type>WPT</type> 
+        </trkpt>
+        <trkpt lat="-43.487991" lon="172.570938"> 
+            <time>2012-04-30T08:21:28Z</time> 
+            <type>WPT</type> 
+        </trkpt>
+        <trkpt lat="-43.487832" lon="172.570346"> 
+            <time>2012-04-30T08:21:51Z</time> 
+            <type>WPT</type> 
+        </trkpt>
+        <trkpt lat="-43.487609" lon="172.569782"> 
+            <time>2012-04-30T08:22:26Z</time> 
+            <type>WPT</type> 
+        </trkpt>
+        <trkpt lat="-43.487332" lon="172.569293"> 
+            <time>2012-04-30T08:22:53Z</time> 
+            <type>WPT</type> 
+        </trkpt>
+        <trkpt lat="-43.487107" lon="172.568735"> 
+            <time>2012-04-30T08:23:30Z</time> 
+            <type>WPT</type> 
+        </trkpt>
+        <trkpt lat="-43.486989" lon="172.568116"> 
+            <time>2012-04-30T08:24:08Z</time> 
+            <type>WPT</type> 
+        </trkpt>
+        <trkpt lat="-43.487135" lon="172.567513"> 
+            <time>2012-04-30T08:24:43Z</time> 
+            <type>WPT</type> 
+        </trkpt>
+        <trkpt lat="-43.487506" lon="172.567152"> 
+            <time>2012-04-30T08:25:15Z</time> 
+            <type>WPT</type> 
+        </trkpt>
+        <trkpt lat="-43.487859" lon="172.566741"> 
+            <time>2012-04-30T08:25:48Z</time> 
+            <type>WPT</type> 
+        </trkpt>
+        <trkpt lat="-43.488088" lon="172.566197"> 
+            <time>2012-04-30T08:26:33Z</time> 
+            <type>WPT</type> 
+        </trkpt>
+        <trkpt lat="-43.488544" lon="172.566109"> 
+            <time>2012-04-30T08:27:06Z</time> 
+            <type>WPT</type> 
+        </trkpt>
+        <trkpt lat="-43.488981" lon="172.565946"> 
+            <time>2012-04-30T08:27:36Z</time> 
+            <type>WPT</type> 
+        </trkpt>
+        <trkpt lat="-43.489412" lon="172.565676"> 
+            <time>2012-04-30T08:28:16Z</time> 
+            <type>WPT</type> 
+        </trkpt>
+        <trkpt lat="-43.489772" lon="172.565302"> 
+            <time>2012-04-30T08:28:53Z</time> 
+            <type>WPT</type> 
+        </trkpt>
+        <trkpt lat="-43.490201" lon="172.565016"> 
+            <time>2012-04-30T08:29:31Z</time> 
+            <type>WPT</type> 
+        </trkpt>
+        <trkpt lat="-43.490587" lon="172.564695"> 
+            <time>2012-04-30T08:32:04Z</time> 
+            <type>WPT</type> 
+        </trkpt>
+        <trkpt lat="-43.490587" lon="172.564695"> 
+            <time>2012-04-30T08:32:04Z</time> 
+            <type>WPT</type> 
+        </trkpt>
+        <trkpt lat="-43.490644" lon="172.564605"> 
+            <time>2012-04-30T08:33:11Z</time> 
+            <type>WPT</type> 
+        </trkpt>
+    </trkseg> 
+</trk> 
+</gpx>

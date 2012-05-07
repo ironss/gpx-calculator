@@ -8,10 +8,6 @@ local M = {}
 
 function M.load(filename)
    local xmldata = xml.load(filename)
---   local t = require('table-tostring')
---   print(t.to_string(xmldata))
-   print(xml.tostring(xmldata))
-
    local gpxdata = xml.find(xmldata, "gpx")
 
    local waypoints = {}

@@ -59,7 +59,7 @@ local function collect(s)
   if #stack > 1 then
     error("unclosed "..stack[#stack][TAG])
   end
-  return stack[1][1]
+  return stack[1]
 end
 
 
