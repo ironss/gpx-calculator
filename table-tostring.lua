@@ -60,12 +60,13 @@ local function table_print (tt, indent, done)
   end
 end
 
-function M.tostring( tbl )
-    if  "nil"       == type( tbl ) then
+
+function M.tostring(tbl)
+    if type(tbl) == "nil" then
         return tostring(nil)
-    elseif  "table" == type( tbl ) then
+    elseif type(tbl) == "table" then
         return table_print(tbl)
-    elseif  "string" == type( tbl ) then
+    elseif type(tbl) == "string" then
         return tbl
     else
         return tostring(tbl)
