@@ -82,6 +82,10 @@ end
 
 local function append(var,tag)
   if type(var)~="table" then return end
+  if type(tag) == 'string' then
+    var[#var+1] = tag
+    return     
+  end
   local newVar = new(tag)
   var[#var+1] = newVar
   return newVar
