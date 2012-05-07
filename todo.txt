@@ -79,4 +79,7 @@ Todo
 
 17. Tests for output format             -- DONE
 
+18. Add meta-tables to xml.lua
+
+19. Add escape encoding/decoding to xml.lua 
 

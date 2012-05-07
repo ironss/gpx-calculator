@@ -1,17 +1,44 @@
 #! /usr/bin/lua
 
 local M = {}
+local MT = {}
 
-local function parseargs(s)
-  local arg = {}
-  string.gsub(s, "([%w:]+)=([\"'])(.-)%2", function (w, _, a)
-    arg[w] = a
-  end)
-  return arg
-end
-    
 local TAG = 0
 
+local function new(arg)
+   if type(arg) =='table' then 
+ --     setmetatable(arg, MT)
+      return arg
+   end
+
+   local var={}
+--   setmetatable(var, MT)
+   if type(arg) == 'string' then var[TAG]=arg end
+   return var
+end
+
+
+local function append(t, tag)
+   if type(t) ~= 'table' then return end
+   if type(tag) == 'string' then
+      t[#t+1] = tag
+      return     
+   end
+   
+   local newVar = new(tag)
+   t[#t+1] = newVar
+   return newVar
+end
+
+
+local function parseargs(s)
+   local arg = {}
+   string.gsub(s, "([%w:]+)=([\"'])(.-)%2", function (w, _, a)
+      arg[w] = a
+   end)
+   return arg
+end
+    
 
 local function collect(s)
   local stack = {}
@@ -68,27 +95,6 @@ local function load(filename)
    local xdata = f:read('*all')
    local t = collect(xdata)
    return t
-end
-
-
-local function new(arg)
-  if type(arg)=="table" then 
-	return arg
-  end
-  local var={}
-  if type(arg)=="string" then var[TAG]=arg end
-  return var
-end
-
-local function append(var,tag)
-  if type(var)~="table" then return end
-  if type(tag) == 'string' then
-    var[#var+1] = tag
-    return     
-  end
-  local newVar = new(tag)
-  var[#var+1] = newVar
-  return newVar
 end
 
 
@@ -191,15 +197,23 @@ local function nodes(t, tag)
    return f
 end
 
-M.tag = TAG
+M.TAG = TAG
 M.load = load
+M.new = new
 M.parse = collect
 M.find = find
 M.nodes = nodes
-M.new = new
 M.append = append
 M.save = save
 M.tostring = str
+
+MT.TAG = tag
+MT.parse = collect
+MT.find = find
+MT.nodes = nodes
+MT.append = append
+MT.save = save
+MT.__tostring = str
 
 return M
 

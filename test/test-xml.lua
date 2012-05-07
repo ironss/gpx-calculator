@@ -95,7 +95,9 @@ end
 
 
 local function HACK(s)
-   return '<table>\n  ' .. s .. '</table>\n'
+   
+   local s1 = string.gsub(s, '\n(.)', '\n  %1')
+   return '<table>\n  ' .. s1 .. '</table>\n'
 --   return s
 end
 
