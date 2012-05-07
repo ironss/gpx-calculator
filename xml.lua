@@ -7,12 +7,12 @@ local TAG = 0
 
 local function new(arg)
    if type(arg) =='table' then 
- --     setmetatable(arg, MT)
+      setmetatable(arg, MT)
       return arg
    end
 
    local var={}
---   setmetatable(var, MT)
+   setmetatable(var, MT)
    if type(arg) == 'string' then var[TAG]=arg end
    return var
 end

@@ -73,20 +73,20 @@ Test_xml = {}
 
 function Test_xml:test_new_string()
    local x1 = xml.new('test')
-   assertEquals(xml.tostring(x1), '<test />\n')
+   assertEquals(tostring(x1), '<test />\n')
 end
 
 function Test_xml:test_append_string()
    local x1 = xml.new('test')
    xml.append(x1, 'Test data')
-   assertEquals(xml.tostring(x1), '<test>Test data</test>\n')
+   assertEquals(tostring(x1), '<test>Test data</test>\n')
 end
 
 function Test_xml:test_append_nested()
    local x1 = xml.new('test')
    local x2 = xml.new('nest')
    xml.append(x1, x2)
-   assertEquals(xml.tostring(x1), [[
+   assertEquals(tostring(x1), [[
 <test>
   <nest />
 </test>
