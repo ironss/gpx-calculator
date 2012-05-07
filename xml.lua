@@ -192,11 +192,13 @@ end
 
 M.tag = TAG
 M.load = load
+M.parse = collect
 M.find = find
 M.nodes = nodes
 M.new = new
 M.append = append
 M.save = save
+M.tostring = str
 
 return M
 
