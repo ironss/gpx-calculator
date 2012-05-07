@@ -39,14 +39,6 @@ local function table_print (tt, indent, done)
     for key, value in ipairs (tt) do
          table.insert(sb, string.rep (" ", indent)) -- indent it
 
---         if type(key) == 'string' then
---            table.insert(sb, string.format('[\'%s\'] = ', tostring(key)))
---         elseif type(key) == 'number' then
---            table.insert(sb, string.format('[%s] = ', tonumber(key)))
---         else
---            table.insert('[??] = ')
---         end
-         
          if type(value) == "table" and not done[value] then
            done [value] = true
            table.insert(sb, "{\n");
@@ -68,7 +60,7 @@ local function table_print (tt, indent, done)
   end
 end
 
-function M.to_string( tbl )
+function M.tostring( tbl )
     if  "nil"       == type( tbl ) then
         return tostring(nil)
     elseif  "table" == type( tbl ) then
