@@ -1,6 +1,6 @@
 #! /usr/bin/lua
 
-xml = require("xml")
+local xml = require("xml")
 local dateparse = require("dateparse")
 local geo = require("geocalcs")
 
@@ -9,7 +9,7 @@ local M = {}
 function M.load(filename)
    local xmldata = xml.load(filename)
    local t = require('table-tostring')
-   print(t.to_string(xmldata))
+--   print(t.to_string(xmldata))
    local gpxdata = xml.find(xmldata, "gpx")
 
    local waypoints = {}

@@ -21,6 +21,8 @@ for _, trk in ipairs(tracks) do
    end
 end
 
+t = require('table-tostring')
+--print(t.to_string(tracks))
 
 for _, trk in ipairs(tracks) do
    print(trk.name)
