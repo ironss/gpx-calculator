@@ -71,4 +71,7 @@ Todo
 
 13. Can we pass a 'scale' parameter, and calculate the distance and time intervals from that?
 
-14. How do we specify data to be stored with each point
+14. How do we specify data to be stored with each point?
+
+15. Use pure lua XML parser and creator -- DONE
+
