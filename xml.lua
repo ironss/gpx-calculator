@@ -66,7 +66,6 @@ end
 local function load(filename)
    local f = io.open(filename)
    local xdata = f:read('*all')
-   print(xdata)
    local t = collect(xdata)
    return t
 end

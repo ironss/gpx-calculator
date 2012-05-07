@@ -74,6 +74,7 @@ function M.calculate_d_points(trk, d_interval)
          tp3.time = tp1.time + partial_t
          tp3.trktime = total_t + partial_t
          tp3.distance = rounded_d
+         tp3.speed = tp1.distance / tp1.duration
          
          d_points[#d_points+1] = tp3
 
@@ -119,6 +120,7 @@ function M.calculate_t_points(trk, t_interval, abs_time)
          tp3.time = tp1.time + partial_t
          tp3.trktime = total_t + partial_t
          tp3.distance = total_d + partial_d
+         tp3.speed = tp1.distance / tp1.duration
          
          t_points[#t_points+1] = tp3
 

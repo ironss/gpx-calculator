@@ -40,7 +40,20 @@ end
 function M.create_gpx(name)
 end
 
-function M.append_wpts(parent, pts, value, unit)
+
+function default_format(tp)
+   local s = table.concat{os.date('!%H:%MZ', tp.time), 
+                                   ' (', 
+                                   os.date('!+%H:%M', tp.trktime), ', ',
+                                   math.floor(tp.distance + 0.5), 'm, ',
+                                   string.format("%3.1f kn", tp.speed * 1.94384),
+                                   ')' }
+   return s
+end
+
+
+function M.append_wpts(parent, pts, value, unit, format)
+   local format = format or default_format
    local wpts = xml.new('gpx')
    wpts.version = '1.1'
    wpts.creator = arg[0]
@@ -59,10 +72,7 @@ function M.append_wpts(parent, pts, value, unit)
 --      wp:append(name)
       
       local desc = xml.new('name')
-      desc[#desc+1] = table.concat{os.date('!%H:%M:%SZ', tp.time), 
-                                   ' (', 
-                                   os.date('!+%H:%M:%S', tp.trktime), ', ',
-                                   math.floor(tp.distance + 0.5), 'm)'}
+      desc[#desc+1] = format(tp)
       xml.append(wp, desc)
       
       xml.append(wpts, wp)

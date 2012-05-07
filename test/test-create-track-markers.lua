@@ -4,6 +4,7 @@ require('luaunit')
 
 Test_create_markers  = {}
 
+os.execute('rm test/out/*')
 os.execute('./create-track-markers.lua test/track1.gpx 200 60')
 
 function Test_create_markers:test_distance_200m()

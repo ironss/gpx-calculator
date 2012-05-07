@@ -75,3 +75,8 @@ Todo
 
 15. Use pure lua XML parser and creator -- DONE
 
+16. Tests for XML parser                -- DONE
+
+17. Tests for output format             -- DONE
+
+
