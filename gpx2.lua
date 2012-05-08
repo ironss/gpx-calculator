@@ -16,14 +16,14 @@ function M.load(filename)
    
    for trk in gpxdata:nodes("trk") do
       track = {}
-      track.name = xml.find(trk, "name")[1]
+      track.name = trk:find("name")[1]
       
       for trkseg in trk:nodes("trkseg") do
          for trkpt in trkseg:nodes("trkpt") do
             local tp = {}
             tp.lat = math.rad(trkpt.lat)
             tp.lon = math.rad(trkpt.lon)
-            tp.time = dateparse.parse(xml.find(trkpt, "time")[1])
+            tp.time = dateparse.parse(trkpt:find("time")[1])
             
             if #track == 0 or tp.time ~= track[#track].time then
                track[#track+1] = tp
