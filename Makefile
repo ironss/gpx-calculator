@@ -1,8 +1,14 @@
-all: test
 
-test: test/test-*
-	$(foreach f, $^, sh -c $f;)
+testfiles=$(wildcard test/test-*)
+tests=$(patsubst test/%, %, $(testfiles))
+
+all: $(tests)
+
+$(tests): 
+	test/$@
 	
+test: $(testfiles)
+	$(foreach f, $^, $f;)
 
-.PHONY: test
+.PHONY: test $(tests)
 
