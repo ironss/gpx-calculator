@@ -6,6 +6,7 @@ Test_create_markers  = {}
 
 os.execute('rm test/out/*')
 os.execute('./create-track-markers.lua test/track1.gpx 200 60')
+os.execute('./create-track-markers2.lua test/track1.gpx 200 60')
 
 --[==[
 function Test_create_markers:test_distance_200m()
@@ -28,6 +29,23 @@ end
 function Test_create_markers:test_distance_60s_abs()
    local f_expected = io.open('test/ref/track1-60s.gpx')
    local f_actual = io.open('test/out/track1-60s.gpx')
+   
+   line_no = 0
+   while true do
+      line_no = line_no + 1
+      l_expected = f_expected:read('*line')
+      l_actual = f_actual:read('*line')
+
+      if l_expected == nil or l_actual == nil then break end
+            
+      assertEquals(line_no .. ': ' .. l_expected, line_no .. ': ' .. l_actual)
+   end
+end
+
+
+function Test_create_markers:test_distance_60s_abs_2()
+   local f_expected = io.open('test/ref/track1-60s-2.gpx')
+   local f_actual = io.open('test/out/track1-60s-2.gpx')
    
    line_no = 0
    while true do

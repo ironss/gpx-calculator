@@ -99,7 +99,7 @@ function M.append_wpts(parent, pts, format)
       name[#name+1] = format_name(tp)
       wp:append(name)
       
-      local desc = xml.new('name')
+      local desc = xml.new('desc')
       desc[#desc+1] = format_desc(tp)
       wp:append(desc)
       
