@@ -67,7 +67,7 @@ Todo
 
 11. Verify that initial segment works correctly -- DONE
 
-12. Test for track calculations.
+12. Test for track calculations   -- DONE
 
 13. Can we pass a 'scale' parameter, and calculate the distance and time intervals from that?
 
@@ -79,7 +79,8 @@ Todo
 
 17. Tests for output format             -- DONE
 
-18. Add meta-tables to xml.lua
+18. Add meta-tables to xml.lua          -- in progress
 
 19. Add escape encoding/decoding to xml.lua 
 
+20. Tests for XML find
