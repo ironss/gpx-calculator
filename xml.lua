@@ -164,12 +164,12 @@ local function find(var, tag, attributeKey,attributeValue)
   -- compare this table:
   if tag~=nil then
     if var[0]==tag and ( attributeValue == nil or var[attributeKey]==attributeValue ) then
-      setmetatable(var,{__index=xml, __tostring=xml.str})
+      setmetatable(var,{__index=xml, __tostring=M.str})
       return var
     end
   else
     if attributeValue == nil or var[attributeKey]==attributeValue then
-      setmetatable(var,{__index=xml, __tostring=xml.str})
+      setmetatable(var,{__index=xml, __tostring=M.str})
       return var
     end
   end

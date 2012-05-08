@@ -6,25 +6,28 @@ local geo = require("geocalcs")
 
 local M = {}
 
+if xml.nodes == nil then
 -- Iterator for searching for nodes with a specific tag
-function xml.nodes(t, tag)
-   local i = 0
-   local f = function()
-      local n
-      repeat
-         i = i + 1
-         n = t[i]
-      until (n == nil or n:find(tag) ~= nil)
+   function xml.nodes(t, tag)
+      local i = 0
+      local f = function()
+         local n
+         repeat
+            i = i + 1
+            n = t[i]
+         until (n == nil or n:find(tag) ~= nil)
+         
+         return n
+      end
       
-      return n
+      return f
    end
-   
-   return f
 end
 
+
 function M.load(filename)
-   local file = xml.load(filename)
-   local gpxdata = file:find("gpx")
+   local xmldata = xml.load(filename)
+   local gpxdata = xmldata:find("gpx")
 
    local waypoints = {}
    local tracks = {}

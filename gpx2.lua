@@ -6,6 +6,25 @@ local geo = require("geocalcs")
 
 local M = {}
 
+if xml.nodes == nil then
+-- Iterator for searching for nodes with a specific tag
+   function xml.nodes(t, tag)
+      local i = 0
+      local f = function()
+         local n
+         repeat
+            i = i + 1
+            n = t[i]
+         until (n == nil or n:find(tag) ~= nil)
+         
+         return n
+      end
+      
+      return f
+   end
+end
+
+
 function M.load(filename)
    local xmldata = xml.load(filename)
    local gpxdata = xml.find(xmldata, "gpx")
