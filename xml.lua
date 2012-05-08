@@ -45,6 +45,7 @@ local function collect(s)
   local stack = {}
   local top = {}
   table.insert(stack, top)
+  
   local ni,c,tag,xarg, empty
   local i, j = 1, 1
   while true do
@@ -55,11 +56,12 @@ local function collect(s)
       table.insert(top, text)
     end
     if empty == "/" then  -- empty element tag
-      table.insert(top, {[TAG]=tag})
-      xargs = parseargs(xarg)
+      local new = {[TAG]=tag}
+      local xargs = parseargs(xarg)
       for k, v in pairs(xargs) do
-         top[k] = v
+         new[k] = v
       end
+      table.insert(top, new)
     elseif c == "" then   -- start tag
       top = {[TAG]=tag}
       xargs = parseargs(xarg)
