@@ -50,31 +50,8 @@ function assertError(f, ...)
 	error( "No error generated", 2 )
 end
 
-function assertEquals(actual, expected)
-	-- assert that two values are equal and calls error else
-	if  actual ~= expected  then
-		local function wrapValue( v )
-			if type(v) == 'string' then return "'"..v.."'" end
-			return tostring(v)
-		end
-		if not USE_EXPECTED_ACTUAL_IN_ASSERT_EQUALS then
-			expected, actual = actual, expected
-		end
-
-		local errorMsg
-		if type(expected) == 'string' then
-			errorMsg = "\nexpected: "..wrapValue(expected).."\n"..
-                             "actual  : "..wrapValue(actual).."\n"
-		else
-			errorMsg = "expected: "..wrapValue(expected)..", actual: "..wrapValue(actual)
-		end
-		print (errorMsg)
-		error( errorMsg, 2 )
-	end
-end
-
 function assertClose(actual, expected, eps)
-	-- assert that two values are equal and calls error else
+	-- assert that two numeric values are within eps of one another, otherwise calls error
 	if  not(math.abs(actual - expected) < eps)  then
 		local function wrapValue( v )
 			if type(v) == 'string' then return "'"..v.."'" end
@@ -96,9 +73,49 @@ function assertClose(actual, expected, eps)
 	end
 end
 
-assert_equals = assertEquals
+local function assertCompare(actual, expected, op)
+	local chunk = 'return actual ' .. op .. ' expected'
+	local result = loadstring(chunk)
+	if not(result)  then
+		local function wrapValue( v )
+			if type(v) == 'string' then return "'"..v.."'" end
+			return tostring(v)
+		end
+		if not USE_EXPECTED_ACTUAL_IN_ASSERT_EQUALS then
+			expected, actual = actual, expected
+		end
+
+		local errorMsg
+		if type(expected) == 'string' then
+			errorMsg = "\nexpected: "..wrapValue(expected).."\n"..
+                             "actual  : "..wrapValue(actual).."\n"
+		else
+			errorMsg = "expected: "..wrapValue(expected)..", actual: "..wrapValue(actual)
+		end
+		print (errorMsg)
+		error( errorMsg, 2 )
+	end
+end
+
+local compareFunctions = 
+{
+   { '==', 'Equals'     },
+   { '~=', 'NotEquals'  },
+   { '<' , 'LessThan'   },
+   { '<=', 'LessEquals' },
+}
+
+for _, v in ipairs(compareFunctions) do
+   local f = function(actual, expected)
+      assertCompare(actual, expected, v[1])
+   end
+   _G['assert' .. v[2]] = f
+   _G['assert_' .. string.lower(v[2])] = f
+end
+
 assert_error = assertError
 assert_close = assertClose
+
 
 function wrapFunctions(...)
 	-- Use me to wrap a set of functions into a Runnable test class:
