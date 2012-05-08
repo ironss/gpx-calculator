@@ -28,7 +28,7 @@ function Test_dateparse:test_timezone_nz()
    assertEquals(parsedate('2012-04-21 01:02:03NZDT'), 1334926923)
 end
 
-function Test_dateparse:disable_test_timezone_offset()
+function Test_dateparse:disabled_test_timezone_offset()
    assertEquals(parsedate('2012-04-21 01:02:03+12'), 1334926923)
 end
 

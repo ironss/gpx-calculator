@@ -161,8 +161,10 @@ end
 -------------------------------------------------------------------------------
 UnitResult = { -- class
 	failureCount = 0,
+	disabledCount = 0,
 	testCount = 0,
 	errorList = {},
+	disabledList = {},
 	currentClassName = "",
 	currentTestName = "",
 	testHasFailure = false,
@@ -195,6 +197,14 @@ UnitResult = { -- class
 		end
 	end
 
+   function UnitResult:displayDisabled(name)
+      if self.verbosity == 0 then
+         io.stdout:write('d')
+      else
+         print('--- ' .. name)
+      end
+   end
+   
 	function UnitResult:displayOneFailedTest( failure )
 		testName, errorMsg, stacktrace = unpack( failure )
 		print(">>> "..testName.." failed")
@@ -214,9 +224,20 @@ UnitResult = { -- class
 		end
 		print()
 	end
-
+	
+	function UnitResult:displayDisabledTests()
+	   if self.disabledCount == 0 then return end
+		print("Disabled tests:")
+		print("---------------")
+		for _, v in ipairs(self.disabledList) do
+			print(v)
+		end
+		print()
+	end
+	
 	function UnitResult:displayFinalResult()
 		print("=========================================================")
+  		self:displayDisabledTests()
 		self:displayFailedTests()
 		local failurePercent, successCount
 		if self.testCount == 0 then
@@ -225,8 +246,8 @@ UnitResult = { -- class
 			failurePercent = 100 * self.failureCount / self.testCount
 		end
 		successCount = self.testCount - self.failureCount
-		print( string.format("Success : %d%% - %d / %d",
-			100-math.ceil(failurePercent), successCount, self.testCount) )
+		print( string.format("Success : %d%% - %d / %d (%d disabled)",
+			100-math.ceil(failurePercent), successCount, self.testCount, self.disabledCount) )
 		return self.failureCount
     end
 
@@ -248,6 +269,13 @@ UnitResult = { -- class
 		table.insert( self.errorList, { self.currentTestName, errorMsg, stacktrace } )
 		self:displayFailure( errorMsg )
 	end
+
+   function UnitResult:addDisabled(testName)
+      self.disabledCount = self.disabledCount + 1
+   	self.testHasDisabled = true
+   	table.insert(self.disabledList, testName)
+   	self:displayDisabled(testName)
+   end
 
 	function UnitResult:endTest()
 		if not self.testHasFailure then
@@ -339,7 +367,7 @@ LuaUnit = {
 		local methodInstance = loadstring(methodName .. '()')
 		LuaUnit:runTestMethod(methodName, classInstance, methodInstance)
 	end
-
+	
     function LuaUnit:runTestClassByName( aClassName )
 		-- example: runTestMethodName( 'TestToto' )
 		local hasMethod, methodName, classInstance
@@ -364,8 +392,12 @@ LuaUnit = {
 			-- run all test methods of the class
 			for methodName, method in orderedPairs(classInstance) do
 			--for methodName, method in classInstance do
-				if LuaUnit.isFunction(method) and string.sub(methodName, 1, 4) == "test" then
-					LuaUnit:runTestMethodName( aClassName..':'.. methodName, classInstance )
+				if LuaUnit.isFunction(method)  then
+				   if string.sub(methodName, 1, 4) == "test" then
+						LuaUnit:runTestMethodName( aClassName..':'.. methodName, classInstance )
+					elseif string.lower(string.sub(methodName, 1, 7)) == 'disable' then
+					   LuaUnit.result:addDisabled(aClassName..':'..methodName)
+					end
 				end
 			end
 		end

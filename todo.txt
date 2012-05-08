@@ -84,3 +84,7 @@ Todo
 19. Add escape encoding/decoding to xml.lua 
 
 20. Tests for XML find
+
+21. LuaUnit: support for disabled tests
+
+22. 
