@@ -1,8 +1,8 @@
 #! /usr/bin/lua
 
 require("LuaXml")
-dateparse = require("dateparse")
-geo = require("geocalcs")
+local dateparse = require("dateparse")
+local geo = require("geocalcs")
 
 local M = {}
 
