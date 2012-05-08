@@ -44,8 +44,8 @@ end
 function default_format(tp)
    local s = table.concat{os.date('!%H:%MZ', tp.time), 
                                    ' (', 
-                                   os.date('!+%H:%M', tp.trktime), ', ',
-                                   math.floor(tp.distance + 0.5), 'm, ',
+--                                   os.date('!+%H:%M', tp.trktime), ', ',
+--                                   math.floor(tp.distance + 0.5), 'm, ',
                                    string.format("%3.1f kn", tp.speed * 1.94384),
                                    ')' }
    return s
