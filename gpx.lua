@@ -96,11 +96,11 @@ function M.append_wpts(parent, pts, format)
       wp.lon = math.deg(tp.lon)
       
       local name = xml.new('name')
-      name[#name+1] = format(tp)
+      name[#name+1] = format_name(tp)
       wp:append(name)
       
       local desc = xml.new('name')
-      desc[#desc+1] = format(tp)
+      desc[#desc+1] = format_desc(tp)
       wp:append(desc)
       
       wpts:append(wp)
