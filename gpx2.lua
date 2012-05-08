@@ -72,7 +72,7 @@ function M.append_wpts(parent, pts, format_name, format_desc)
    
    local n = xml.new('name')
    n[#n+1] = parent
-   xml.append(wpts, n)
+   wpts:append(n)
    
    for _, tp in ipairs(pts) do
       local wp = xml.new('wpt')
@@ -81,13 +81,13 @@ function M.append_wpts(parent, pts, format_name, format_desc)
       
       local name = xml.new('name')
       name[#name+1] = format_name(tp)
-      xml.append(wp, name)
+      wp:append(name)
       
       local desc = xml.new('desc')
       desc[#desc+1] = format_desc(tp)
-      xml.append(wp, desc)
+      wp:append(desc)
       
-      xml.append(wpts, wp)
+      wpts:append(wp)
    end
    
    return wpts

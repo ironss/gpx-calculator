@@ -2,11 +2,12 @@
 
 local M = {}
 local MT = {}
+MT.__index = M
 
 local TAG = 0
 
 local function new(arg)
-   if type(arg) =='table' then 
+   if type(arg) == 'table' then 
       setmetatable(arg, MT)
       return arg
    end
