@@ -85,6 +85,7 @@ Todo
 
 20. Tests for XML find
 
-21. LuaUnit: support for disabled tests
+21. LuaUnit: support for disabled tests -- DONE
 
-22. 
+22. LuaUnit: more 'expect' methods (isnil, isnumber, notequals, etc)
+ 
