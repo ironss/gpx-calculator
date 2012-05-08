@@ -14,12 +14,12 @@ function M.load(filename)
    local tracks = {}
    local routes = {}
    
-   for trk in xml.nodes(gpxdata, "trk") do
+   for trk in gpxdata:nodes("trk") do
       track = {}
       track.name = xml.find(trk, "name")[1]
       
-      for trkseg in xml.nodes(trk, "trkseg") do
-         for trkpt in xml.nodes(trkseg, "trkpt") do
+      for trkseg in trk:nodes("trkseg") do
+         for trkpt in trkseg:nodes("trkpt") do
             local tp = {}
             tp.lat = math.rad(trkpt.lat)
             tp.lon = math.rad(trkpt.lon)
@@ -92,7 +92,6 @@ function M.append_wpts(parent, pts, format_name, format_desc)
    
    return wpts
 end
-
 
 
 function M.append_trk(parent, name, points)
