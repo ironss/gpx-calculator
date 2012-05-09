@@ -50,13 +50,15 @@ function assertError(f, ...)
 	error( "No error generated", 2 )
 end
 
+
+local function wrapValue( v )
+	if type(v) == 'string' then return "'"..v.."'" end
+	return tostring(v)
+end
+
 function assertClose(actual, expected, eps)
 	-- assert that two numeric values are within eps of one another, otherwise calls error
 	if  not(math.abs(actual - expected) < eps)  then
-		local function wrapValue( v )
-			if type(v) == 'string' then return "'"..v.."'" end
-			return tostring(v)
-		end
 		if not USE_EXPECTED_ACTUAL_IN_ASSERT_EQUALS then
 			expected, actual = actual, expected
 		end
@@ -73,14 +75,9 @@ function assertClose(actual, expected, eps)
 	end
 end
 
-local function assertCompare(actual, expected, op)
-	local chunk = 'return actual ' .. op .. ' expected'
-	local result = loadstring(chunk)
+local function assertCompare(actual, expected, f)
+	local result = f(actual, expected)
 	if not(result)  then
-		local function wrapValue( v )
-			if type(v) == 'string' then return "'"..v.."'" end
-			return tostring(v)
-		end
 		if not USE_EXPECTED_ACTUAL_IN_ASSERT_EQUALS then
 			expected, actual = actual, expected
 		end
@@ -96,18 +93,48 @@ local function assertCompare(actual, expected, op)
 		error( errorMsg, 2 )
 	end
 end
+
+local function assertIs(value, expectedType)
+	if not(result)  then
+
+		local errorMsg
+		if type(expected) == 'string' then
+			errorMsg = "\nexpected: "..wrapValue(expected).."\n"..
+                             "actual  : "..wrapValue(actual).."\n"
+		else
+			errorMsg = "expected: "..wrapValue(expected)..", actual: "..wrapValue(actual)
+		end
+		print (errorMsg)
+		error( errorMsg, 2 )
+	end
+end
+
 
 local compareFunctions = 
 {
-   { '==', 'Equals'     },
-   { '~=', 'NotEquals'  },
-   { '<' , 'LessThan'   },
-   { '<=', 'LessEquals' },
+   { '==', 'Equals'    , function(a, e) return a == e end  },
+   { '~=', 'NotEquals' , function(a, e) return a ~= e end  },
+   { '<' , 'LessThan'  , function(a, e) return a < e end   },
+   { '<=', 'LessEquals', function(a, e) return a <= e end  },
 }
 
 for _, v in ipairs(compareFunctions) do
    local f = function(actual, expected)
-      assertCompare(actual, expected, v[1])
+      assertCompare(actual, expected, v[3])
+   end
+   _G['assert' .. v[2]] = f
+   _G['assert_' .. string.lower(v[2])] = f
+end
+
+local typeFunctions = 
+{
+   { 'nil',    'IsNil'    },
+   { 'string', 'IsString' },
+}
+
+for _, v in ipairs(typeFunctions) do
+   local f = function(value)
+      assertIsType(value, expected, v[1])
    end
    _G['assert' .. v[2]] = f
    _G['assert_' .. string.lower(v[2])] = f
