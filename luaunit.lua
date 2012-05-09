@@ -75,7 +75,7 @@ function assertClose(actual, expected, eps)
 	end
 end
 
-local function assertCompare(actual, expected, f)
+local function assertCompare(actual, expected, s, f)
 	local result = f(actual, expected)
 	if not(result)  then
 		if not USE_EXPECTED_ACTUAL_IN_ASSERT_EQUALS then
@@ -90,22 +90,17 @@ local function assertCompare(actual, expected, f)
 			errorMsg = "expected: "..wrapValue(expected)..", actual: "..wrapValue(actual)
 		end
 		print (errorMsg)
-		error( errorMsg, 2 )
+		error( errorMsg, 3 )
 	end
 end
 
-local function assertIs(value, expectedType)
+local function assertIsType(value, expected, f)
+   local result, actual = f(value)
 	if not(result)  then
-
 		local errorMsg
-		if type(expected) == 'string' then
-			errorMsg = "\nexpected: "..wrapValue(expected).."\n"..
-                             "actual  : "..wrapValue(actual).."\n"
-		else
-			errorMsg = "expected: "..wrapValue(expected)..", actual: "..wrapValue(actual)
-		end
+		errorMsg = "expected: "..wrapValue(expected)..", actual: "..wrapValue(actual)
 		print (errorMsg)
-		error( errorMsg, 2 )
+		error( errorMsg, 3 )
 	end
 end
 
@@ -120,21 +115,25 @@ local compareFunctions =
 
 for _, v in ipairs(compareFunctions) do
    local f = function(actual, expected)
-      assertCompare(actual, expected, v[3])
+      assertCompare(actual, expected, v[1], v[3])
    end
    _G['assert' .. v[2]] = f
    _G['assert_' .. string.lower(v[2])] = f
 end
 
+
 local typeFunctions = 
 {
-   { 'nil',    'IsNil'    },
-   { 'string', 'IsString' },
+   { 'function', 'IsFunction', function(v) return type(v) == 'function', type(v) end },
+   { 'nil'     , 'IsNil'     , function(v) return type(v) == 'nil'     , type(v) end },
+   { 'number'  , 'IsNumber'  , function(v) return type(v) == 'number'  , type(v) end },
+   { 'string'  , 'IsString'  , function(v) return type(v) == 'string'  , type(v) end },
+   { 'table'   , 'IsTable'   , function(v) return type(v) == 'table'   , type(v) end },
 }
 
 for _, v in ipairs(typeFunctions) do
    local f = function(value)
-      assertIsType(value, expected, v[1])
+      assertIsType(value, v[1], v[3])
    end
    _G['assert' .. v[2]] = f
    _G['assert_' .. string.lower(v[2])] = f
