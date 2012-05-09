@@ -87,5 +87,5 @@ Todo
 
 21. LuaUnit: support for disabled tests -- DONE
 
-22. LuaUnit: more 'expect' methods (isnil, isnumber, notequals, etc)
+22. LuaUnit: more 'expect' methods (isnil, isnumber, notequals, etc)  -- DONE
  
