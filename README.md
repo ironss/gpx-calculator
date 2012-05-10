@@ -24,8 +24,12 @@ Acknowledgements
 * XML parsing and generation
   * http://lua-users.org/wiki/LuaXml (Roberto Ierusalimschy's 
     implementation)
+  * http://www.hpelbers.org/lua/xl
   * LuaXML (https://github.com/LuaDist/luaxml)
 
+* Date parsing
+  * http://wiki.interfaceware.com/302.html
+  
 * Geographical calculations
   * http://www.movable-type.co.uk/scripts/latlong.html
 
