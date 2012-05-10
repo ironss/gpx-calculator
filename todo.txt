@@ -1,17 +1,22 @@
 Todo
 ====
 
-* Tests for gpx calculations
+* Tests for calculations of equal time intervals
 
 * Can we pass a 'scale' parameter, and calculate the distance and time intervals from that?
 
-* How do we specify data to be stored with each point?
+* How do we specify data to be stored with each calculated point? Or do we just store 
+  everythings for each point (lat, lon, time, track time, track distance, speed, 
+  average speed, distance and bearing to next point, etc)
 
 * Add meta-tables to xml.lua          -- in progress
 
 * Add escape encoding/decoding to xml.lua 
 
 * Tests for XML find
+
+* Use LuaExpat LOM rather than homebrew, even though it is not pure lua,
+  because it is available in Ubuntu repositories.
 
 
 Done
@@ -29,6 +34,10 @@ Done
 
 * luaunit: hide stacktrace     -- DONE
 
+* luaunit: support for disabled tests -- DONE
+
+* luaunit: more 'expect' methods (isnil, isnumber, notequals, etc)  -- DONE
+
 * Generate time waypoints      -- DONE
 
 * Generate distance waypoints  -- DONE
@@ -44,9 +53,4 @@ Done
 * Tests for XML parser                -- DONE
 
 * Tests for output format             -- DONE
-
-* LuaUnit: support for disabled tests -- DONE
-
-* LuaUnit: more 'expect' methods (isnil, isnumber, notequals, etc)  -- DONE
-
 
