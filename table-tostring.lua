@@ -8,8 +8,8 @@ local function table_print (tt, indent, done)
   indent = indent or 0
   if type(tt) == "table" then
     local sb = {}
-    for key, value in pairs (tt) do
-      if type(key) ~= 'number' or type(key) == 'number' and key <= 0 then
+    for key, value in pairs(tt) do
+      if type(key) ~= 'number' or (type(key) == 'number' and key <= 0) then
          table.insert(sb, string.rep (" ", indent)) -- indent it
 
          if type(key) == 'string' then
@@ -17,11 +17,11 @@ local function table_print (tt, indent, done)
          elseif type(key) == 'number' then
             table.insert(sb, string.format('[%s] = ', tonumber(key)))
          else
-            table.insert('[??] = ')
+            table.insert('[(' .. type(key) .. '?)] = ')
          end
          
          if type(value) == "table" and not done[value] then
-           done [value] = true
+           done[value] = true
            table.insert(sb, "{\n");
            table.insert(sb, table_print (value, indent + 2, done))
            table.insert(sb, string.rep (" ", indent)) -- indent it
@@ -31,7 +31,7 @@ local function table_print (tt, indent, done)
          elseif type(value) == 'number' then
            table.insert(sb, string.format("%s,\n", tostring(value)))
          else
-           table.insert(sb, '??,')
+           table.insert(sb, '(' .. type(value) .. '?),')
          end
        end
     end
@@ -40,7 +40,7 @@ local function table_print (tt, indent, done)
          table.insert(sb, string.rep (" ", indent)) -- indent it
 
          if type(value) == "table" and not done[value] then
-           done [value] = true
+           done[value] = true
            table.insert(sb, "{\n");
            table.insert(sb, table_print (value, indent + 2, done))
            table.insert(sb, string.rep (" ", indent)) -- indent it
@@ -50,7 +50,7 @@ local function table_print (tt, indent, done)
          elseif type(value) == 'number' then
            table.insert(sb, string.format("%s,\n", tostring(value)))
          else
-           table.insert(sb, '??,')
+           table.insert(sb, '?(' .. type(key) .. ')=(' .. type(value) .. ')?,')
          end
     end
 

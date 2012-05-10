@@ -10,6 +10,8 @@ time = tonumber(arg[3])
 
 waypoints, tracks, routes = gpx.load(filename)
 
+t = require('table-tostring')
+
 for _, trk in ipairs(tracks) do
    for i = 1, #trk - 1 do
       tp1 = trk[i]
@@ -27,11 +29,11 @@ for _, trk in ipairs(tracks) do
    local d_gpx = gpx.append_wpts(trk.name, d_points)
 --   d_gpx:save(trk.name .. '-' .. distance .. 'm-rel-2.gpx')
  
-   local t_points = geo.calculate_t_points(trk, time)
+   local t_points = geo.calculate_t_points(trk, time, 0)
    local t_gpx = gpx.append_wpts(trk.name, t_points)
 --   t_gpx:save(trk.name .. '-' .. time .. 's-rel-2.gpx')
    
-   local h_points = geo.calculate_t_points(trk, time, true)
+   local h_points = geo.calculate_t_points(trk, time)
    local h_gpx = gpx.append_wpts(trk.name, h_points)
    h_gpx:save(trk.name .. '-' .. time .. 's-2.gpx')
 end

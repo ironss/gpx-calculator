@@ -93,19 +93,15 @@ end
 -- If start time is omitted or zero, then the points are relative to the start of the track.
 -- If the start time is calculated from the time of the first trackBy specifying the start time correctly, it is possible to ensure that the times
 -- 
-function M.calculate_t_points(trk, t_interval, abs_time)
+function M.calculate_t_points(trk, t_interval, start_time)
    local tp1 = {}
    local tp2 = {}
    local total_t = 0
    local partial_t = 0
-   local rounded_t = start_time or 0
+   local rounded_t = start_time or t_interval - math.fmod(trk[1].time, t_interval)
    local total_d = 0
    local partial_d = 0
    local t_points = {}
-   
-   if abs_time then
-      rounded_t = t_interval - math.fmod(trk[1].time, t_interval)
-   end
    
    for i = 1, #trk - 1 do
       tp1 = trk[i]
