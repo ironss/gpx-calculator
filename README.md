@@ -26,12 +26,16 @@ Acknowledgements
     implementation)
   * http://www.hpelbers.org/lua/xl
   * LuaXML (https://github.com/LuaDist/luaxml)
+  * Should have used LuaExpat LOM
 
 * Date parsing
   * http://wiki.interfaceware.com/302.html
   
 * Geographical calculations
   * http://www.movable-type.co.uk/scripts/latlong.html
+
+* Unit test
+  * luaunit (http://phil.freehackers.org/programs/luaunit/)
 
 
 License
