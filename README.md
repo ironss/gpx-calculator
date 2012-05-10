@@ -18,6 +18,39 @@ has a name and description that includes:
 * etc
 
 
+Input
+-----
+* A GPX file containing one or more GPS tracks (GPX <trk> tag)
+
+* A parameter specifying the distance between points
+
+* A parameter specifying the time between points
+
+
+Output
+------
+Two GPX files containing
+
+* waypoints calculated at regular time intervals
+
+* waypoints calculated at regular distance intervals
+
+
+Each calculated waypoint has the following data calculated from
+the track data:
+
+* latitude and longitude
+
+* time in UTC
+ 
+* time in seconds from the start of the track
+
+* distance from the start of the track
+
+* speed
+
+
+
 Acknowledgements
 ----------------
 

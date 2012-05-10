@@ -1,91 +1,52 @@
-GPX calculations
-################
-
-Purpose
-=======
-Given a GPS track, calculate points at regular intervals along the track.
-The points can be calculated:
-
-* with a fixed distance between them
-
-* with a fixed time interval between them
-
-
-Input
-=====
-* A GPX file containing one or more GPS tracks (GPX <trk> tag)
-
-* A parameter specifying the distance between points
-
-* A parameter specifying the time between points
-
-
-Output
-======
-Two GPX files containing
-
-* waypoints calculated at regular time intervals
-
-* waypoints calculated at regular distance intervals
-
-
-Each calculated waypoint has the following data calculated from
-the track data:
-
-* latitude and longitude
-
-* time in UTC
- 
-* time in seconds from the start of the track
-
-* distance from the start of the track
-
-* speed
-
-
 Todo
 ====
- 1. Tests for distance_between() -- DONE
 
- 2. Tests for bearing()          -- DONE
+* Tests for gpx calculations
 
- 3. Tests for destination()      -- DONE
+* Can we pass a 'scale' parameter, and calculate the distance and time intervals from that?
 
- 4. Tests for date parser        -- DONE
+* How do we specify data to be stored with each point?
 
- 5. Tests for gpx calculations
+* Add meta-tables to xml.lua          -- in progress
 
- 6. Use luaunit test framework   -- DONE
+* Add escape encoding/decoding to xml.lua 
 
- 7. luaunit: hide stacktrace     -- DONE
+* Tests for XML find
 
- 8. Generate time waypoints      -- DONE
 
- 9. Generate distance waypoints  -- DONE
+Done
+----
 
-10. Generate absolute-time waypoints -- DONE
+* Tests for distance_between() -- DONE
 
-11. Verify that initial segment works correctly -- DONE
+* Tests for bearing()          -- DONE
 
-12. Test for track calculations   -- DONE
+* Tests for destination()      -- DONE
 
-13. Can we pass a 'scale' parameter, and calculate the distance and time intervals from that?
+* Tests for date parser        -- DONE
 
-14. How do we specify data to be stored with each point?
+* Use luaunit test framework   -- DONE
 
-15. Use pure lua XML parser and creator -- DONE
+* luaunit: hide stacktrace     -- DONE
 
-16. Tests for XML parser                -- DONE
+* Generate time waypoints      -- DONE
 
-17. Tests for output format             -- DONE
+* Generate distance waypoints  -- DONE
 
-18. Add meta-tables to xml.lua          -- in progress
+* Generate absolute-time waypoints -- DONE
 
-19. Add escape encoding/decoding to xml.lua 
+* Verify that initial segment works correctly -- DONE
 
-20. Tests for XML find
+* Test for track calculations   -- DONE
 
-21. LuaUnit: support for disabled tests -- DONE
+* Use pure lua XML parser and creator -- DONE
 
-22. LuaUnit: more 'expect' methods (isnil, isnumber, notequals, etc)  -- DONE
- 
+* Tests for XML parser                -- DONE
+
+* Tests for output format             -- DONE
+
+* LuaUnit: support for disabled tests -- DONE
+
+* LuaUnit: more 'expect' methods (isnil, isnumber, notequals, etc)  -- DONE
+
+
