@@ -46,10 +46,11 @@ end
 
 
 M.null_calibration = { }
+M.gettime_calibration = { }
 
 local function measure(f, accuracy)
    if accuracy == 0 or accuracy == nil then
-      accuracy = 0.01
+      accuracy = 0.0001
    end
    local max_t = 1/accuracy * clock_resolution
    local max_n = 1/accuracy
@@ -58,33 +59,30 @@ local function measure(f, accuracy)
    local t_total
    local n
    
-   if M.null_calibration == nil and M.null_calibration.ave == nil then
+   if M.null_calibration.ave == nil and M.gettime_calibration.ave == nil then
       M.calibrate()
    end
 
 
-   if clock_resolution > 0.2 then
-      local t_1
-      local t_2
+   local t_1
+   local t_2
 
-      n = 0
-      local t_1 = clock_synctime()
-      repeat
-         f()
-         t_2 = clock_gettime()
-         n = n+1
-      until t_2 > t_1 + max_t or (n > max_n and t_2 > t_1)
-      t_total = t_2 - t_1
-   else
-      
-   end
-   
-   return { t_total=t_total, n=n, ave=(t_total / n) - M.null_calibration.ave }
+   n = 0
+   local t_1 = clock_synctime()
+   repeat
+      f()
+      t_2 = clock_gettime()
+      n = n+1
+   until (t_2 >= t_1 + max_t) or (n >= max_n and t_2 >= t_1 + clock_resolution)
+   t_total = t_2 - t_1
+ 
+   return { t_total=t_total, n=n, ave=(t_total / n) }
 end
 
 
 local function calibrate(n)
    M.null_calibration.ave = 0
+   M.gettime_calibration.ave = 0
    M.null_calibration = measure(function() end)
    M.gettime_calibration = measure(clock_gettime)
 end
