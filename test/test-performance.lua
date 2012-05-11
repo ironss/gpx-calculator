@@ -4,8 +4,9 @@ p = require('performance')
 
 print('Calibrating...')
 
-p.calibrate()
+p.calibrate(0.01)
 print('Resolution: ', p.clock_resolution)
+print('Cal accuracy: ', p.calibration_accuracy * 100 .. '%')
 print('null() overhead: ', p.null_calibration.t_ave, p.null_calibration.t_total, p.null_calibration.n)
 print('gettime() overhead: ', p.gettime_calibration.t_ave, p.gettime_calibration.t_total, p.gettime_calibration.n)
 
@@ -26,6 +27,10 @@ tests =
    { '5s'   , 5     },
 }
 
+accuracies = 
+{
+   0.1, 0.01, 0.001, 0.0001
+}
 
 require 'posix'
 
@@ -45,9 +50,13 @@ function busy_loop(t)
 end
 
 
-for _, t in ipairs(tests) do
-   print(t[1])
-   t.m = p.measure(function() busy_loop(t[2]) end, 0.01)
-   print(t[1] .. ': ', t.m.t_total, t.m.n, t.m.t_ave)
+for _, a in ipairs(accuracies) do
+   print('Accuracy: ' .. a * 100 .. '%')
+   for _, t in ipairs(tests) do
+      print(t[1], a * 100 .. '%')
+      t.m = p.measure(function() busy_loop(t[2]) end, a)
+      print(t[1] .. ': ', t.m.t_total, t.m.n, t.m.t_ave)
+   end
+   print()
 end
 

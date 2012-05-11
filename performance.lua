@@ -44,14 +44,14 @@ M.gettime_calibration = { }
 M.calibration_accuracy = 1
 
 local function measure(f, accuracy)
-   if accuracy == 0 or accuracy == nil then
-      accuracy = 0.0001
+   if accuracy == 0 or type(accuracy) ~= 'number' then
+      accuracy = M.calibration_accuracy * 10
    end
    local max_t = 1/accuracy * clock_resolution
    local max_n = 1/accuracy
    
-   if accuracy < M.calibration_accuracy then
-      M.calibrate(accuracy)
+   if accuracy / 10 < M.calibration_accuracy then
+      M.calibrate(accuracy / 10)
    end
 
    local t_total
@@ -73,17 +73,20 @@ local function measure(f, accuracy)
 end
 
 
-local function calibrate(n, accuracy)
+local function calibrate(accuracy)
    if accuracy == 0 or accuracy == nil then
       accuracy = 0.00001
    end
 
+   M.calibration_accuracy = 0
    M.null_calibration.ave = 0
    M.gettime_calibration.ave = 0
-   M.calibration_accuracy = accuracy
+
    M.null_calibration = measure(function() end, accuracy)
    M.gettime_calibration = measure(clock_gettime, accuracy)
+   M.calibration_accuracy = accuracy
 end
+
 
 M.clock_resolution = clock_resolution
 M.gettime = gettime
