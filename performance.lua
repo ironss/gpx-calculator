@@ -39,6 +39,47 @@ function clock_synctime()
 end
 
 
+
+local clock = {}
+
+function clock.synctime()
+   local t1
+   local t2
+   
+   t1 = clock_gettime()
+   repeat
+      t2 = clock_gettime()
+   until t2 ~= t1
+   return t2
+end
+
+function clock.new(name, resolution, gettime)
+   local c = {}
+   
+   c.name = name
+   c.resolution = resolution
+   c.gettime = gettime
+   c.synctime = clock.synctime
+   
+   return c
+end
+
+
+
+clock_posix = clock.new('clock_posix', 0.001, function()
+   local s, f = posix.clock_gettime("")
+   local t = s + f / 1000000000
+   return t
+end)
+
+clock_os = clock.new('clock_os', 1, function()
+   local t = os.time()
+   return t
+end)
+
+
+
+
 M.null_calibration = { }
 M.gettime_calibration = { }
 M.calibration_accuracy = 1
