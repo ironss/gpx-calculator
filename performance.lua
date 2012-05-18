@@ -10,8 +10,8 @@ local M = {}
 local clock_gettime
 local clock_resolution
 
-local posix = require 'posix'
-if posix and posix.clock_gettime then
+local e, posix = pcall(require, 'posix')
+if e and posix.clock_gettime then
    clock_resolution = 0.001  -- How can we read the resolution of the POSIX clocks?
    function clock_gettime()
       local s, f = posix.clock_gettime("")
