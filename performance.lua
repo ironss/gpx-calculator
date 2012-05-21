@@ -7,89 +7,113 @@
 
 local M = {}
 
-local clock_gettime
-local clock_resolution
+
+-- Timebases
+
+local function timebase_new(name, resolution, gettime)
+   local tb = {}
+   
+   tb.name = name
+   tb.resolution = resolution
+   tb.gettime = gettime
+   tb.synctime = function()
+      local t1
+      local t2
+      
+      t1 = gettime()
+      repeat
+         t2 = gettime()
+      until t2 ~= t1
+      
+      return t2
+   end
+   
+   return tb
+end
+
+
+
+-- Define 'timebase_posix' if posix library is available.
 
 local e, posix = pcall(require, 'posix')
 if e and posix.clock_gettime then
-   clock_resolution = 0.001  -- How can we read the resolution of the POSIX clocks?
-   function clock_gettime()
+   local function posix_gettime()
       local s, f = posix.clock_gettime("")
       local t = s + f / 1000000000
-      return t
+      return math.floor(t / 0.0001) * 0.0001
    end
-else
-   clock_resolution = 1
-   function clock_gettime()
-      local t = os.time()
-      return t
+   timebase_posix = timebase_new('clock_posix', 0.0001, posix_gettime)
+end
+
+local function os_gettime()
+   return os.time()
+end
+timebase_os = timebase_new('clock_os', 1, os_gettime)
+
+
+
+
+
+local function measure_new(name, f, tb, accuracy, n_min)
+   local m = {}
+   
+   m.name = name
+   m.tb = tb
+   m.f = f
+   m.accuracy = accuracy
+   m.n_min = n_min
+
+   local function reset()
+      m.t_min = 1E15
+      m.t_max = 0
+      m.t_total = 0
+      m.n = 0
    end
-end
-
-
-function clock_synctime()
-   local t1
-   local t2
    
-   t1 = clock_gettime()
-   repeat
-      t2 = clock_gettime()
-   until t2 ~= t1
-   return t2
-end
-
-
-
-local clock = {}
-
-function clock.synctime()
-   local t1
-   local t2
+   local function measure()
+   end
    
-   t1 = clock_gettime()
-   repeat
-      t2 = clock_gettime()
-   until t2 ~= t1
-   return t2
-end
+   local function calibrate(accuracy)
+      if accuracy == 0 or accuracy == nil then
+         accuracy = 0.00001
+      end
 
-function clock.new(name, resolution, gettime)
-   local c = {}
+      m.calibration_accuracy = 0
+      m.null_calibration.ave = 0
+      m.gettime_calibration.ave = 0
+
+      m.null_calibration = measure(function() end, accuracy, 1, clock)
+      m.gettime_calibration = measure(clock.gettime, accuracy, 1, clock)
+      m.calibration_accuracy = accuracy
+   end
+
+   reset()
    
-   c.name = name
-   c.resolution = resolution
-   c.gettime = gettime
-   c.synctime = clock.synctime
+   m.reset = reset
+   m.calibrate = calibrate
+   m.measure = measure
    
-   return c
+   return m
 end
-
-
-
-clock_posix = clock.new('clock_posix', 0.001, function()
-   local s, f = posix.clock_gettime("")
-   local t = s + f / 1000000000
-   return t
-end)
-
-clock_os = clock.new('clock_os', 1, function()
-   local t = os.time()
-   return t
-end)
-
-
 
 
 M.null_calibration = { }
 M.gettime_calibration = { }
 M.calibration_accuracy = 1
 
-local function measure(f, accuracy, n_min)
+local function measure(f, accuracy, n_min, clock)
    if accuracy == 0 or type(accuracy) ~= 'number' then
       accuracy = M.calibration_accuracy * 10
    end
+   
+   local clock = clock or timebase_posix
+   local clock_resolution = clock.resolution
+   local clock_synctime = clock.synctime
+   local clock_gettime = clock.gettime
+   
    local t_max = 1/accuracy * clock_resolution
    local n_max = 1/accuracy
+   local ending = t_max * n_max
 
    local n_min = n_min or 1
    
@@ -99,16 +123,16 @@ local function measure(f, accuracy, n_min)
 
    local min = math.min
    local max = math.max
-   local t_total = 0
-   local t_min = 1000000
-   local t_max = 0
    local n = 0
+   local tm_total = 0
+   local tm_min = 1000000
+   local tm_max = 0
+   local tm_ave = 0
 
    local t_0
    local t_1
    local t_2
 
-   local t_0 = clock_synctime()
    repeat
       if type(f_setup) == 'function' then f_setup() end
       t_1 = clock_gettime()
@@ -117,48 +141,36 @@ local function measure(f, accuracy, n_min)
       if type(f_teardown) == 'function' then t_teardown() end
       
       local t_diff = t_2 - t_1
-      t_total = t_total + t_diff
-      t_min = min(t_min, t_diff)
-      t_max = max(t_max, t_diff)
+      tm_total = tm_total + t_diff -- - M.null_calibration.t_ave
+      tm_min = min(tm_min, t_diff)
+      tm_max = max(tm_max, t_diff)
       
       n = n+1
-      --print(n, t_diff)
-   until (t_2 >= t_0 + t_max and n >= n_min) or (n >= n_max and t_2 >= t_0 + clock_resolution)
+      --print(tm_total, n)
+   until accuracy * tm_total >= clock_resolution * 1.1
+   
+   tm_ave = (tm_total / n) - M.null_calibration.t_ave
+   --print(tm_total, n, (1-((tm_total - clock_resolution) / tm_total))*100)
  
-   return { t_total=t_total, n=n, t_ave=(t_total / n), t_min=t_min, t_max=t_max }
+   return { t_total=tm_total, n=n, t_ave=tm_ave, t_min=tm_min, t_max=tm_max }
 end
 
 
-local function calibrate(accuracy)
+local function calibrate(accuracy, clock)
    if accuracy == 0 or accuracy == nil then
-      accuracy = 0.00001
+      accuracy = 0.0001
    end
+   
+   local clock = clock or timebase_posix
+   print(clock.name)
 
    M.calibration_accuracy = 0
-   M.null_calibration.ave = 0
-   M.gettime_calibration.ave = 0
+   M.null_calibration.t_ave = 0
+   M.gettime_calibration.t_ave = 0
 
-   M.null_calibration = measure(function() end, accuracy)
-   M.gettime_calibration = measure(clock_gettime, accuracy)
+   M.null_calibration = measure(function() end, accuracy, 5, clock)
+   M.gettime_calibration = measure(clock.gettime, accuracy, 5, clock)
    M.calibration_accuracy = accuracy
-end
-
-
--- Create a new measurement clock
--- Parameters:
--- * clock, with clock.gettime(), clock.synctime and clock.resolution
--- * 
-
--- Returns: a table with
--- * t.measure()
--- * t.clock.resolution
--- * 
- 
-
-local function new(params)
-   local t = {}
-   
-   t.clock = params.clock
 end
 
 
