@@ -59,17 +59,13 @@ end
 function assertClose(actual, expected, eps)
 	-- assert that two numeric values are within eps of one another, otherwise calls error
 	if  not(math.abs(actual - expected) < eps)  then
-		if not USE_EXPECTED_ACTUAL_IN_ASSERT_EQUALS then
-			expected, actual = actual, expected
-		end
 
 		local errorMsg
-		if type(expected) == 'string' then
-			errorMsg = "\nexpected: "..wrapValue(expected).."\n"..
-                             "actual  : "..wrapValue(actual).."\n"
-		else
-			errorMsg = "expected: "..wrapValue(expected)..", actual: "..wrapValue(actual)
-		end
+		if actual < expected - eps then
+      	errorMsg = "actual: "..wrapValue(actual).." < expected: "..wrapValue(expected - eps)
+      else
+         errorMsg = "actual: "..wrapValue(actual).." > expected: "..wrapValue(expected + eps)
+      end
 		print (errorMsg)
 		error( errorMsg, 2 )
 	end
