@@ -78,7 +78,7 @@ local function measure_new(name, f, timebase, accuracy)
       local t_max = 1/m.accuracy * m.timebase.resolution
       
       if m.calibration_accuracy > m.accuracy / 10 then
-         -- calibrate(m.accuracy / 10)
+         calibrate(m.accuracy / 10)
       end
 
       local t_1

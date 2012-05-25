@@ -75,11 +75,10 @@ for _, t in ipairs(tests) do
    local accuracy = t[3]
    Test_performance['test_' .. name] = function(t)
       local m = p.measure_new(name, function() busy_loop(duration) end, p.timebase_posix, accuracy)
-      m.calibrate(accuracy / 5)
       local r = m.measure()
---      print(m.calibration.n, m.calibration.t_min, m.calibration.t_ave, m.calibration.t_max)
---      print(r.n, r.t_min, r.t_ave, r.t_max)
-      assert_close(r.t_ave - m.calibration.t_ave, duration, r.t_ave * accuracy)
+      print(m.calibration.n, m.calibration.t_min, m.calibration.t_ave, m.calibration.t_max)
+      print(r.n, r.t_min, r.t_ave, r.t_max)
+      assert_close(r.t_min, duration, r.t_ave * accuracy)
    end
 end
 
