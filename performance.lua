@@ -16,17 +16,6 @@ local function timebase_new(name, resolution, gettime)
    tb.name = name
    tb.resolution = resolution
    tb.gettime = gettime
-   tb.synctime = function()
-      local t1
-      local t2
-      
-      t1 = gettime()
-      repeat
-         t2 = gettime()
-      until t2 ~= t1
-      
-      return t2
-   end
    
    return tb
 end
