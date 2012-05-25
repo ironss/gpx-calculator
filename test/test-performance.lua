@@ -82,5 +82,133 @@ for _, t in ipairs(tests) do
    end
 end
 
+Test_performance = nil
+
+
+timebase_test = p.timebase_new('test', 1, function() return timebase_test.t end)
+timebase_test.t = 0
+
+function timebase_test.settime(t) 
+   timebase_test.t = t 
+end
+
+function timebase_test.inctime(n)
+   local n = n or 1
+   local t = n * timebase_test.resolution
+   timebase_test.t = timebase_test.t + t
+end
+
+function timebase_test.gettime()
+   timebase_test.inctime()
+   return timebase_test.t
+end
+
+
+Test_timebase = {}
+
+function Test_timebase:test_1()
+   local t_1 = timebase_test.gettime()
+   local t_2 = timebase_test.gettime()
+   assertEquals(t_2, t_1 + 1)
+end
+
+function Test_timebase:test_2() 
+   local m = p.measure_new('test', function() end, timebase_test, 0.01, nil, nil)
+   local r = m.measure()
+   assertEquals(r.n, 100)
+   assertEquals(r.t_sum, 100)
+   assertEquals(r.t_sum2, 100)
+   assertEquals(r.t_min, 1)
+   assertEquals(r.t_ave, 1)
+   assertEquals(r.t_max, 1)
+end
+
+
+function Test_timebase:test_3() 
+   local m = p.measure_new('test', function() timebase_test.inctime() end, timebase_test, 0.01, nil, nil)
+   local r = m.measure()
+   assertEquals(r.n, 50)
+   assertEquals(r.t_sum, 100)
+   assertEquals(r.t_sum2, 200)
+   assertEquals(r.t_min, 2)
+   assertEquals(r.t_ave, 2)
+   assertEquals(r.t_max, 2)
+end
+
+
+function Test_timebase:test_4() 
+   local m = p.measure_new('test', function() timebase_test.inctime(4) end, timebase_test, 0.01, nil, nil)
+   local r = m.measure()
+   assertEquals(r.n, 20)
+   assertEquals(r.t_sum, 100)
+   assertEquals(r.t_sum2, 500)
+   assertEquals(r.t_min, 5)
+   assertEquals(r.t_ave, 5)
+   assertEquals(r.t_max, 5)
+end
+
+
+function Test_timebase:test_5()
+   local count = 0
+   local m = p.measure_new('test', function() 
+                                      count = count+1
+                                      if math.mod(count, 2) == 0 then
+                                         timebase_test.inctime() 
+                                      end
+                                   end, timebase_test, 0.01, nil, nil)
+   local r = m.measure()
+   assertEquals(r.n, 67)
+   assertEquals(r.t_sum, 100)
+   assertEquals(r.t_sum2, 166)
+   assertEquals(r.t_min, 1)
+   assertClose(r.t_ave, 1.4925, 0.001)
+   assertEquals(r.t_max, 2)
+end
+
+
+function Test_timebase:test_6() 
+   local count = 0
+   local m = p.measure_new('test', function() 
+                                      count = count+1
+                                      if math.mod(count, 5) == 0 then
+                                         timebase_test.inctime(3) 
+                                      end
+                                   end, timebase_test, 0.01, nil, nil)
+   timebase_test.count = 0
+   local r = m.measure()
+   assertEquals(r.n, 64)
+   assertEquals(r.t_sum, 100)
+   assertEquals(r.t_sum2, 244)
+   assertEquals(r.t_min, 1)
+   assertClose(r.t_ave, 1.5625, 0.001)
+   assertEquals(r.t_max, 4)
+end
+
+
+function Test_timebase:test_7() 
+   local m = p.measure_new('test', function() timebase_test.inctime(98) end, timebase_test, 0.01, nil, nil)
+   local r = m.measure()
+   assertEquals(r.n, 2)
+   assertEquals(r.t_sum, 198)
+   assertEquals(r.t_sum2, 19602)
+   assertEquals(r.t_min, 99)
+   assertEquals(r.t_ave, 99)
+   assertEquals(r.t_max, 99)
+end
+
+
+function Test_timebase:test_8() 
+   local m = p.measure_new('test', function() timebase_test.inctime(100) end, timebase_test, 0.01, nil, nil)
+   local r = m.measure()
+   assertEquals(r.n, 1)
+   assertEquals(r.t_sum, 101)
+   assertEquals(r.t_sum2, 10201)
+   assertEquals(r.t_min, 101)
+   assertEquals(r.t_ave, 101)
+   assertEquals(r.t_max, 101)
+end
+
+
+
 LuaUnit:run()
 
