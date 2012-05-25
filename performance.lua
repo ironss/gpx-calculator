@@ -28,7 +28,7 @@ if e and posix.clock_gettime then
    local function posix_gettime()
       local s, f = posix.clock_gettime("")
       local t = s + f / 1000000000
-      return math.floor(t / 0.000001) * 0.000001
+      return t
    end
    M.timebase_posix = timebase_new('clock_posix', 0.0001, posix_gettime)
 end

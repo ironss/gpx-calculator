@@ -18,10 +18,10 @@ tests =
    { '2ms_10pc'   , 0.0020, 0.1    },
 --   { '2ms_1pc'    , 0.0020, 0.01   },
    { '5ms_10pc'   , 0.0050, 0.1    },
---   { '5ms_1pc'    , 0.0050, 0.01   },
+   { '5ms_1pc'    , 0.0050, 0.01   },
    { '10ms_10pc'  , 0.0100, 0.1    },
    { '10ms_1pc'   , 0.0100, 0.01   },
---   { '10ms_0_1pc' , 0.0100, 0.001  },
+   { '10ms_0_1pc' , 0.0100, 0.001  },
    { '20ms_10pc'  , 0.0200, 0.1    },
    { '20ms_1pc'   , 0.0200, 0.01   },
    { '20ms_0_1pc' , 0.0200, 0.001  },
@@ -76,13 +76,13 @@ for _, t in ipairs(tests) do
    Test_performance['test_' .. name] = function(t)
       local m = p.measure_new(name, function() busy_loop(duration) end, p.timebase_posix, accuracy)
       local r = m.measure()
-      print(m.calibration.n, m.calibration.t_min, m.calibration.t_ave, m.calibration.t_max)
-      print(r.n, r.t_min, r.t_ave, r.t_max)
+      --print(m.calibration.t_sum, m.calibration.n, m.calibration.t_min, m.calibration.t_ave, m.calibration.t_max)
+      --print(r.t_sum, r.n, r.t_min, r.t_ave, r.t_max)
       assert_close(r.t_min, duration, r.t_ave * accuracy)
    end
 end
 
-Test_performance = nil
+--Test_performance = nil
 
 
 timebase_test = p.timebase_new('test', 1, function() return timebase_test.t end)
