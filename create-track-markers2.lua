@@ -25,6 +25,7 @@ end
 
 for _, trk in ipairs(tracks) do
    print(trk.name)
+   
    local d_points = geo.calculate_d_points(trk, distance)
    local d_gpx = gpx.append_wpts(trk.name, d_points)
 --   d_gpx:save(trk.name .. '-' .. distance .. 'm-rel-2.gpx')
