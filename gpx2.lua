@@ -24,18 +24,35 @@ if xml.nodes == nil then
    end
 end
 
-
 function M.load(filename)
    local xmldata = xml.load(filename)
    local gpxdata = xml.find(xmldata, "gpx")
 
+   local gpx = {}
+
+   do
+      local node = gpxdata:find("name")
+      if node ~= nil then
+         gpx.name = node[1]
+      else
+         gpx.name = filename
+      end
+   end
+      
    local waypoints = {}
    local tracks = {}
    local routes = {}
    
    for trk in gpxdata:nodes("trk") do
       track = {}
-      track.name = trk:find("name")[1]
+      do
+         local node = trk:find("name")
+         if node ~= nil then
+            track.name = node[1]
+         else
+            track.name = gpx.name
+         end
+      end
       
       for trkseg in trk:nodes("trkseg") do
          for trkpt in trkseg:nodes("trkpt") do
@@ -60,7 +77,7 @@ function M.create_gpx(name)
 end
 
 
-function default_format_name(tp)
+local function default_format_name(tp)
    local s = table.concat{os.date('!%H:%MZ', tp.time), 
                                    ' (', 
 --                                   os.date('!+%H:%M', tp.trktime), ', ',
@@ -70,7 +87,7 @@ function default_format_name(tp)
    return s
 end
 
-function default_format_desc(tp)
+local function default_format_desc(tp)
    local s = table.concat{os.date('!%H:%M:%SZ', tp.time), 
                                    ' (', 
                                    os.date('!+%H:%M:%S', tp.trktime), ', ',
@@ -79,7 +96,6 @@ function default_format_desc(tp)
                                    ')' }
    return s
 end
-
 
 function M.append_wpts(parent, pts, format_name, format_desc)
    local format_name = format_name or default_format_name
