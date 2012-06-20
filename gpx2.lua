@@ -59,7 +59,7 @@ function M.load(filename)
             local tp = {}
             tp.lat = math.rad(trkpt.lat)
             tp.lon = math.rad(trkpt.lon)
-            tp.time = dateparse.parse(trkpt:find("time")[1])
+            tp.time = dateparse.parse(trkpt:find("time")[1], 'yyyy-mm-ddwHH:MM:SS[.ssss]w')
             
             if #track == 0 or tp.time ~= track[#track].time then
                track[#track+1] = tp
