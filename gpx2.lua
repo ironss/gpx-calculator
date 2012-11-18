@@ -77,9 +77,28 @@ function M.create_gpx(name)
 end
 
 
+local function format_utc_time(time, format, zone)
+   local utc_string = os.date('%Y-%m-%d %H:%M:%SZ', time)
+   
+   if zone ~= nil then
+      tz = 'TZ=' .. zone
+   else
+      tz = ''
+   end
+   
+   local command = table.concat({tz, 'date', '-d "'..utc_string..'"', '+"'..format..'"'}, ' ')
+--   print(command)
+   local f = io.popen(command)
+   local local_string = f:read('*a'):sub(1, -2)
+--   print('"'..local_string .. '"')
+   return local_string
+end
+
+
 local function default_format_name(tp)
-   local s = table.concat{os.date('!%H:%MZ', tp.time), 
+   local s = table.concat{os.date('%H:%MZ', tp.time), 
                                    ' (', 
+                                   format_utc_time(tp.time, '%H:%M'), ', ',
 --                                   os.date('!+%H:%M', tp.trktime), ', ',
 --                                   math.floor(tp.distance + 0.5), 'm, ',
                                    string.format("%3.1f kn", tp.speed * 1.94384),
@@ -88,7 +107,8 @@ local function default_format_name(tp)
 end
 
 local function default_format_desc(tp)
-   local s = table.concat{os.date('!%H:%M:%SZ', tp.time), 
+   local tzoff
+   local s = table.concat{os.date('%H:%M:%SZ', tp.time), 
                                    ' (', 
                                    os.date('!+%H:%M:%S', tp.trktime), ', ',
                                    math.floor(tp.distance + 0.5), 'm, ',

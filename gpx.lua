@@ -24,7 +24,6 @@ if xml.nodes == nil then
    end
 end
 
-
 function M.load(filename)
    local xmldata = xml.load(filename)
    local gpxdata = xmldata:find("gpx")
@@ -36,7 +35,6 @@ function M.load(filename)
    for trk in gpxdata:nodes("trk") do
       track = {}
       track.name = trk:find("name")[1]
-      
       for trkseg in trk:nodes("trkseg") do
          for trkpt in trkseg:nodes("trkpt") do
             local tp = {}
