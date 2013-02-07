@@ -3,7 +3,6 @@
 gpx = require('gpx')
 geo = require('geocalcs')
 
-
 filename = arg[1]
 distance = tonumber(arg[2])
 time = tonumber(arg[3])
