@@ -8,11 +8,11 @@ at regular time or distance intervals, and display the time
 and speed (and other properties) at those places.
 
 This set of scripts will take a GPX file containing a track
-and generate a GPX files containing a number of sets of waypoints.
+and generate GPX files containing waypoints.
 
-* One set of waypoints at regular time intervals
+* One file contains waypoints at regular time intervals
 
-* One set of waypoints at regular distance intervals
+* One file contains waypoints at regular distance intervals
 
 
 Each waypoint has a name and description that includes some of:
