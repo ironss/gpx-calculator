@@ -29,7 +29,7 @@ Each waypoint has a name and description that includes some of:
 Usage
 -----
 
-    ./create-track-markers.lua <gpx-file>  <distance>  <time>
+    ./create-track-markers.lua <gpx-file>  <time>  [<distance>]
 
 Input
 -----
