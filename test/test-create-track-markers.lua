@@ -24,7 +24,7 @@ function Test_create_markers:test_distance_200m()
    end
 end
 
-function Test_create_markers:test_distance_60s_abs()
+function Test_create_markers:test_distance_60s()
    local f_expected = io.open('test/ref/track1-60s.gpx')
    local f_actual = io.open('test/out/track1-60s.gpx')
    
