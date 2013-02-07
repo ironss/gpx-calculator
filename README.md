@@ -1,7 +1,7 @@
 gpx-calculator
 ==============
 
-After you have finished a race, you can view your track using
+After you have finished a race, you can view your GPS track using
 any one of a number of online or installed applications. However,
 I have not found one that will add index markers to the track
 at regular time or distance intervals, and display the time
@@ -18,9 +18,14 @@ has a name and description that includes:
 * etc
 
 
+Usage
+-----
+
+    ./create-track-markers.lua <gpx-file>  <distance>  <time>
+
 Input
 -----
-* A GPX file containing one or more GPS tracks (GPX <trk> tag)
+* A GPX file containing one or more GPS tracks, with the GPX <trk> tag
 
 * A parameter specifying the distance between points
 
@@ -51,15 +56,11 @@ the track data:
 
 
 
-Acknowledgements
-----------------
+Dependencies
+------------
 
 * XML parsing and generation
-  * http://lua-users.org/wiki/LuaXml (Roberto Ierusalimschy's 
-    implementation)
-  * http://www.hpelbers.org/lua/xl
-  * LuaXML (https://github.com/LuaDist/luaxml)
-  * Should have used LuaExpat LOM
+  * Penlight
 
 * Date parsing
   * http://wiki.interfaceware.com/302.html
