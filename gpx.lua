@@ -7,10 +7,8 @@ local geo = require("geocalcs")
 local M = {}
 
 function M.load(filename)
-   local f = io.open(filename)
-   local xdata = f:read('*all')
-   local xmldata = xml.parse(xdata)
-   local gpxdata = xmldata --:get_elements_with_name("gpx")
+   local xmldata = xml.parse(filename, true)
+   local gpxdata = xmldata
 
    local waypoints = {}
    local tracks = {}
