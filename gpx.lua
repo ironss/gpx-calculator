@@ -99,7 +99,7 @@ function M.append_trk(parent, name, points)
 
 end
 
-function M.save(data, filename)
+function M.save(filename, data, ...)
   if not data then return end
   if not filename or #filename==0 then return end
   local file = io.open(filename, "w")
