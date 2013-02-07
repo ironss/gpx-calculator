@@ -25,23 +25,17 @@ if xml.nodes == nil then
 end
 
 
-serpent = require 'serpent'
-
 function M.load(filename)
    local f = io.open(filename)
    local xdata = f:read('*all')
    local xmldata = xml.parse(xdata)
    local gpxdata = xmldata --:get_elements_with_name("gpx")
 
---   print(serpent.block(xmldata))
---   print(serpent.block(gpxdata))
-
    local waypoints = {}
    local tracks = {}
    local routes = {}
    
    for _, trk in ipairs(gpxdata:get_elements_with_name("trk")) do
---      print(serpent.block(trk))
       track = {}
       track.name = trk:child_with_name("name")[1]
       for _, trkseg in ipairs(trk:get_elements_with_name("trkseg")) do
