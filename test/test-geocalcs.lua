@@ -55,7 +55,6 @@ function Test_geocalcs:test_destination()
 end
 
 function Test_geocalcs:test_calculate_t_points()
-   local t = require('table-tostring')
 	local trk = 
 	{  
 		{
