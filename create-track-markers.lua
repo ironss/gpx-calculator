@@ -34,6 +34,6 @@ for _, trk in ipairs(tracks) do
    
    local h_points = geo.calculate_t_points(trk, time)
    local h_gpx = gpx.append_wpts(trk.name, h_points)
-   h_gpx:save(trk.name .. '-' .. time .. 's.gpx')
+   gpx.save(h_gpx, trk.name .. '-' .. time .. 's.gpx')
 end
 
