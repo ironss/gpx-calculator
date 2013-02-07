@@ -61,7 +61,7 @@ function default_format_desc(tp)
 end
 
 
-function M.append_wpts(parent, pts, format_name, format_desc)
+function M.create_wpts(parent, pts, format_name, format_desc)
    local format_name = format_name or default_format_name
    local format_desc = format_desc or default_format_desc
 

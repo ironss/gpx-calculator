@@ -26,7 +26,7 @@ for _, trk in ipairs(tracks) do
       local filename = trk.name .. '-' .. time .. 's.gpx'
       print(filename)
       local t_points = geo.calculate_t_points(trk, time)
-      local t_gpx = gpx.append_wpts(trk.name, t_points)
+      local t_gpx = gpx.create_wpts(trk.name, t_points)
       gpx.save(filename, t_gpx)
    end
 
@@ -34,7 +34,7 @@ for _, trk in ipairs(tracks) do
       local filename = trk.name .. '-' .. distance .. 'm.gpx'
       print(filename)
       local d_points = geo.calculate_d_points(trk, distance)
-      local d_gpx = gpx.append_wpts(trk.name, d_points)
+      local d_gpx = gpx.create_wpts(trk.name, d_points)
       gpx.save(filename, d_gpx)
    end
 end
