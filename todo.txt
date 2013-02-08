@@ -1,13 +1,15 @@
 Todo
 ====
 
+* Create an overlay for a map.
+
 * Pass a 'scale' parameter, and calculate the time and distance intervals from that, 
   rather than specifying time and distance explicitly. It might need map scale and
   viewing distance.
 
 * How do we specify data to be stored with each calculated point? Or do we just store 
   everythings for each point (lat, lon, time, track time, track distance, speed, 
-  average speed, distance and bearing to next point, etc)
+  average speed, distance and bearing to next point, etc).
 
 
 
