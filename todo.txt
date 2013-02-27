@@ -1,26 +1,20 @@
 Todo
 ====
 
-* Tests for calculations of equal time intervals
+* Create an overlay for a map.
 
-* Can we pass a 'scale' parameter, and calculate the distance and time intervals from that?
+* Pass a 'scale' parameter, and calculate the time and distance intervals from that, 
+  rather than specifying time and distance explicitly. It might need map scale and
+  viewing distance.
 
 * How do we specify data to be stored with each calculated point? Or do we just store 
   everythings for each point (lat, lon, time, track time, track distance, speed, 
-  average speed, distance and bearing to next point, etc)
+  average speed, distance and bearing to next point, etc).
 
-* Add meta-tables to xml.lua          -- in progress
-
-* Add escape encoding/decoding to xml.lua 
-
-* Tests for XML find
-
-* Use LuaExpat LOM rather than homebrew, even though it is not pure lua,
-  because it is available in Ubuntu repositories.
 
 
 Done
-----
+====
 
 * Tests for distance_between() -- DONE
 
@@ -54,3 +48,16 @@ Done
 
 * Tests for output format             -- DONE
 
+
+Waypoint data
+=============
+
+* Local time and date
+* UTC time and date
+* Time elapsed from start of track
+* Position (latitude and longitude)
+* Speed
+
+
+    (*) 12:34Z  2.6kn
+        +00:15:39  

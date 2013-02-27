@@ -216,6 +216,9 @@ if true then
    local templates = {
       -- HL7 Standard
       'yyyy[mm[dd[HHMM[SS[.ssss]]]]][zzzz]',
+      -- ISO8601 formats
+      'yyyy-mm-ddwHH:MM:SS[.ssss][ZZZ]',
+      'yyyy-mm-ddwHH:MM:SS[.ssss][zzzz]',
       -- Common formats (US)
       'm/d/yy[yy][ H:MM[:SS][ tt][ ZZZ]]',
       'yyyy-m-d[ w][ H:MM[:SS][ tt][ ZZZ]]',

@@ -3,10 +3,9 @@
 gpx = require('gpx')
 geo = require('geocalcs')
 
-
 filename = arg[1]
-distance = tonumber(arg[2])
-time = tonumber(arg[3])
+time = tonumber(arg[2])
+distance = tonumber(arg[3])
 
 waypoints, tracks, routes = gpx.load(filename)
 
@@ -23,17 +22,20 @@ end
 
 
 for _, trk in ipairs(tracks) do
-   print(trk.name)
-   local d_points = geo.calculate_d_points(trk, distance)
-   local d_gpx = gpx.append_wpts(trk.name, d_points)
---   d_gpx:save(trk.name .. '-' .. distance .. 'm-rel.gpx')
- 
-   local t_points = geo.calculate_t_points(trk, time, 0)
-   local t_gpx = gpx.append_wpts(trk.name, t_points)
---   t_gpx:save(trk.name .. '-' .. time .. 's-rel.gpx')
-   
-   local h_points = geo.calculate_t_points(trk, time)
-   local h_gpx = gpx.append_wpts(trk.name, h_points)
-   h_gpx:save(trk.name .. '-' .. time .. 's.gpx')
+   if time ~= nil then 
+      local filename = trk.name .. '-' .. time .. 's.gpx'
+      print(filename)
+      local t_points = geo.calculate_t_points(trk, time)
+      local t_gpx = gpx.create_wpts(trk.name, t_points)
+      gpx.save(filename, t_gpx)
+   end
+
+   if distance ~= nil then
+      local filename = trk.name .. '-' .. distance .. 'm.gpx'
+      print(filename)
+      local d_points = geo.calculate_d_points(trk, distance)
+      local d_gpx = gpx.create_wpts(trk.name, d_points)
+      gpx.save(filename, d_gpx)
+   end
 end
 

@@ -1,26 +1,39 @@
 gpx-calculator
 ==============
 
-After you have finished a race, you can view your track using
+After you have finished a race, you can view your GPS track using
 any one of a number of online or installed applications. However,
 I have not found one that will add index markers to the track
 at regular time or distance intervals, and display the time
-and speed at those places.
+and speed (and other properties) at those places.
 
 This set of scripts will take a GPX file containing a track
-and generate a second GPX file containing a set of waypoints.
-These way points are at regular time intervals. Each waypoint
-has a name and description that includes:
+and generate GPX files containing waypoints.
 
-* position
+* One file contains waypoints at regular time intervals
+
+* One file contains waypoints at regular distance intervals
+
+
+Each waypoint has a name and description that includes some of:
+
+* position (lat/long)
 * time
+* duration from start of track
 * speed
-* etc
+* altitude
+* wind speed and direction
+* tide
 
+
+Usage
+-----
+
+    ./create-track-markers.lua <gpx-file>  <time>  [<distance>]
 
 Input
 -----
-* A GPX file containing one or more GPS tracks (GPX <trk> tag)
+* A GPX file containing one or more GPS tracks, with the GPX <trk> tag
 
 * A parameter specifying the distance between points
 
@@ -51,15 +64,11 @@ the track data:
 
 
 
-Acknowledgements
-----------------
+Dependencies
+------------
 
 * XML parsing and generation
-  * http://lua-users.org/wiki/LuaXml (Roberto Ierusalimschy's 
-    implementation)
-  * http://www.hpelbers.org/lua/xl
-  * LuaXML (https://github.com/LuaDist/luaxml)
-  * Should have used LuaExpat LOM
+  * Penlight
 
 * Date parsing
   * http://wiki.interfaceware.com/302.html
