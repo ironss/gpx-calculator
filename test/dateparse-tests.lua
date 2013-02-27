@@ -35,5 +35,5 @@ function Test_dateparse:disabled_test_timezone_offset()
    assertEquals(parsedate('2012-04-21 01:02:03+1200'), 1334926923)
 end
 
-LuaUnit:run()
+return LuaUnit:run()
 
