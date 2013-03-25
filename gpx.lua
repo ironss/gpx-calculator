@@ -42,7 +42,7 @@ end
 
 
 function default_format_name(tp)
-   local s = table.concat{os.date('!%H:%MZ', tp.time), 
+   local s = table.concat{os.date('%H%MZ', tp.time), 
                                    ' (', 
 --                                   os.date('!+%H:%M', tp.trktime), ', ',
 --                                   math.floor(tp.distance + 0.5), 'm, ',
@@ -52,7 +52,7 @@ function default_format_name(tp)
 end
 
 function default_format_desc(tp)
-   local s = table.concat{os.date('!%H:%M:%SZ', tp.time), 
+   local s = table.concat{os.date('%H:%M:%SZ', tp.time), 
                                    ' (', 
                                    os.date('!+%H:%M:%S', tp.trktime), ', ',
                                    math.floor(tp.distance + 0.5), 'm, ',
