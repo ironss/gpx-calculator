@@ -14,9 +14,10 @@ function M.load(filename)
    local tracks = {}
    local routes = {}
    
+   local name = gpxdata:child_with_name("name") and gpxdata:child_with_name("name")[1] or filename
    for _, trk in ipairs(gpxdata:get_elements_with_name("trk")) do
       track = {}
-      track.name = trk:child_with_name("name")[1]
+      track.name = trk:child_with_name("name") and trk:child_with_name("name")[1] or name
       for _, trkseg in ipairs(trk:get_elements_with_name("trkseg")) do
          for _, trkpt in ipairs(trkseg:get_elements_with_name("trkpt")) do
             local tp = {}
