@@ -65,13 +65,17 @@ local function process_mxmariner(device)
 
       end
    end
+
+   posix.rm(tmp_path, '-rf')
+
+--   os.execute('git add ' .. out_path .. '*.gpx 2> /dev/null')
+--   os.execute('git commit ' .. out_path .. ' -m "Added tracks from ' .. device_id .. '." 2> /dev/null')
+--   os.execute('git push 2> /dev/null')
 end
 
-process_mxmariner(devices[1])
-
---posix.rm(tmp_path, '-rf')
-
---os.execute('git add ' .. out_path .. '*.gpx 2> /dev/null')
---os.execute('git commit ' .. out_path .. ' -m "Added tracks from ' .. device_id .. '." 2> /dev/null')
---os.execute('git push 2> /dev/null')
+for _, d in pairs(devices) do
+   if posix.exists(d.path) then
+      process_mxmariner(d)
+   end
+end
 

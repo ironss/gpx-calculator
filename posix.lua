@@ -33,5 +33,9 @@ M.rm = function(path, p)
    local r = os.execute(cmd)
 end
 
+M.exists = function(path)
+   return true
+end
+
 return M
 
