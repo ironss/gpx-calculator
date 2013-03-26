@@ -12,11 +12,11 @@ local xml = require("pl.xml")
 
 local function process_mxmariner(device)
    local app_name = 'mxmariner'
-   local device_type = 'vf845'
-   local device_uid = '78.1D.BA.13.07.C1'
+   local device_type = device.model
+   local device_uid = device.uid
    local device_id = app_name .. '-' .. device_type .. '-' .. device_uid
 
-   local mount_path = '/media/FFB8-0F12/mxmariner/gpx/'
+   local mount_path = device.path
    local tmp_path = './tmp/'
    local out_path = './tracks/'
 
@@ -67,7 +67,7 @@ local function process_mxmariner(device)
    end
 end
 
-process_mxmariner(nil)
+process_mxmariner(devices[1])
 
 --posix.rm(tmp_path, '-rf')
 
