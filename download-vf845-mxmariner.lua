@@ -6,17 +6,16 @@ local devices =
 --   { model='ideos_x3', uid='asdfasdfasdfasdfs', path='/junk/' },
 }
 
-
 local posix = require('posix')
 local xml = require("pl.xml")
 
-local function process_mxmariner(device)
-   local app_name = 'mxmariner'
+local function process_files(device, app)
+   local app_name = app.name
    local device_type = device.model
    local device_uid = device.uid
    local device_id = app_name .. '-' .. device_type .. '-' .. device_uid
 
-   local mount_path = device.path .. 'mxmariner/gpx/'
+   local mount_path = device.path .. app.path
    local tmp_path = './tmp/'
    local out_path = './tracks/'
 
@@ -73,9 +72,19 @@ local function process_mxmariner(device)
 --   os.execute('git push 2> /dev/null')
 end
 
-for _, d in pairs(devices) do
-   if posix.exists(d.path) then
-      process_mxmariner(d)
+
+local apps = 
+{
+   { name='mxmariner', path='mxmariner/gpx/'     , process_mxmariner, },
+--   { 'oruxmaps' , 'oruxmaps/tracklogs/', process_oruxmaps , },
+}
+
+
+for _, device in pairs(devices) do
+   for _, app in pairs(apps) do
+      if posix.exists(device.path) then
+         process_files(device, app)
+      end
    end
 end
 
