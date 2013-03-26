@@ -21,8 +21,8 @@ echo Downloading from $DEVICE_ID...done
 
 
 echo Archiving tracks...
-bzr add $OUTDIR/* 2> /dev/null
-bzr commit $OUTDIR -m "Added tracks from $DEVICE_ID" 2> /dev/null
-bzr push :parent 2> /dev/null
+git add $OUTDIR/*.gpx 2> /dev/null
+git commit $OUTDIR -m "Added tracks from $DEVICE_ID" 2> /dev/null
+git push 2> /dev/null
 echo Archiving tracks...done
 
