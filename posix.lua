@@ -1,8 +1,8 @@
 
 local M = {}
 
-M.mkdir = function(dir)
-   local cmd = 'mkdir -p ' .. dir
+M.mkdir = function(path, p)
+   local cmd = 'mkdir ' .. p .. ' ' .. path
    cmd = cmd .. '>/dev/null 2>/dev/null'
    local r = os.execute(cmd)
 end
@@ -25,6 +25,12 @@ M.ls = function(path)
    until l == nil
 
    return r
+end
+
+M.rm = function(path, p)
+   local cmd = 'rm ' .. p .. ' ' .. path
+   cmd = cmd .. '>/dev/null 2>/dev/null'
+   local r = os.execute(cmd)
 end
 
 return M
