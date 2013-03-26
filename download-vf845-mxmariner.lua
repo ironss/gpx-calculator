@@ -2,7 +2,7 @@
 
 local devices = 
 {
-   { model='vf845',    uid='78.1D.BA.13.07.C1', path='/media/FFB8-0F12/mxmariner/gpx/' },
+   { model='vf845',    uid='78.1D.BA.13.07.C1', path='/media/FFB8-0F12/' },
 --   { model='ideos_x3', uid='asdfasdfasdfasdfs', path='/junk/' },
 }
 
@@ -16,7 +16,7 @@ local function process_mxmariner(device)
    local device_uid = device.uid
    local device_id = app_name .. '-' .. device_type .. '-' .. device_uid
 
-   local mount_path = device.path
+   local mount_path = device.path .. 'mxmariner/gpx/'
    local tmp_path = './tmp/'
    local out_path = './tracks/'
 
