@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<gpx xmlns="http://www.topografix.com/GPX/1/0"
+ creator="BT747 V2.X.1968M" version="1.0"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:schemaLocation="http://www.topografix.com/GPX/1/0 http://www.topografix.com/GPX/1/0/gpx.xsd">
+<name>GPS-20130323_2223</name><trk><trkseg>
+<trkpt lat="-43.493740" lon="172.579391" >
+<time>2013-03-23T22:23:58.000Z</time>
+<speed>0.1400</speed>
+<type>D</type>
+</trkpt>
+</trkseg></trk>
+</gpx>
