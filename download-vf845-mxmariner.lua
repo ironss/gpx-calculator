@@ -9,7 +9,7 @@ local devices =
 local posix = require('posix')
 local xml = require("pl.xml")
 
-local function process_files(device, app)
+local function process_filesystem(device, app)
    local app_name = app.name
    local device_type = device.model
    local device_uid = device.uid
@@ -76,15 +76,15 @@ end
 
 local apps = 
 {
-   { name='mxmariner', path='mxmariner/gpx/'     , process_mxmariner, },
-   { name='oruxmaps' , path='oruxmaps/tracklogs/', process_oruxmaps , },
+   { name='mxmariner', path='mxmariner/gpx/'     , process=process_filesystem, },
+   { name='oruxmaps' , path='oruxmaps/tracklogs/', process=process_filesystem , },
 }
 
 
 for _, device in pairs(devices) do
    for _, app in pairs(apps) do
       if posix.exists(device.path) then
-         process_files(device, app)
+         app.process(device, app)
       end
    end
 end
