@@ -5,7 +5,7 @@ local xml = require("pl.xml")
 
 local out_path = './tracks/'
 
-local function process_gpx_files(gpx_files, device_id)
+local function process_gpx_tracks(gpx_files, device_id)
    for _1, fn in ipairs(gpx_files) do
       print(fn)
       local xmldata = xml.parse(fn, true)
@@ -50,9 +50,9 @@ local function process_gpx_files(gpx_files, device_id)
 end
 
 local function archive_files(out_path, device_id)
-   os.execute('git add ' .. out_path .. '*.gpx 2> /dev/null')
-   os.execute('git commit ' .. out_path .. ' -m "Added tracks from ' .. device_id .. '." 2> /dev/null')
-   os.execute('git push 2> /dev/null')
+--   os.execute('git add ' .. out_path .. '*.gpx 2> /dev/null')
+--   os.execute('git commit ' .. out_path .. ' -m "Added tracks from ' .. device_id .. '." 2> /dev/null')
+--   os.execute('git push 2> /dev/null')
 end
 
 local function process_bt747(device)
@@ -79,10 +79,31 @@ local function process_bt747(device)
    os.execute('rm -f ' .. device_id .. '.bin')
    
    local gpx_files = posix.ls(tmp_path .. '/*.gpx', '-1')
-   process_gpx_files(gpx_files, device_id)
+   process_gpx_files(gpx_tracks, device_id)
    posix.rm(tmp_path, '-rf')
 
    archive_files(out_path, device_id)
+end
+
+
+local function process_gpsbabel(device)
+   local device_type = device.model
+   local device_uid = device.uid
+   local device_id = device_type .. '-' .. device_uid
+   print('Identifying device...' .. device_id)
+   
+   local tmp_path = './tmp/' .. device_id
+   posix.mkdir(tmp_path, '-p')
+
+   local cmd = [[ /usr/bin/gpsbabel -t -i garmin -f ]] .. device.path .. [[ -o gpx -F ]] .. tmp_path .. [[/]] .. device_id .. [[.gpx >/dev/null 2>/dev/null ]]
+   print(cmd)
+   os.execute(cmd)
+   
+   local gpx_files = posix.ls(tmp_path .. '/*.gpx', '-1')
+--   process_gpx_files(gpx_files, device_id)
+--   posix.rm(tmp_path, '-rf')
+
+--   archive_files(out_path, device_id)
 end
 
 
@@ -91,6 +112,7 @@ local function process_gpx(device, app)
    local device_type = device.model
    local device_uid = device.uid
    local device_id = device_type .. '-' .. device_uid .. '-' .. app_name
+   print('Identifying device...' .. device_id)
 
    local mount_path = device.path .. app.path
    local tmp_path = './tmp/' .. device_id
@@ -99,7 +121,7 @@ local function process_gpx(device, app)
    posix.cp(mount_path .. '*.gpx', tmp_path)
 
    local gpx_files = posix.ls(tmp_path .. '/*.gpx', '-1')
-   process_gpx_files(gpx_files, device_id)
+   process_gpx_tracks(gpx_files, device_id)
    posix.rm(tmp_path, '-rf')
 
    archive_files(out_path, device_id)
@@ -123,10 +145,10 @@ end
 
 local devices = 
 {
-   { model='vf845'      , uid='78.1D.BA.13.07.C1', path='/media/FFB8-0F12/', process=process_filesystem },
-   { model='ideos_x3'   , uid='10.C6.1F.56.EC.45', path='/media/7E4A-0FF3/', process=process_filesystem },
-   { model='holux_1000c', uid=nil                , path='/dev/ttyACM0'     , process=process_bt747      },
---   { model='garmin_72h',  uid='382.1055.173'     , path='usb:'             , process=process_gpsbabel   },
+--   { model='vf845'      , uid='78.1D.BA.13.07.C1', path='/media/FFB8-0F12/', process=process_filesystem },
+--   { model='ideos_x3'   , uid='10.C6.1F.56.EC.45', path='/media/7E4A-0FF3/', process=process_filesystem },
+--   { model='holux_1000c', uid=nil                , path='/dev/ttyACM0'     , process=process_bt747      },
+   { model='garmin_72h',  uid='382.1055.173'     , path='usb:'             , process=process_gpsbabel   },
 }
 
 
