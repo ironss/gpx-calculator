@@ -3,7 +3,7 @@
 local posix = require('posix')
 local xml = require("pl.xml")
 
-local function process_filesystem(device, app)
+local function process_gpx(device, app)
    local app_name = app.name
    local device_type = device.model
    local device_uid = device.uid
@@ -69,14 +69,14 @@ end
 
 local apps = 
 {
-   { name='mxmariner', path='mxmariner/gpx/'      },
-   { name='oruxmaps' , path='oruxmaps/tracklogs/' },
+   { name='mxmariner', path='mxmariner/gpx/'      , process=process_gpx },
+   { name='oruxmaps' , path='oruxmaps/tracklogs/' , process=process_gpx },
 }
 
-local function process_filesystems(device)
+local function process_filesystem(device)
    for _, app in pairs(apps) do
       if posix.exists(device.path) then
-         process_filesystem(device, app)
+         app.process(device, app)
       end
    end
 end
@@ -84,8 +84,8 @@ end
 
 local devices = 
 {
-   { model='vf845'      , uid='78.1D.BA.13.07.C1', path='/media/FFB8-0F12/', process=process_filesystems },
-   { model='ideos_x3'   , uid='10.C6.1F.56.EC.45', path='/media/7E4A-0FF3/', process=process_filesystems },
+   { model='vf845'      , uid='78.1D.BA.13.07.C1', path='/media/FFB8-0F12/', process=process_filesystem },
+   { model='ideos_x3'   , uid='10.C6.1F.56.EC.45', path='/media/7E4A-0FF3/', process=process_filesystem },
 --   { model='holux_1000c', uid=nil                , path='/dev/ttyACM0'     , process=process_bt747      },
 --   { model='garmin_72h',  uid='382.1055.173'     , path='usb:'             , process=process_gpsbabel   },
 }
