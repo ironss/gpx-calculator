@@ -3,7 +3,7 @@
 local devices = 
 {
    { model='vf845',    uid='78.1D.BA.13.07.C1', path='/media/FFB8-0F12/' },
---   { model='ideos_x3', uid='asdfasdfasdfasdfs', path='/junk/' },
+   { model='ideos_x3', uid='10.C6.1F.56.EC.45', path='/media/7E4A-0FF3/' },
 }
 
 local posix = require('posix')
