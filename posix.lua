@@ -34,7 +34,9 @@ M.rm = function(path, p)
 end
 
 M.exists = function(path)
-   return true
+   local cmd = 'test -e  ' .. path
+   local r = os.execute(cmd)
+   return r == 0
 end
 
 return M
