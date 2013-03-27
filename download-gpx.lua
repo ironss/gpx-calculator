@@ -49,6 +49,11 @@ local function process_gpx_files(gpx_files, device_id)
    end
 end
 
+local function archive_files(out_path, device_id)
+   os.execute('git add ' .. out_path .. '*.gpx 2> /dev/null')
+   os.execute('git commit ' .. out_path .. ' -m "Added tracks from ' .. device_id .. '." 2> /dev/null')
+   os.execute('git push 2> /dev/null')
+end
 
 local function process_bt747(device)
    if not posix.exists(device.path) then
@@ -77,9 +82,7 @@ local function process_bt747(device)
    process_gpx_files(gpx_files, device_id)
    posix.rm(tmp_path, '-rf')
 
---   os.execute('git add ' .. out_path .. '*.gpx 2> /dev/null')
---   os.execute('git commit ' .. out_path .. ' -m "Added tracks from ' .. device_id .. '." 2> /dev/null')
---   os.execute('git push 2> /dev/null')
+   archive_files(out_path, device_id)
 end
 
 
@@ -99,9 +102,7 @@ local function process_gpx(device, app)
    process_gpx_files(gpx_files, device_id)
    posix.rm(tmp_path, '-rf')
 
---   os.execute('git add ' .. out_path .. '*.gpx 2> /dev/null')
---   os.execute('git commit ' .. out_path .. ' -m "Added tracks from ' .. device_id .. '." 2> /dev/null')
---   os.execute('git push 2> /dev/null')
+   archive_files(out_path, device_id)
 end
 
 
