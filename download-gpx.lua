@@ -108,9 +108,9 @@ local function process_gpsbabel(device)
    
    local gpx_files = posix.ls(tmp_path .. '/*.gpx', '-1')
    process_gpx_files(gpx_files, device_id)
---   posix.rm(tmp_path, '-rf')
+   posix.rm(tmp_path, '-rf')
 
---   archive_files(out_path, device_id)
+   archive_files(out_path, device_id)
 end
 
 
