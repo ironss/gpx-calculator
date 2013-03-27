@@ -1,11 +1,5 @@
 #! /usr/bin/lua
 
-local devices = 
-{
-   { model='vf845',    uid='78.1D.BA.13.07.C1', path='/media/FFB8-0F12/' },
-   { model='ideos_x3', uid='10.C6.1F.56.EC.45', path='/media/7E4A-0FF3/' },
-}
-
 local posix = require('posix')
 local xml = require("pl.xml")
 
@@ -74,17 +68,24 @@ local function process_filesystem(device, app)
 end
 
 
+local devices = 
+{
+   { model='vf845'      , uid='78.1D.BA.13.07.C1', path='/media/FFB8-0F12/', process=process_filesystem },
+   { model='ideos_x3'   , uid='10.C6.1F.56.EC.45', path='/media/7E4A-0FF3/', process=process_filesystem },
+--   { model='holux_1000c', uid=nil                , path='/dev/ttyACM0'     , process=process_bt747      },
+}
+
 local apps = 
 {
-   { name='mxmariner', path='mxmariner/gpx/'     , process=process_filesystem, },
-   { name='oruxmaps' , path='oruxmaps/tracklogs/', process=process_filesystem , },
+   { name='mxmariner', path='mxmariner/gpx/'      },
+   { name='oruxmaps' , path='oruxmaps/tracklogs/' },
 }
 
 
 for _, device in pairs(devices) do
    for _, app in pairs(apps) do
       if posix.exists(device.path) then
-         app.process(device, app)
+         device.process(device, app)
       end
    end
 end
