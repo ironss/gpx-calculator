@@ -67,26 +67,31 @@ local function process_filesystem(device, app)
 --   os.execute('git push 2> /dev/null')
 end
 
-
-local devices = 
-{
-   { model='vf845'      , uid='78.1D.BA.13.07.C1', path='/media/FFB8-0F12/', process=process_filesystem },
-   { model='ideos_x3'   , uid='10.C6.1F.56.EC.45', path='/media/7E4A-0FF3/', process=process_filesystem },
---   { model='holux_1000c', uid=nil                , path='/dev/ttyACM0'     , process=process_bt747      },
-}
-
 local apps = 
 {
    { name='mxmariner', path='mxmariner/gpx/'      },
    { name='oruxmaps' , path='oruxmaps/tracklogs/' },
 }
 
-
-for _, device in pairs(devices) do
+local function process_filesystems(device)
    for _, app in pairs(apps) do
       if posix.exists(device.path) then
-         device.process(device, app)
+         process_filesystem(device, app)
       end
    end
+end
+
+
+local devices = 
+{
+   { model='vf845'      , uid='78.1D.BA.13.07.C1', path='/media/FFB8-0F12/', process=process_filesystems },
+   { model='ideos_x3'   , uid='10.C6.1F.56.EC.45', path='/media/7E4A-0FF3/', process=process_filesystems },
+--   { model='holux_1000c', uid=nil                , path='/dev/ttyACM0'     , process=process_bt747      },
+--   { model='garmin_72h',  uid='382.1055.173'     , path='usb:'             , process=process_gpsbabel   },
+}
+
+
+for _, device in pairs(devices) do
+   device.process(device)
 end
 
