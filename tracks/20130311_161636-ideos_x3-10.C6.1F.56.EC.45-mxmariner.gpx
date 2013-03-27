@@ -4,8 +4,6 @@
 <gpx creator='./download-gpx.lua' version='1.1'>
   <name>20130311_161636-ideos_x3-10.C6.1F.56.EC.45-mxmariner</name>
   <trk>
-    <name>New Track</name>
-    <desc/>
     <trkseg>
       <trkpt lon='172.564552' lat='-43.490574'>
         <time>2013-03-11T16:16:36Z</time>

@@ -4,8 +4,6 @@
 <gpx creator='./download-gpx.lua' version='1.1'>
   <name>19700101_120000-ideos_x3-10.C6.1F.56.EC.45-mxmariner</name>
   <trk>
-    <name/>
-    <desc/>
     <trkseg>
       <trkpt lon='172.708023' lat='-43.6101'>
         <time>1970-01-01T12:00:00Z</time>
