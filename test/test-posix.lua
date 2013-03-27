@@ -70,5 +70,17 @@ function Test_posix:test_ls_empty()
    os.execute('rm -rf ' .. p)
 end
 
+
+function Test_posix:test_cp()
+   local f = 'test/testfile'
+   os.execute('touch ' .. f)
+   posix.cp(f, f .. '1')
+   local r = os.execute('diff ' .. f .. ' ' .. f .. '1')
+   assertEquals(r, 0)
+   
+   os.execute('rm -f ' .. f .. '*')
+end
+
+local f
 LuaUnit:run()
 
