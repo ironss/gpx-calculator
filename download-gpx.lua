@@ -51,6 +51,33 @@ local function process_gpx_files(gpx_files, device_id)
 end
 
 
+local function process_bt747(device)
+   local device_type = device.model
+   local device_uid = device.uid
+   if device_uid == nil then
+      local cmd = [[/opt/BT747/run_j2se-batch.sh -p ]] .. device.path .. [[ --device=HOLUX245 --mac-address | sed -n -e 's/Bluetooth Mac Addr://p' | sed -e 's/:/./g' ]]
+      local f = io.popen(cmd)
+      device_uid = f:read('*l')
+   end
+   
+   local device_id = device_type .. '-' .. device_uid
+   local tmp_path = './tmp/' .. device_id
+   posix.mkdir(tmp_path, '-p')
+
+   local cmd = [[ /opt/BT747/run_j2se-batch.sh -p ]] .. device.path .. [[ --device=HOLUX245 -a -f ]] .. tmp_path .. [[/]] .. device_id .. [[ --timesplit=60 --splittype=TRACK --outtype=GPX >/dev/null 2>/dev/null ]]
+   print(cmd)
+   os.execute(cmd)
+
+   local gpx_files = posix.ls(tmp_path .. '/*.gpx', '-1')
+   process_gpx_files(gpx_files, device_id)
+--   posix.rm(tmp_path, '-rf')
+
+--   os.execute('git add ' .. out_path .. '*.gpx 2> /dev/null')
+--   os.execute('git commit ' .. out_path .. ' -m "Added tracks from ' .. device_id .. '." 2> /dev/null')
+--   os.execute('git push 2> /dev/null')
+end
+
+
 local function process_gpx(device, app)
    local app_name = app.name
    local device_type = device.model
@@ -91,9 +118,9 @@ end
 
 local devices = 
 {
-   { model='vf845'      , uid='78.1D.BA.13.07.C1', path='/media/FFB8-0F12/', process=process_filesystem },
-   { model='ideos_x3'   , uid='10.C6.1F.56.EC.45', path='/media/7E4A-0FF3/', process=process_filesystem },
---   { model='holux_1000c', uid=nil                , path='/dev/ttyACM0'     , process=process_bt747      },
+--   { model='vf845'      , uid='78.1D.BA.13.07.C1', path='/media/FFB8-0F12/', process=process_filesystem },
+--   { model='ideos_x3'   , uid='10.C6.1F.56.EC.45', path='/media/7E4A-0FF3/', process=process_filesystem },
+   { model='holux_1000c', uid=nil                , path='/dev/ttyACM0'     , process=process_bt747      },
 --   { model='garmin_72h',  uid='382.1055.173'     , path='usb:'             , process=process_gpsbabel   },
 }
 
