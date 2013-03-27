@@ -66,8 +66,7 @@ local function process_files(device, app)
       end
    end
 
---   posix.rm(tmp_path, '-rf')
---   posix.rm(tmp_path .. device_id .. '/*.gpx', '-rf')
+   posix.rm(tmp_path, '-rf')
 
 --   os.execute('git add ' .. out_path .. '*.gpx 2> /dev/null')
 --   os.execute('git commit ' .. out_path .. ' -m "Added tracks from ' .. device_id .. '." 2> /dev/null')
