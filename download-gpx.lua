@@ -65,12 +65,12 @@ local function process_bt747(device)
    posix.mkdir(tmp_path, '-p')
 
    local cmd = [[ /opt/BT747/run_j2se-batch.sh -p ]] .. device.path .. [[ --device=HOLUX245 -a -f ]] .. tmp_path .. [[/]] .. device_id .. [[ --timesplit=60 --splittype=TRACK --outtype=GPX >/dev/null 2>/dev/null ]]
-   print(cmd)
    os.execute(cmd)
-
+   os.execute('rm -f ' .. device_id .. '.bin'
+   
    local gpx_files = posix.ls(tmp_path .. '/*.gpx', '-1')
    process_gpx_files(gpx_files, device_id)
---   posix.rm(tmp_path, '-rf')
+   posix.rm(tmp_path, '-rf')
 
 --   os.execute('git add ' .. out_path .. '*.gpx 2> /dev/null')
 --   os.execute('git commit ' .. out_path .. ' -m "Added tracks from ' .. device_id .. '." 2> /dev/null')
@@ -89,10 +89,9 @@ local function process_gpx(device, app)
 
    posix.mkdir(tmp_path, '-p')
    posix.cp(mount_path .. '*.gpx', tmp_path)
-   local gpx_files = posix.ls(tmp_path .. '/*.gpx', '-1')
-   
-   process_gpx_files(gpx_files, device_id)
 
+   local gpx_files = posix.ls(tmp_path .. '/*.gpx', '-1')
+   process_gpx_files(gpx_files, device_id)
    posix.rm(tmp_path, '-rf')
 
 --   os.execute('git add ' .. out_path .. '*.gpx 2> /dev/null')
