@@ -23,7 +23,7 @@ local function process_gpx_files(gpx_files, device_id)
             local time_text = string.gsub(time_text, 'T', '_')
             local time_text = string.gsub(time_text, ':', '')
       --      print(time_text)
-            local trk_name = device_id .. '-' .. time_text
+            local trk_name = time_text .. '-' .. device_id 
             print(trk_name)
 
             local name = xml.new('name')
@@ -55,7 +55,7 @@ local function process_gpx(device, app)
    local app_name = app.name
    local device_type = device.model
    local device_uid = device.uid
-   local device_id = app_name .. '-' .. device_type .. '-' .. device_uid
+   local device_id = device_type .. '-' .. device_uid .. '-' .. app_name
 
    local mount_path = device.path .. app.path
    local tmp_path = './tmp/' .. device_id
