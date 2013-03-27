@@ -2,6 +2,7 @@
 local M = {}
 
 M.mkdir = function(path, p)
+   local p = p or ''
    local cmd = 'mkdir ' .. p .. ' ' .. path
    cmd = cmd .. '>/dev/null 2>/dev/null'
    local r = os.execute(cmd)
