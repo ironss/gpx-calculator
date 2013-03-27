@@ -5,30 +5,7 @@ local xml = require("pl.xml")
 
 local out_path = './tracks/'
 
-local function process_gpx(device, app)
-   local app_name = app.name
-   local device_type = device.model
-   local device_uid = device.uid
-   local device_id = app_name .. '-' .. device_type .. '-' .. device_uid
-
-   local mount_path = device.path .. app.path
-   local tmp_path = './tmp/' .. device_id
-
-   posix.mkdir(tmp_path, '-p')
-   posix.cp(mount_path .. '*.gpx', tmp_path)
-   local gpx_files = posix.ls(tmp_path .. '/*.gpx', '-1')
-   
-   process_gpx_files(gpx_files, device_id)
-
-   posix.rm(tmp_path, '-rf')
-
---   os.execute('git add ' .. out_path .. '*.gpx 2> /dev/null')
---   os.execute('git commit ' .. out_path .. ' -m "Added tracks from ' .. device_id .. '." 2> /dev/null')
---   os.execute('git push 2> /dev/null')
-end
-
-
-function process_gpx_files(gpx_files, device_id)
+local function process_gpx_files(gpx_files, device_id)
    for _1, fn in ipairs(gpx_files) do
       print(fn)
       local xmldata = xml.parse(fn, true)
@@ -71,6 +48,29 @@ function process_gpx_files(gpx_files, device_id)
          end
       end
    end
+end
+
+
+local function process_gpx(device, app)
+   local app_name = app.name
+   local device_type = device.model
+   local device_uid = device.uid
+   local device_id = app_name .. '-' .. device_type .. '-' .. device_uid
+
+   local mount_path = device.path .. app.path
+   local tmp_path = './tmp/' .. device_id
+
+   posix.mkdir(tmp_path, '-p')
+   posix.cp(mount_path .. '*.gpx', tmp_path)
+   local gpx_files = posix.ls(tmp_path .. '/*.gpx', '-1')
+   
+   process_gpx_files(gpx_files, device_id)
+
+   posix.rm(tmp_path, '-rf')
+
+--   os.execute('git add ' .. out_path .. '*.gpx 2> /dev/null')
+--   os.execute('git commit ' .. out_path .. ' -m "Added tracks from ' .. device_id .. '." 2> /dev/null')
+--   os.execute('git push 2> /dev/null')
 end
 
 
