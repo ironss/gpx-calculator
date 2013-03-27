@@ -9,6 +9,10 @@
         <ele>29.938110</ele>
         <time>2013-03-27T04:16:43Z</time>
       </trkpt>
+      <trkpt lon='172.564619891' lat='-43.490587128'>
+        <ele>37.148071</ele>
+        <time>2013-03-27T04:25:49Z</time>
+      </trkpt>
     </trkseg>
     <name>20130327_041643-garmin_72h-382.1055.173</name>
   </trk>
