@@ -23,7 +23,7 @@ local function process_gpx_files(fn, device_id)
                local time_text = string.gsub(time_text, 'T', '_')
                local time_text = string.gsub(time_text, ':', '')
          --      print(time_text)
-               local trk_name = time_text .. '-' .. device_id 
+               local trk_name = time_text .. 'Z-' .. device_id 
 
                local name = xml.new('name')
                name[#name+1] = trk_name
