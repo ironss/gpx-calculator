@@ -5,7 +5,7 @@ tests=$(patsubst test/%, %, $(testfiles))
 all: $(tests)
 
 $(tests): 
-	test/$@
+	TZ=NZST-12 test/$@
 	
 test: $(testfiles)
 	$(foreach f, $^, $f;)
