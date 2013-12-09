@@ -387,7 +387,7 @@ function Test_geocalcs:test_calculate_t_points()
       local etp = expected_t_points[i]
    	assertEquals(atp.time, etp.time)
    	assertEquals(atp.trktime, etp.trktime)
-   	assertClose(atp.lat, etp.lat+0.1, 0.00001)
+   	assertClose(atp.lat, etp.lat, 0.00001)
    	assertClose(atp.lon, etp.lon, 0.00001)
    	assertClose(atp.distance, etp.distance, 0.00001)
    	assertClose(atp.speed, etp.speed, 0.00001)
