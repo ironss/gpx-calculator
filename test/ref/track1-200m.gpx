@@ -4,43 +4,43 @@
 <gpx creator='./create-track-markers.lua' version='1.1'>
   <name>test/out/track1</name>
   <wpt lon='172.579341' lat='-43.493773'>
-    <name>20:04Z (0.4 kn)</name>
-    <desc>20:04:45Z (+00:00:00, 0m, 0.4 kn)</desc>
+    <name>0804Z (0.4 kn)</name>
+    <desc>08:04:45Z (+00:00:00, 0m, 0.4 kn)</desc>
   </wpt>
   <wpt lon='172.57841981888' lat='-43.492315665282'>
-    <name>20:10Z (3.0 kn)</name>
-    <desc>20:10:29Z (+00:05:44, 200m, 3.0 kn)</desc>
+    <name>0810Z (3.0 kn)</name>
+    <desc>08:10:29Z (+00:05:44, 200m, 3.0 kn)</desc>
   </wpt>
   <wpt lon='172.57756221438' lat='-43.490807209033'>
-    <name>20:12Z (2.8 kn)</name>
-    <desc>20:12:41Z (+00:07:56, 400m, 2.8 kn)</desc>
+    <name>0812Z (2.8 kn)</name>
+    <desc>08:12:41Z (+00:07:56, 400m, 2.8 kn)</desc>
   </wpt>
   <wpt lon='172.57577382119' lat='-43.490679985784'>
-    <name>20:15Z (2.6 kn)</name>
-    <desc>20:15:09Z (+00:10:24, 600m, 2.6 kn)</desc>
+    <name>0815Z (2.6 kn)</name>
+    <desc>08:15:09Z (+00:10:24, 600m, 2.6 kn)</desc>
   </wpt>
   <wpt lon='172.57453316347' lat='-43.489476529454'>
-    <name>20:17Z (4.2 kn)</name>
-    <desc>20:17:34Z (+00:12:49, 800m, 4.2 kn)</desc>
+    <name>0817Z (4.2 kn)</name>
+    <desc>08:17:34Z (+00:12:49, 800m, 4.2 kn)</desc>
   </wpt>
   <wpt lon='172.57242790754' lat='-43.488538698789'>
-    <name>20:19Z (2.7 kn)</name>
-    <desc>20:19:42Z (+00:14:57, 1000m, 2.7 kn)</desc>
+    <name>0819Z (2.7 kn)</name>
+    <desc>08:19:42Z (+00:14:57, 1000m, 2.7 kn)</desc>
   </wpt>
   <wpt lon='172.57020306807' lat='-43.487775486551'>
-    <name>20:21Z (2.9 kn)</name>
-    <desc>20:21:59Z (+00:17:14, 1200m, 2.9 kn)</desc>
+    <name>0821Z (2.9 kn)</name>
+    <desc>08:21:59Z (+00:17:14, 1200m, 2.9 kn)</desc>
   </wpt>
   <wpt lon='172.56802303907' lat='-43.487011508206'>
-    <name>20:24Z (2.9 kn)</name>
-    <desc>20:24:13Z (+00:19:28, 1400m, 2.9 kn)</desc>
+    <name>0824Z (2.9 kn)</name>
+    <desc>08:24:13Z (+00:19:28, 1400m, 2.9 kn)</desc>
   </wpt>
   <wpt lon='172.56619050226' lat='-43.488121670342'>
-    <name>20:26Z (3.0 kn)</name>
-    <desc>20:26:35Z (+00:21:50, 1600m, 3.0 kn)</desc>
+    <name>0826Z (3.0 kn)</name>
+    <desc>08:26:35Z (+00:21:50, 1600m, 3.0 kn)</desc>
   </wpt>
   <wpt lon='172.56530760505' lat='-43.489766604801'>
-    <name>20:28Z (2.6 kn)</name>
-    <desc>20:28:52Z (+00:24:07, 1800m, 2.6 kn)</desc>
+    <name>0828Z (2.6 kn)</name>
+    <desc>08:28:52Z (+00:24:07, 1800m, 2.6 kn)</desc>
   </wpt>
 </gpx>
