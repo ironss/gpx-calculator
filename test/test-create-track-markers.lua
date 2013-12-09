@@ -59,5 +59,7 @@ function Test_create_markers:test_distance_60s_rel()
 end
 ]==]
 
-LuaUnit:run()
+
+result = LuaUnit:run()
+os.exit(result)
 

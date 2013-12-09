@@ -81,6 +81,7 @@ function Test_posix:test_cp()
    os.execute('rm -f ' .. f .. '*')
 end
 
-local f
-LuaUnit:run()
+
+result = LuaUnit:run()
+os.exit(result)
 
