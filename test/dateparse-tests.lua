@@ -45,5 +45,7 @@ function Test_dateparse:test_timezone_offset()
    assertEquals(parsedate('2012-04-21T01:02:03+12:00'), 1334926923)
 end
 
-return LuaUnit:run()
+
+LuaUnit:setOutputType('JUNIT')
+os.exit(LuaUnit:run())
 

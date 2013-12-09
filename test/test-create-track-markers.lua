@@ -6,7 +6,7 @@ Test_create_markers  = {}
 
 os.execute('rm -f test/out/*')
 os.execute('mkdir -p test/out')
-os.execute('./create-track-markers.lua test/track1.gpx 60 200')
+os.execute('./create-track-markers.lua test/track1.gpx 60 200 > /dev/null')
 
 function Test_create_markers:test_distance_200m()
    local f_expected = io.open('test/ref/track1-200m.gpx')
@@ -60,6 +60,6 @@ end
 ]==]
 
 
-result = LuaUnit:run()
-os.exit(result)
+LuaUnit:setOutputType('JUNIT')
+os.exit(LuaUnit:run())
 

@@ -395,6 +395,6 @@ function Test_geocalcs:test_calculate_t_points()
 end
 
 
-result = LuaUnit:run()
-os.exit(result)
+LuaUnit:setOutputType('JUNIT')
+os.exit(LuaUnit:run())
 

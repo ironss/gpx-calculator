@@ -82,6 +82,6 @@ function Test_posix:test_cp()
 end
 
 
-result = LuaUnit:run()
-os.exit(result)
+LuaUnit:setOutputType('JUNIT')
+os.exit(LuaUnit:run())
 
