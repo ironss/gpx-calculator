@@ -27,8 +27,15 @@ end
 for _, trk in ipairs(tracks) do
    if time ~= nil then 
       local filename = timefilename or trk.name .. '-' .. time .. 's.gpx'
-      print(filename)
+--      print(filename)
       local t_points = geo.calculate_t_points(trk, time)
+      
+--      local tmpfilename = os.tmpname()
+--      local f=io.open(filename, 'w')
+--      for _, tp in ipairs(t_points) do
+--         f:write(math.deg(tp.lon), '\t', math.deg(tp.lat), '\n')
+--      end
+--      f:close()
       local t_gpx = gpx.create_wpts(trk.name, t_points)
       gpx.save(filename, t_gpx)
    end
