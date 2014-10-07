@@ -28,6 +28,19 @@ Todo
 11. After downloading and renaming tracks, add them to a GIT repository and 
     commit them. Push to remote server for backup.
 
+12. It is possible to transfer a track from one device to another. The system
+    then finds the old track on a different device, and thinks it is a
+    different track. Need ensure that content is identical, not filename.
+
+13. Ensure that short tracks are rejected. A short track is one with fewer than
+    (say) 10 trackpoints, no matter how far apart they are. (I thought this was
+    already done, but it seems to have got lost)
+
+14. When processing a filesystem, use some type of search algorithm, rather 
+    than an absolute path name. Otherwise it does not work on new Ubuntu 
+    systems, where USB devices are mounted on /media/<username>/<media-id>/, 
+    rather than /media/<media-id>/. Perhaps search /media/*
+    
 
 Track and file name are identified as
 * date and time of first trackpoint
@@ -38,7 +51,6 @@ eg. 20130312_122334Z-garmin_72h-382.1055.173.gpx
     20130326_191105Z-holux_1000c-00.1B.C1.06.F5.80.gpx
     20130326_191553Z-vf845-78.1D.BA.13.07.C1-oruxmaps.gpx
     20130311_161636-ideos_x3-10.C6.1F.56.EC.45-mxmariner.gpx
-
 
 
 Done
