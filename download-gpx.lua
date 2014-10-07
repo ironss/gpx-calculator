@@ -158,6 +158,7 @@ local devices =
 {
    { model='vf845'      , uid='78.1D.BA.13.07.C1', path='/media/FFB8-0F12/', process=process_filesystem },
    { model='ideos_x3'   , uid='10.C6.1F.56.EC.45', path='/media/7E4A-0FF3/', process=process_filesystem },
+   { model='huawei_y320', uid='F4.DC.F9.CE.F8.BB', path='/media/9016-4EF8/', process=process_filesystem },
    { model='holux_1000c', uid=nil                , path='/dev/ttyACM0'     , process=process_bt747      },
    { model='garmin_72h',  uid='382.1055.173'     , path='usb:'             , process=process_gpsbabel   },
 }
