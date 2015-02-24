@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<gpx version="1.1" creator="OpenCPN" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.topografix.com/GPX/1/1" xmlns:gpxx="http://www.garmin.com/xmlschemas/GpxExtensions/v3" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd" xmlns:opencpn="http://www.opencpn.org">
+    <rte>
+        <name>Lyttelton to French Farm</name>
+        <extensions>
+            <opencpn:start>Magazine Bay</opencpn:start>
+            <opencpn:end>French Farm</opencpn:end>
+            <opencpn:viz>1</opencpn:viz>
+            <opencpn:guid>4a2079bb-606d-47dd-9713-fdc96a3971b1</opencpn:guid>
+        </extensions>
+        <rtept lat="-43.614895000" lon="172.707050000">
+            <time>2013-10-02T23:34:07Z</time>
+            <name>Shag</name>
+            <sym>diamond</sym>
+            <type>WPT</type>
+            <extensions>
+                <opencpn:guid>4fc0e96b-392e-4cf3-a5a1-5941218295ef</opencpn:guid>
+                <opencpn:viz>1</opencpn:viz>
+                <opencpn:viz_name>1</opencpn:viz_name>
+            </extensions>
+        </rtept>
+        <rtept lat="-43.598883333" lon="172.856731667">
+            <time>2013-10-02T23:34:28Z</time>
+            <name>Baleine</name>
+            <sym>diamond</sym>
+            <type>WPT</type>
+            <extensions>
+                <opencpn:guid>7fd18a6e-10d5-4e1d-908e-d1bf501a14be</opencpn:guid>
+                <opencpn:viz>1</opencpn:viz>
+                <opencpn:viz_name>1</opencpn:viz_name>
+            </extensions>
+        </rtept>
+        <rtept lat="-43.617630000" lon="172.936225000">
+            <time>2013-10-02T23:35:06Z</time>
+            <name>Wakaroa</name>
+            <sym>diamond</sym>
+            <type>WPT</type>
+            <extensions>
+                <opencpn:guid>1d14b73a-543c-4d2b-8707-4390744a0a97</opencpn:guid>
+                <opencpn:viz>1</opencpn:viz>
+                <opencpn:viz_name>1</opencpn:viz_name>
+            </extensions>
+        </rtept>
+        <rtept lat="-43.648461287" lon="173.053004056">
+            <time>2013-10-02T23:35:39Z</time>
+            <name>Long Lookout</name>
+            <sym>diamond</sym>
+            <type>WPT</type>
+            <extensions>
+                <opencpn:guid>1b1c1a61-d125-4d11-8a31-f4ee10c4b927</opencpn:guid>
+                <opencpn:viz>1</opencpn:viz>
+                <opencpn:viz_name>1</opencpn:viz_name>
+            </extensions>
+        </rtept>
+        <rtept lat="-43.679517498" lon="173.097057579">
+            <time>2013-10-02T23:35:49Z</time>
+            <name>Sail Rocks</name>
+            <sym>diamond</sym>
+            <type>WPT</type>
+            <extensions>
+                <opencpn:guid>227dcc96-f2b8-45fb-a42c-82ef4544ac0f</opencpn:guid>
+                <opencpn:viz>1</opencpn:viz>
+                <opencpn:viz_name>1</opencpn:viz_name>
+            </extensions>
+        </rtept>
+        <rtept lat="-43.694755000" lon="173.112215000">
+            <time>2013-10-03T00:00:43Z</time>
+            <name>Pa Island</name>
+            <sym>diamond</sym>
+            <type>WPT</type>
+            <extensions>
+                <opencpn:guid>393d551e-9fdb-444c-973d-ae53256f53d6</opencpn:guid>
+                <opencpn:viz>1</opencpn:viz>
+                <opencpn:viz_name>1</opencpn:viz_name>
+            </extensions>
+        </rtept>
+        <rtept lat="-43.735053491" lon="173.134321464">
+            <time>2013-10-02T23:36:07Z</time>
+            <name>Steep Head</name>
+            <sym>diamond</sym>
+            <type>WPT</type>
+            <extensions>
+                <opencpn:guid>66d639d9-dc30-4d8e-8dec-cbab6eb62bb2</opencpn:guid>
+                <opencpn:viz>1</opencpn:viz>
+                <opencpn:viz_name>1</opencpn:viz_name>
+            </extensions>
+        </rtept>
+        <rtept lat="-43.778384965" lon="173.134321469">
+            <time>2013-10-02T23:36:22Z</time>
+            <name>Putakolo</name>
+            <sym>diamond</sym>
+            <type>WPT</type>
+            <extensions>
+                <opencpn:guid>3dc6eb10-9d6b-4da0-b5f1-eacb3e9554fd</opencpn:guid>
+                <opencpn:viz>1</opencpn:viz>
+                <opencpn:viz_name>1</opencpn:viz_name>
+            </extensions>
+        </rtept>
+        <rtept lat="-43.835231776" lon="173.107794626">
+            <time>2013-10-02T23:36:35Z</time>
+            <name>Goat</name>
+            <sym>diamond</sym>
+            <type>WPT</type>
+            <extensions>
+                <opencpn:guid>7c53ce6d-2e5c-45be-afff-12d07cac7cec</opencpn:guid>
+                <opencpn:viz>1</opencpn:viz>
+                <opencpn:viz_name>1</opencpn:viz_name>
+            </extensions>
+        </rtept>
+        <rtept lat="-43.855685691" lon="173.082373072">
+            <time>2013-10-02T23:36:42Z</time>
+            <name>Pompey</name>
+            <sym>diamond</sym>
+            <type>WPT</type>
+            <extensions>
+                <opencpn:guid>188aa3f7-07bf-4ae2-b6f9-10df2d472690</opencpn:guid>
+                <opencpn:viz>1</opencpn:viz>
+                <opencpn:viz_name>1</opencpn:viz_name>
+            </extensions>
+        </rtept>
+        <rtept lat="-43.882424279" lon="173.026003527">
+            <time>2013-10-02T23:36:57Z</time>
+            <name>Flea</name>
+            <sym>diamond</sym>
+            <type>WPT</type>
+            <extensions>
+                <opencpn:guid>132f707a-93ce-4517-b370-b2a560ad6e9d</opencpn:guid>
+                <opencpn:viz>1</opencpn:viz>
+                <opencpn:viz_name>1</opencpn:viz_name>
+            </extensions>
+        </rtept>
+        <rtept lat="-43.893106667" lon="172.992288333">
+            <time>2013-10-02T23:37:14Z</time>
+            <name>Damon</name>
+            <sym>diamond</sym>
+            <type>WPT</type>
+            <extensions>
+                <opencpn:guid>2e831ee3-7e52-4ec7-981c-1c684725ac3d</opencpn:guid>
+                <opencpn:viz>1</opencpn:viz>
+                <opencpn:viz_name>1</opencpn:viz_name>
+            </extensions>
+        </rtept>
+        <rtept lat="-43.893755000" lon="172.963476667">
+            <time>2013-10-02T23:37:26Z</time>
+            <name>Ruahine</name>
+            <sym>diamond</sym>
+            <type>WPT</type>
+            <extensions>
+                <opencpn:guid>06b2c992-0734-4b76-8635-71341a7680cf</opencpn:guid>
+                <opencpn:viz>1</opencpn:viz>
+                <opencpn:viz_name>1</opencpn:viz_name>
+            </extensions>
+        </rtept>
+        <rtept lat="-43.855068333" lon="172.932488333">
+            <time>2013-10-02T23:37:37Z</time>
+            <name>Nine Fathom</name>
+            <sym>diamond</sym>
+            <type>WPT</type>
+            <extensions>
+                <opencpn:guid>1a88ae53-8404-4e46-a68b-49286e1bc2d6</opencpn:guid>
+                <opencpn:viz>1</opencpn:viz>
+                <opencpn:viz_name>1</opencpn:viz_name>
+            </extensions>
+        </rtept>
+        <rtept lat="-43.785770000" lon="172.927466667">
+            <time>2013-10-02T23:38:07Z</time>
+            <name>Petit Carenage</name>
+            <sym>diamond</sym>
+            <type>WPT</type>
+            <extensions>
+                <opencpn:guid>2eeadbb8-ce83-4201-ba4d-00c849b8048d</opencpn:guid>
+                <opencpn:viz>1</opencpn:viz>
+                <opencpn:viz_name>1</opencpn:viz_name>
+            </extensions>
+        </rtept>
+        <rtept lat="-43.777621667" lon="172.918011667">
+            <time>2013-10-02T23:38:12Z</time>
+            <name>French Farm</name>
+            <sym>diamond</sym>
+            <type>WPT</type>
+            <extensions>
+                <opencpn:guid>3449f725-1d30-41bb-b624-2d313e0358b7</opencpn:guid>
+                <opencpn:viz>1</opencpn:viz>
+                <opencpn:viz_name>1</opencpn:viz_name>
+            </extensions>
+        </rtept>
+    </rte>
+</gpx>

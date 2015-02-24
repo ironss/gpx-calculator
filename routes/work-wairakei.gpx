@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx
+  version="1.0"
+  creator="GPSBabel - http://www.gpsbabel.org"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://www.topografix.com/GPX/1/0"
+  xsi:schemaLocation="http://www.topografix.com/GPX/1/0 http://www.topografix.com/GPX/1/0/gpx.xsd">
+<rte>
+  <name>WORK WAIRAKAI</name>
+  <rtept lat="-43.490642281" lon="172.564575300">
+    <name>DESK</name>
+  </rtept>
+  <rtept lat="-43.489807276" lon="172.565052062">
+    <name>COFFEE</name>
+  </rtept>
+  <rtept lat="-43.489010073" lon="172.565836441">
+    <name>CIRCLE</name>
+  </rtept>
+  <rtept lat="-43.492358392" lon="172.573513677">
+    <name>BREENS</name>
+  </rtept>
+  <rtept lat="-43.492062762" lon="172.574120359">
+    <name>TWYFORD</name>
+  </rtept>
+  <rtept lat="-43.492379095" lon="172.576560583">
+    <name>WILTON</name>
+  </rtept>
+  <rtept lat="-43.491512910" lon="172.577640591">
+    <name>MERRY-GO-R</name>
+  </rtept>
+  <rtept lat="-43.492839849" lon="172.579388721">
+    <name>017</name>
+  </rtept>
+  <rtept lat="-43.493376374" lon="172.578861080">
+    <name>018</name>
+  </rtept>
+  <rtept lat="-43.493769569" lon="172.579291491">
+    <name>HOME</name>
+  </rtept>
+</rte>
+</gpx>

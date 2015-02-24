@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<gpx version="1.1" creator="OpenCPN" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.topografix.com/GPX/1/1" xmlns:gpxx="http://www.garmin.com/xmlschemas/GpxExtensions/v3" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd" xmlns:opencpn="http://www.opencpn.org">
+  <rte>
+    <name>French Farm to Horseshoe Bay</name>
+    <extensions>
+      <opencpn:guid>016cdc1a-50bd-4b62-804b-81b93de70bc3</opencpn:guid>
+      <opencpn:viz>1</opencpn:viz>
+    </extensions>
+    <gpxx:RouteExtension>
+      <gpxx:DisplayColor>Red</gpxx:DisplayColor>
+    </gpxx:RouteExtension>
+    <rtept lat="-43.775241667" lon="172.916948333">
+      <time>2014-03-21T16:09:10Z</time>
+      <name>French Farm</name>
+      <sym>diamond</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>3d4afc76-94d5-4f39-a48f-dc971cb2c916</opencpn:guid>
+      </extensions>
+    </rtept>
+    <rtept lat="-43.786685000" lon="172.927425000">
+      <time>2014-03-21T16:09:22Z</time>
+      <name>Petit Carenage</name>
+      <sym>diamond</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>7a2ed4d9-2fe3-411e-acb4-b8276e7ba398</opencpn:guid>
+      </extensions>
+    </rtept>
+    <rtept lat="-43.856781667" lon="172.933238333">
+      <time>2014-03-21T16:09:41Z</time>
+      <name>Nine Fathom Point</name>
+      <sym>diamond</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>69d5425a-d800-4adb-87a8-3c294d66d528</opencpn:guid>
+      </extensions>
+    </rtept>
+    <rtept lat="-43.894378333" lon="172.962550000">
+      <time>2014-03-21T16:09:51Z</time>
+      <name>Akaroa Head Reporting</name>
+      <sym>diamond</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>20d80f03-a71d-49d8-84f7-753b02bafbc4</opencpn:guid>
+      </extensions>
+    </rtept>
+    <rtept lat="-43.904019656" lon="172.952034407">
+      <time>2014-03-21T16:10:00Z</time>
+      <name>Timutimu Head</name>
+      <sym>diamond</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>217c4bbb-f6f4-4144-bd8b-407d5122206d</opencpn:guid>
+      </extensions>
+    </rtept>
+    <rtept lat="-43.905564910" lon="172.921635388">
+      <time>2014-03-21T21:35:20Z</time>
+      <name>Scenery Nook</name>
+      <sym>diamond</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>545d4d3a-a31c-49ee-bddf-76d366357427</opencpn:guid>
+      </extensions>
+    </rtept>
+    <rtept lat="-43.904489955" lon="172.882471008">
+      <time>2014-03-21T16:10:09Z</time>
+      <name>Whakamoa Reef</name>
+      <sym>diamond</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>009ae60f-84f0-4914-945d-73ef4e79f93e</opencpn:guid>
+      </extensions>
+    </rtept>
+    <rtept lat="-43.891051387" lon="172.822512208">
+      <time>2014-03-21T16:10:26Z</time>
+      <name>Snuffle Nose</name>
+      <sym>diamond</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>02ee1cb0-b018-47c1-8757-d199460b16d0</opencpn:guid>
+      </extensions>
+    </rtept>
+    <rtept lat="-43.883875000" lon="172.821905000">
+      <time>2014-03-21T16:10:28Z</time>
+      <name>Horseshoe Bay</name>
+      <sym>diamond</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>2788c60f-46d6-418c-913e-12d027cc59fb</opencpn:guid>
+      </extensions>
+    </rtept>
+  </rte>
+</gpx>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx
+  version="1.0"
+  creator="GPSBabel - http://www.gpsbabel.org"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://www.topografix.com/GPX/1/0"
+  xsi:schemaLocation="http://www.topografix.com/GPX/1/0 http://www.topografix.com/GPX/1/0/gpx.xsd">
+<time>2013-10-03T03:28:09Z</time>
+<bounds minlat="-43.493769569" minlon="172.564575300" maxlat="-43.488123687" maxlon="172.579388721"/>
+<rte>
+  <name>WORK NUNWEEK</name>
+  <rtept lat="-43.493769569" lon="172.579291491">
+    <name>HOME</name>
+  </rtept>
+  <rtept lat="-43.493376374" lon="172.578861080">
+    <name>018</name>
+  </rtept>
+  <rtept lat="-43.492839849" lon="172.579388721">
+    <name>017</name>
+  </rtept>
+  <rtept lat="-43.491512910" lon="172.577640591">
+    <name>MERRY-GO-R</name>
+  </rtept>
+  <rtept lat="-43.490292672" lon="172.577365246">
+    <name>022</name>
+  </rtept>
+  <rtept lat="-43.490851242" lon="172.576221451">
+    <name>013</name>
+  </rtept>
+  <rtept lat="-43.490439272" lon="172.575341268">
+    <name>012</name>
+  </rtept>
+  <rtept lat="-43.489910038" lon="172.575579733">
+    <name>011</name>
+  </rtept>
+  <rtept lat="-43.488466591" lon="172.572335098">
+    <name>LEO</name>
+  </rtept>
+  <rtept lat="-43.488123687" lon="172.571299598">
+    <name>SKYDALE</name>
+  </rtept>
+  <rtept lat="-43.488794658" lon="172.570937080">
+    <name>LAMPPOST</name>
+  </rtept>
+  <rtept lat="-43.488670019" lon="172.569473432">
+    <name>FLOODLIGHT</name>
+  </rtept>
+  <rtept lat="-43.488788707" lon="172.569362791">
+    <name>DRAIN</name>
+  </rtept>
+  <rtept lat="-43.488325272" lon="172.566322675">
+    <name>HEALTHFOOD</name>
+  </rtept>
+  <rtept lat="-43.489010073" lon="172.565836441">
+    <name>CIRCLE</name>
+  </rtept>
+  <rtept lat="-43.489807276" lon="172.565052062">
+    <name>COFFEE</name>
+  </rtept>
+  <rtept lat="-43.490642281" lon="172.564575300">
+    <name>DESK</name>
+  </rtept>
+</rte>
+</gpx>
