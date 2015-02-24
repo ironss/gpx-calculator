@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<gpx version="1.1" creator="OpenCPN" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.topografix.com/GPX/1/1" xmlns:gpxx="http://www.garmin.com/xmlschemas/GpxExtensions/v3" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd" xmlns:opencpn="http://www.opencpn.org">
+  <wpt lat="-43.633178333" lon="172.747135000">
+    <time>2013-10-01T17:23:35Z</time>
+    <name>NPCL PURAU</name>
+    <desc>Marked 113Y</desc>
+    <sym>mooring</sym>
+    <type>WPT</type>
+    <extensions>
+      <opencpn:guid>44e83b19-5339-4dbb-9c3d-ad2435416b13</opencpn:guid>
+      <opencpn:viz>1</opencpn:viz>
+      <opencpn:viz_name>1</opencpn:viz_name>
+    </extensions>
+  </wpt>
+  <wpt lat="-43.623763333" lon="172.736696667">
+    <time>2013-10-01T17:02:39Z</time>
+    <name>NPCL DIAMOND HARBOUR</name>
+    <desc>Marked 136Y</desc>
+    <sym>mooring</sym>
+    <type>WPT</type>
+    <extensions>
+      <opencpn:guid>13f76176-1226-4862-8cfa-40e45a9312d6</opencpn:guid>
+      <opencpn:viz>1</opencpn:viz>
+      <opencpn:viz_name>1</opencpn:viz_name>
+    </extensions>
+  </wpt>
+  <wpt lat="-43.775800000" lon="172.915333333">
+    <time>2013-10-01T17:17:37Z</time>
+    <name>NPCL FRENCH FARM</name>
+    <desc>Marked AFK 542</desc>
+    <sym>mooring</sym>
+    <type>WPT</type>
+    <extensions>
+      <opencpn:guid>4959dee2-ea7c-4f69-8ed7-de5552e88188</opencpn:guid>
+      <opencpn:viz>1</opencpn:viz>
+      <opencpn:viz_name>1</opencpn:viz_name>
+    </extensions>
+  </wpt>
+  <wpt lat="-43.642933333" lon="172.835383333">
+    <time>2013-10-01T17:11:46Z</time>
+    <name>NPCL PORT LEVY JETTY</name>
+    <desc>Marked LEV 02</desc>
+    <sym>mooring</sym>
+    <type>WPT</type>
+    <extensions>
+      <opencpn:guid>27f18406-a507-48cf-af7c-c2382d71d507</opencpn:guid>
+      <opencpn:viz>1</opencpn:viz>
+      <opencpn:viz_name>1</opencpn:viz_name>
+    </extensions>
+  </wpt>
+  <wpt lat="-43.609433333" lon="172.818733333">
+    <time>2013-10-01T17:03:35Z</time>
+    <name>NPCL LITTLE PORT COOPER</name>
+    <desc>Marked LPC 01</desc>
+    <sym>mooring</sym>
+    <type>WPT</type>
+    <extensions>
+      <opencpn:guid>6c49d513-869c-4163-9fb1-c14b1ee2ddac</opencpn:guid>
+      <opencpn:viz>1</opencpn:viz>
+      <opencpn:viz_name>1</opencpn:viz_name>
+    </extensions>
+  </wpt>
+  <wpt lat="-43.673530000" lon="172.888875000">
+    <time>2013-10-01T17:15:47Z</time>
+    <name>NPCL PIGEON BAY</name>
+    <desc>Marked 800</desc>
+    <sym>mooring</sym>
+    <type>WPT</type>
+    <extensions>
+      <opencpn:guid>4d135e04-59ee-47cd-b2e0-293168d1e621</opencpn:guid>
+      <opencpn:viz>1</opencpn:viz>
+      <opencpn:viz_name>1</opencpn:viz_name>
+    </extensions>
+  </wpt>
+  <wpt lat="-43.636840000" lon="172.822383333">
+    <time>2013-10-01T17:09:15Z</time>
+    <name>NPCL PORT LEVY</name>
+    <desc>Marked PLY 01</desc>
+    <sym>mooring</sym>
+    <type>WPT</type>
+    <extensions>
+      <opencpn:guid>5da57232-ecff-4eec-9723-eb2358a2c69a</opencpn:guid>
+      <opencpn:viz>1</opencpn:viz>
+      <opencpn:viz_name>1</opencpn:viz_name>
+    </extensions>
+  </wpt>
+</gpx>

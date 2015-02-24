@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<gpx version="1.1" creator="OpenCPN" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.topografix.com/GPX/1/1" xmlns:gpxx="http://www.garmin.com/xmlschemas/GpxExtensions/v3" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd" xmlns:opencpn="http://www.opencpn.org">
+  <rte>
+    <name>NPCL Course 1</name>
+    <extensions>
+      <opencpn:guid>288d268c-8896-41f3-8d95-a93169c66ccb</opencpn:guid>
+      <opencpn:viz>1</opencpn:viz>
+      <opencpn:time_display>PC</opencpn:time_display>
+    </extensions>
+    <rtept lat="-43.611846667" lon="172.709633333">
+      <time>2014-02-22T18:24:29Z</time>
+      <name>NPCL Start</name>
+      <sym>triangle</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>733f1e34-7406-4d08-8d0b-f41c7cb1c8bf</opencpn:guid>
+        <opencpn:viz_name>1</opencpn:viz_name>
+        <opencpn:shared>1</opencpn:shared>
+      </extensions>
+    </rtept>
+    <rtept lat="-43.613433333" lon="172.752155000">
+      <time>2014-02-22T18:24:29Z</time>
+      <name>NPCL 2 Parsons Rock Light</name>
+      <sym>triangle</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>79a97a5c-1ae5-4c3d-83cc-940f56437414</opencpn:guid>
+        <opencpn:viz_name>1</opencpn:viz_name>
+        <opencpn:shared>1</opencpn:shared>
+      </extensions>
+    </rtept>
+    <rtept lat="-43.623223670" lon="172.728237533">
+      <time>2014-02-22T18:24:29Z</time>
+      <name>NPCL 4 Scotts</name>
+      <sym>triangle</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>7a76d3c8-934a-4050-85ad-351d3ec15f72</opencpn:guid>
+        <opencpn:viz_name>1</opencpn:viz_name>
+        <opencpn:shared>1</opencpn:shared>
+      </extensions>
+    </rtept>
+    <rtept lat="-43.614108333" lon="172.713816667">
+      <time>2014-02-22T18:24:29Z</time>
+      <name>NPCL 1 Eastern Light</name>
+      <sym>triangle</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>40cbed8d-36eb-4593-a475-ef4a46d7c476</opencpn:guid>
+        <opencpn:viz_name>1</opencpn:viz_name>
+        <opencpn:shared>1</opencpn:shared>
+      </extensions>
+    </rtept>
+    <rtept lat="-43.613433333" lon="172.752155000">
+      <time>2014-02-22T18:24:29Z</time>
+      <name>NPCL 2 Parsons Rock Light</name>
+      <sym>triangle</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>79a97a5c-1ae5-4c3d-83cc-940f56437414</opencpn:guid>
+        <opencpn:viz_name>1</opencpn:viz_name>
+        <opencpn:shared>1</opencpn:shared>
+      </extensions>
+    </rtept>
+    <rtept lat="-43.611323884" lon="172.709515369">
+      <time>2014-02-22T18:29:18Z</time>
+      <name>006</name>
+      <sym>diamond</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>7be7f9ee-cbec-40ae-b9ce-e7e6512e8043</opencpn:guid>
+        <opencpn:auto_name>1</opencpn:auto_name>
+      </extensions>
+    </rtept>
+  </rte>
+</gpx>

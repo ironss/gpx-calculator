@@ -1,0 +1,960 @@
+<?xml version="1.0"?>
+<gpx version="1.1" creator="OpenCPN" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.topografix.com/GPX/1/1" xmlns:gpxx="http://www.garmin.com/xmlschemas/GpxExtensions/v3" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd" xmlns:opencpn="http://www.opencpn.org">
+  <wpt lat="-43.503079000" lon="172.745676000">
+    <time>2014-02-22T18:24:29Z</time>
+    <name>New Brighton</name>
+    <sym>triangle</sym>
+    <type>WPT</type>
+    <extensions>
+      <opencpn:guid>1e7c03c9-a7ef-4073-bb0d-dee16ead4b1f</opencpn:guid>
+      <opencpn:viz_name>1</opencpn:viz_name>
+    </extensions>
+  </wpt>
+  <wpt lat="-43.611846667" lon="172.709633333">
+    <time>2014-02-22T18:24:29Z</time>
+    <name>NPCL Start</name>
+    <sym>triangle</sym>
+    <type>WPT</type>
+    <extensions>
+      <opencpn:guid>733f1e34-7406-4d08-8d0b-f41c7cb1c8bf</opencpn:guid>
+      <opencpn:viz_name>1</opencpn:viz_name>
+      <opencpn:shared>1</opencpn:shared>
+    </extensions>
+  </wpt>
+  <wpt lat="-43.614108333" lon="172.713816667">
+    <time>2014-02-22T18:24:29Z</time>
+    <name>NPCL 1 Eastern Light</name>
+    <sym>triangle</sym>
+    <type>WPT</type>
+    <extensions>
+      <opencpn:guid>40cbed8d-36eb-4593-a475-ef4a46d7c476</opencpn:guid>
+      <opencpn:viz_name>1</opencpn:viz_name>
+      <opencpn:shared>1</opencpn:shared>
+    </extensions>
+  </wpt>
+  <wpt lat="-43.613433333" lon="172.752155000">
+    <time>2014-02-22T18:24:29Z</time>
+    <name>NPCL 2 Parsons Rock Light</name>
+    <sym>triangle</sym>
+    <type>WPT</type>
+    <extensions>
+      <opencpn:guid>79a97a5c-1ae5-4c3d-83cc-940f56437414</opencpn:guid>
+      <opencpn:viz_name>1</opencpn:viz_name>
+      <opencpn:shared>1</opencpn:shared>
+    </extensions>
+  </wpt>
+  <wpt lat="-43.606981395" lon="172.740146495">
+    <time>2014-02-22T18:24:29Z</time>
+    <name>NPCL 3 Battery Point</name>
+    <sym>triangle</sym>
+    <type>WPT</type>
+    <extensions>
+      <opencpn:guid>2c5a564f-f837-4d98-b179-973120467605</opencpn:guid>
+      <opencpn:viz_name>1</opencpn:viz_name>
+      <opencpn:shared>1</opencpn:shared>
+    </extensions>
+  </wpt>
+  <wpt lat="-43.623223670" lon="172.728237533">
+    <time>2014-02-22T18:24:29Z</time>
+    <name>NPCL 4 Scotts</name>
+    <sym>triangle</sym>
+    <type>WPT</type>
+    <extensions>
+      <opencpn:guid>7a76d3c8-934a-4050-85ad-351d3ec15f72</opencpn:guid>
+      <opencpn:viz_name>1</opencpn:viz_name>
+      <opencpn:shared>1</opencpn:shared>
+    </extensions>
+  </wpt>
+  <wpt lat="-43.624875000" lon="172.702526667">
+    <time>2014-02-22T18:24:29Z</time>
+    <name>NPCL 5 Quail Island</name>
+    <sym>triangle</sym>
+    <type>WPT</type>
+    <extensions>
+      <opencpn:guid>11e2194e-53bf-493e-85fa-3afc3c0b19ac</opencpn:guid>
+      <opencpn:viz_name>1</opencpn:viz_name>
+      <opencpn:shared>1</opencpn:shared>
+    </extensions>
+  </wpt>
+  <wpt lat="-43.616413333" lon="172.708390000">
+    <time>2014-02-22T18:24:29Z</time>
+    <name>NPCL 6 Reef</name>
+    <sym>triangle</sym>
+    <type>WPT</type>
+    <extensions>
+      <opencpn:guid>51f0dfb0-96e7-4de8-8a35-e08930c42e02</opencpn:guid>
+      <opencpn:viz_name>1</opencpn:viz_name>
+    </extensions>
+  </wpt>
+  <wpt lat="-43.616831667" lon="172.782898333">
+    <time>2014-02-22T18:24:29Z</time>
+    <name>NPCL 7 Camp Bay</name>
+    <sym>triangle</sym>
+    <type>WPT</type>
+    <extensions>
+      <opencpn:guid>3fc7ee60-8c01-42d4-b46c-345d1ffebc74</opencpn:guid>
+      <opencpn:viz_name>1</opencpn:viz_name>
+      <opencpn:shared>1</opencpn:shared>
+    </extensions>
+  </wpt>
+  <wpt lat="-43.600026667" lon="172.795113333">
+    <time>2014-02-22T18:24:29Z</time>
+    <name>NPCL 8 Mechanics Bay</name>
+    <sym>triangle</sym>
+    <type>WPT</type>
+    <extensions>
+      <opencpn:guid>5896199e-ecb3-4917-ae35-b8a73da397b9</opencpn:guid>
+      <opencpn:viz_name>1</opencpn:viz_name>
+      <opencpn:shared>1</opencpn:shared>
+    </extensions>
+  </wpt>
+  <wpt lat="-43.604367061" lon="172.851311193">
+    <time>2014-02-22T18:24:29Z</time>
+    <name>NPCL 9 Baleine Point</name>
+    <sym>triangle</sym>
+    <type>WPT</type>
+    <extensions>
+      <opencpn:guid>3cb65574-1877-4fac-9e1d-264d486958bf</opencpn:guid>
+      <opencpn:viz_name>1</opencpn:viz_name>
+      <opencpn:shared>1</opencpn:shared>
+    </extensions>
+  </wpt>
+  <wpt lat="-43.614156667" lon="172.688263333">
+    <time>2014-02-22T18:24:29Z</time>
+    <name>NPCL 10 Cass Bay</name>
+    <sym>triangle</sym>
+    <type>WPT</type>
+    <extensions>
+      <opencpn:guid>56a2c333-259c-479e-8535-067071895dc5</opencpn:guid>
+      <opencpn:viz_name>1</opencpn:viz_name>
+      <opencpn:shared>1</opencpn:shared>
+    </extensions>
+  </wpt>
+  <wpt lat="-43.646246667" lon="172.830240000">
+    <time>2014-02-22T18:24:29Z</time>
+    <name>NPCL 11 Port Levy</name>
+    <sym>triangle</sym>
+    <type>WPT</type>
+    <extensions>
+      <opencpn:guid>50f6566f-a7fd-4cc6-a7dc-7335255ddeb4</opencpn:guid>
+      <opencpn:viz_name>1</opencpn:viz_name>
+      <opencpn:shared>1</opencpn:shared>
+    </extensions>
+  </wpt>
+  <wpt lat="-43.563780000" lon="172.769556667">
+    <time>2014-02-22T18:24:29Z</time>
+    <name>NPCL 12 Sumner Bay</name>
+    <sym>triangle</sym>
+    <type>WPT</type>
+    <extensions>
+      <opencpn:guid>7f0c19d5-9d08-4d8b-b7a7-fd7a28cebf7a</opencpn:guid>
+      <opencpn:viz_name>1</opencpn:viz_name>
+      <opencpn:shared>1</opencpn:shared>
+    </extensions>
+  </wpt>
+  <wpt lat="-43.598923333" lon="172.766111667">
+    <time>2014-02-22T18:25:00Z</time>
+    <name>NPCL 13 Livingstones</name>
+    <sym>triangle</sym>
+    <type>WPT</type>
+    <extensions>
+      <opencpn:guid>6ef5b4d9-0f9c-4a6b-9786-df283afff0b8</opencpn:guid>
+      <opencpn:viz_name>1</opencpn:viz_name>
+    </extensions>
+  </wpt>
+  <wpt lat="-43.611427343" lon="172.709420835">
+    <time>2014-02-22T18:30:55Z</time>
+    <name>NPCL Finish</name>
+    <sym>triangle</sym>
+    <type>WPT</type>
+    <extensions>
+      <opencpn:guid>24980aa5-53a0-426d-a9cc-929a539d4a43</opencpn:guid>
+      <opencpn:viz_name>1</opencpn:viz_name>
+      <opencpn:shared>1</opencpn:shared>
+    </extensions>
+  </wpt>
+  <rte>
+    <name>NPCL Course 1</name>
+    <extensions>
+      <opencpn:guid>1bc0c615-1e2a-4fcb-afe9-807a1467b3ce</opencpn:guid>
+      <opencpn:viz>1</opencpn:viz>
+      <opencpn:time_display>PC</opencpn:time_display>
+    </extensions>
+    <rtept lat="-43.611846667" lon="172.709633333">
+      <time>2014-02-22T18:24:29Z</time>
+      <name>NPCL Start</name>
+      <sym>triangle</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>733f1e34-7406-4d08-8d0b-f41c7cb1c8bf</opencpn:guid>
+        <opencpn:viz_name>1</opencpn:viz_name>
+        <opencpn:shared>1</opencpn:shared>
+      </extensions>
+    </rtept>
+    <rtept lat="-43.613433333" lon="172.752155000">
+      <time>2014-02-22T18:24:29Z</time>
+      <name>NPCL 2 Parsons Rock Light</name>
+      <sym>triangle</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>79a97a5c-1ae5-4c3d-83cc-940f56437414</opencpn:guid>
+        <opencpn:viz_name>1</opencpn:viz_name>
+        <opencpn:shared>1</opencpn:shared>
+      </extensions>
+    </rtept>
+    <rtept lat="-43.623223670" lon="172.728237533">
+      <time>2014-02-22T18:24:29Z</time>
+      <name>NPCL 4 Scotts</name>
+      <sym>triangle</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>7a76d3c8-934a-4050-85ad-351d3ec15f72</opencpn:guid>
+        <opencpn:viz_name>1</opencpn:viz_name>
+        <opencpn:shared>1</opencpn:shared>
+      </extensions>
+    </rtept>
+    <rtept lat="-43.614108333" lon="172.713816667">
+      <time>2014-02-22T18:24:29Z</time>
+      <name>NPCL 1 Eastern Light</name>
+      <sym>triangle</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>40cbed8d-36eb-4593-a475-ef4a46d7c476</opencpn:guid>
+        <opencpn:viz_name>1</opencpn:viz_name>
+        <opencpn:shared>1</opencpn:shared>
+      </extensions>
+    </rtept>
+    <rtept lat="-43.613433333" lon="172.752155000">
+      <time>2014-02-22T18:24:29Z</time>
+      <name>NPCL 2 Parsons Rock Light</name>
+      <sym>triangle</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>79a97a5c-1ae5-4c3d-83cc-940f56437414</opencpn:guid>
+        <opencpn:viz_name>1</opencpn:viz_name>
+        <opencpn:shared>1</opencpn:shared>
+      </extensions>
+    </rtept>
+    <rtept lat="-43.611427343" lon="172.709420835">
+      <time>2014-02-22T18:30:55Z</time>
+      <name>NPCL Finish</name>
+      <sym>triangle</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>24980aa5-53a0-426d-a9cc-929a539d4a43</opencpn:guid>
+        <opencpn:viz_name>1</opencpn:viz_name>
+        <opencpn:shared>1</opencpn:shared>
+      </extensions>
+    </rtept>
+  </rte>
+  <rte>
+    <name>NPCL Course 2</name>
+    <extensions>
+      <opencpn:guid>5c4158ae-6861-4b2c-82bb-4d9a357cc6a6</opencpn:guid>
+      <opencpn:viz>1</opencpn:viz>
+      <opencpn:time_display>PC</opencpn:time_display>
+    </extensions>
+    <rtept lat="-43.611846667" lon="172.709633333">
+      <time>2014-02-22T18:24:29Z</time>
+      <name>NPCL Start</name>
+      <sym>triangle</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>733f1e34-7406-4d08-8d0b-f41c7cb1c8bf</opencpn:guid>
+        <opencpn:viz_name>1</opencpn:viz_name>
+        <opencpn:shared>1</opencpn:shared>
+      </extensions>
+    </rtept>
+    <rtept lat="-43.613433333" lon="172.752155000">
+      <time>2014-02-22T18:24:29Z</time>
+      <name>NPCL 2 Parsons Rock Light</name>
+      <sym>triangle</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>79a97a5c-1ae5-4c3d-83cc-940f56437414</opencpn:guid>
+        <opencpn:viz_name>1</opencpn:viz_name>
+        <opencpn:shared>1</opencpn:shared>
+      </extensions>
+    </rtept>
+    <rtept lat="-43.623223670" lon="172.728237533">
+      <time>2014-02-22T18:24:29Z</time>
+      <name>NPCL 4 Scotts</name>
+      <sym>triangle</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>7a76d3c8-934a-4050-85ad-351d3ec15f72</opencpn:guid>
+        <opencpn:viz_name>1</opencpn:viz_name>
+        <opencpn:shared>1</opencpn:shared>
+      </extensions>
+    </rtept>
+    <rtept lat="-43.614108333" lon="172.713816667">
+      <time>2014-02-22T18:24:29Z</time>
+      <name>NPCL 1 Eastern Light</name>
+      <sym>triangle</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>40cbed8d-36eb-4593-a475-ef4a46d7c476</opencpn:guid>
+        <opencpn:viz_name>1</opencpn:viz_name>
+        <opencpn:shared>1</opencpn:shared>
+      </extensions>
+    </rtept>
+    <rtept lat="-43.613433333" lon="172.752155000">
+      <time>2014-02-22T18:24:29Z</time>
+      <name>NPCL 2 Parsons Rock Light</name>
+      <sym>triangle</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>79a97a5c-1ae5-4c3d-83cc-940f56437414</opencpn:guid>
+        <opencpn:viz_name>1</opencpn:viz_name>
+        <opencpn:shared>1</opencpn:shared>
+      </extensions>
+    </rtept>
+    <rtept lat="-43.623223670" lon="172.728237533">
+      <time>2014-02-22T18:24:29Z</time>
+      <name>NPCL 4 Scotts</name>
+      <sym>triangle</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>7a76d3c8-934a-4050-85ad-351d3ec15f72</opencpn:guid>
+        <opencpn:viz_name>1</opencpn:viz_name>
+        <opencpn:shared>1</opencpn:shared>
+      </extensions>
+    </rtept>
+    <rtept lat="-43.614108333" lon="172.713816667">
+      <time>2014-02-22T18:24:29Z</time>
+      <name>NPCL 1 Eastern Light</name>
+      <sym>triangle</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>40cbed8d-36eb-4593-a475-ef4a46d7c476</opencpn:guid>
+        <opencpn:viz_name>1</opencpn:viz_name>
+        <opencpn:shared>1</opencpn:shared>
+      </extensions>
+    </rtept>
+    <rtept lat="-43.611427343" lon="172.709420835">
+      <time>2014-02-22T18:30:55Z</time>
+      <name>NPCL Finish</name>
+      <sym>triangle</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>24980aa5-53a0-426d-a9cc-929a539d4a43</opencpn:guid>
+        <opencpn:viz_name>1</opencpn:viz_name>
+        <opencpn:shared>1</opencpn:shared>
+      </extensions>
+    </rtept>
+  </rte>
+  <rte>
+    <name>NPCL Course 3</name>
+    <extensions>
+      <opencpn:guid>10d3f24e-16c1-48a2-997f-a3cf6deeae51</opencpn:guid>
+      <opencpn:viz>1</opencpn:viz>
+      <opencpn:time_display>PC</opencpn:time_display>
+    </extensions>
+    <rtept lat="-43.611846667" lon="172.709633333">
+      <time>2014-02-22T18:24:29Z</time>
+      <name>NPCL Start</name>
+      <sym>triangle</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>733f1e34-7406-4d08-8d0b-f41c7cb1c8bf</opencpn:guid>
+        <opencpn:viz_name>1</opencpn:viz_name>
+        <opencpn:shared>1</opencpn:shared>
+      </extensions>
+    </rtept>
+    <rtept lat="-43.613433333" lon="172.752155000">
+      <time>2014-02-22T18:24:29Z</time>
+      <name>NPCL 2 Parsons Rock Light</name>
+      <sym>triangle</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>79a97a5c-1ae5-4c3d-83cc-940f56437414</opencpn:guid>
+        <opencpn:viz_name>1</opencpn:viz_name>
+        <opencpn:shared>1</opencpn:shared>
+      </extensions>
+    </rtept>
+    <rtept lat="-43.623223670" lon="172.728237533">
+      <time>2014-02-22T18:24:29Z</time>
+      <name>NPCL 4 Scotts</name>
+      <sym>triangle</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>7a76d3c8-934a-4050-85ad-351d3ec15f72</opencpn:guid>
+        <opencpn:viz_name>1</opencpn:viz_name>
+        <opencpn:shared>1</opencpn:shared>
+      </extensions>
+    </rtept>
+    <rtept lat="-43.614108333" lon="172.713816667">
+      <time>2014-02-22T18:24:29Z</time>
+      <name>NPCL 1 Eastern Light</name>
+      <sym>triangle</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>40cbed8d-36eb-4593-a475-ef4a46d7c476</opencpn:guid>
+        <opencpn:viz_name>1</opencpn:viz_name>
+        <opencpn:shared>1</opencpn:shared>
+      </extensions>
+    </rtept>
+    <rtept lat="-43.613433333" lon="172.752155000">
+      <time>2014-02-22T18:24:29Z</time>
+      <name>NPCL 2 Parsons Rock Light</name>
+      <sym>triangle</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>79a97a5c-1ae5-4c3d-83cc-940f56437414</opencpn:guid>
+        <opencpn:viz_name>1</opencpn:viz_name>
+        <opencpn:shared>1</opencpn:shared>
+      </extensions>
+    </rtept>
+    <rtept lat="-43.623223670" lon="172.728237533">
+      <time>2014-02-22T18:24:29Z</time>
+      <name>NPCL 4 Scotts</name>
+      <sym>triangle</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>7a76d3c8-934a-4050-85ad-351d3ec15f72</opencpn:guid>
+        <opencpn:viz_name>1</opencpn:viz_name>
+        <opencpn:shared>1</opencpn:shared>
+      </extensions>
+    </rtept>
+    <rtept lat="-43.614108333" lon="172.713816667">
+      <time>2014-02-22T18:24:29Z</time>
+      <name>NPCL 1 Eastern Light</name>
+      <sym>triangle</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>40cbed8d-36eb-4593-a475-ef4a46d7c476</opencpn:guid>
+        <opencpn:viz_name>1</opencpn:viz_name>
+        <opencpn:shared>1</opencpn:shared>
+      </extensions>
+    </rtept>
+    <rtept lat="-43.624875000" lon="172.702526667">
+      <time>2014-02-22T18:24:29Z</time>
+      <name>NPCL 5 Quail Island</name>
+      <sym>triangle</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>11e2194e-53bf-493e-85fa-3afc3c0b19ac</opencpn:guid>
+        <opencpn:viz_name>1</opencpn:viz_name>
+        <opencpn:shared>1</opencpn:shared>
+      </extensions>
+    </rtept>
+    <rtept lat="-43.614156667" lon="172.688263333">
+      <time>2014-02-22T18:24:29Z</time>
+      <name>NPCL 10 Cass Bay</name>
+      <sym>triangle</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>56a2c333-259c-479e-8535-067071895dc5</opencpn:guid>
+        <opencpn:viz_name>1</opencpn:viz_name>
+        <opencpn:shared>1</opencpn:shared>
+      </extensions>
+    </rtept>
+    <rtept lat="-43.614388333" lon="172.706010000">
+      <time>2014-02-22T18:42:45Z</time>
+      <name>010</name>
+      <sym>diamond</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>1d917a76-f168-46d7-83d1-590b21866e47</opencpn:guid>
+        <opencpn:auto_name>1</opencpn:auto_name>
+      </extensions>
+    </rtept>
+    <rtept lat="-43.611427343" lon="172.709420835">
+      <time>2014-02-22T18:30:55Z</time>
+      <name>NPCL Finish</name>
+      <sym>triangle</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>24980aa5-53a0-426d-a9cc-929a539d4a43</opencpn:guid>
+        <opencpn:viz_name>1</opencpn:viz_name>
+        <opencpn:shared>1</opencpn:shared>
+      </extensions>
+    </rtept>
+  </rte>
+  <rte>
+    <name>NPCL Course 24</name>
+    <extensions>
+      <opencpn:guid>6c765141-ab67-4774-9738-58e009435024</opencpn:guid>
+      <opencpn:viz>1</opencpn:viz>
+      <opencpn:time_display>PC</opencpn:time_display>
+    </extensions>
+    <rtept lat="-43.611846667" lon="172.709633333">
+      <time>2014-02-22T18:24:29Z</time>
+      <name>NPCL Start</name>
+      <sym>triangle</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>733f1e34-7406-4d08-8d0b-f41c7cb1c8bf</opencpn:guid>
+        <opencpn:viz_name>1</opencpn:viz_name>
+        <opencpn:shared>1</opencpn:shared>
+      </extensions>
+    </rtept>
+    <rtept lat="-43.610505459" lon="172.751943850">
+      <time>2014-02-22T18:45:07Z</time>
+      <name>002</name>
+      <sym>diamond</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>6f823cc0-fd4f-4cc3-a817-833e54435263</opencpn:guid>
+        <opencpn:auto_name>1</opencpn:auto_name>
+      </extensions>
+    </rtept>
+    <rtept lat="-43.600155601" lon="172.827183909">
+      <time>2014-02-22T18:45:17Z</time>
+      <name>003</name>
+      <sym>diamond</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>27247ffd-1986-485a-b030-30fd250dbd48</opencpn:guid>
+        <opencpn:auto_name>1</opencpn:auto_name>
+      </extensions>
+    </rtept>
+    <rtept lat="-43.604367061" lon="172.851311193">
+      <time>2014-02-22T18:24:29Z</time>
+      <name>NPCL 9 Baleine Point</name>
+      <sym>triangle</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>3cb65574-1877-4fac-9e1d-264d486958bf</opencpn:guid>
+        <opencpn:viz_name>1</opencpn:viz_name>
+        <opencpn:shared>1</opencpn:shared>
+      </extensions>
+    </rtept>
+    <rtept lat="-43.600796718" lon="172.826995083">
+      <time>2014-02-22T18:45:36Z</time>
+      <name>005</name>
+      <sym>diamond</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>57b464e3-d4cb-45f9-aac5-6ccf5710a1ad</opencpn:guid>
+        <opencpn:auto_name>1</opencpn:auto_name>
+      </extensions>
+    </rtept>
+    <rtept lat="-43.611324989" lon="172.751941098">
+      <time>2014-02-22T18:45:48Z</time>
+      <name>006</name>
+      <sym>diamond</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>4be950a6-c5da-412d-b071-88a243d8dd83</opencpn:guid>
+        <opencpn:auto_name>1</opencpn:auto_name>
+      </extensions>
+    </rtept>
+    <rtept lat="-43.611427343" lon="172.709420835">
+      <time>2014-02-22T18:30:55Z</time>
+      <name>NPCL Finish</name>
+      <sym>triangle</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>24980aa5-53a0-426d-a9cc-929a539d4a43</opencpn:guid>
+        <opencpn:viz_name>1</opencpn:viz_name>
+        <opencpn:shared>1</opencpn:shared>
+      </extensions>
+    </rtept>
+  </rte>
+  <rte>
+    <name>NPCL Course 25</name>
+    <extensions>
+      <opencpn:guid>54cccd77-e182-4a38-88de-b6fb58516ec0</opencpn:guid>
+      <opencpn:viz>1</opencpn:viz>
+    </extensions>
+    <rtept lat="-43.611846667" lon="172.709633333">
+      <time>2014-02-22T18:24:29Z</time>
+      <name>NPCL Start</name>
+      <sym>triangle</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>733f1e34-7406-4d08-8d0b-f41c7cb1c8bf</opencpn:guid>
+        <opencpn:viz_name>1</opencpn:viz_name>
+        <opencpn:shared>1</opencpn:shared>
+      </extensions>
+    </rtept>
+    <rtept lat="-43.610963067" lon="172.733638320">
+      <time>2014-02-22T18:46:59Z</time>
+      <name>002</name>
+      <sym>diamond</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>7ac4ea0d-3a3a-4929-8453-b18359e1dc55</opencpn:guid>
+        <opencpn:auto_name>1</opencpn:auto_name>
+      </extensions>
+    </rtept>
+    <rtept lat="-43.600026667" lon="172.795113333">
+      <time>2014-02-22T18:24:29Z</time>
+      <name>NPCL 8 Mechanics Bay</name>
+      <sym>triangle</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>5896199e-ecb3-4917-ae35-b8a73da397b9</opencpn:guid>
+        <opencpn:viz_name>1</opencpn:viz_name>
+        <opencpn:shared>1</opencpn:shared>
+      </extensions>
+    </rtept>
+    <rtept lat="-43.604367061" lon="172.851311193">
+      <time>2014-02-22T18:24:29Z</time>
+      <name>NPCL 9 Baleine Point</name>
+      <sym>triangle</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>3cb65574-1877-4fac-9e1d-264d486958bf</opencpn:guid>
+        <opencpn:viz_name>1</opencpn:viz_name>
+        <opencpn:shared>1</opencpn:shared>
+      </extensions>
+    </rtept>
+    <rtept lat="-43.600026667" lon="172.795113333">
+      <time>2014-02-22T18:24:29Z</time>
+      <name>NPCL 8 Mechanics Bay</name>
+      <sym>triangle</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>5896199e-ecb3-4917-ae35-b8a73da397b9</opencpn:guid>
+        <opencpn:viz_name>1</opencpn:viz_name>
+        <opencpn:shared>1</opencpn:shared>
+      </extensions>
+    </rtept>
+    <rtept lat="-43.616831667" lon="172.782898333">
+      <time>2014-02-22T18:24:29Z</time>
+      <name>NPCL 7 Camp Bay</name>
+      <sym>triangle</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>3fc7ee60-8c01-42d4-b46c-345d1ffebc74</opencpn:guid>
+        <opencpn:viz_name>1</opencpn:viz_name>
+        <opencpn:shared>1</opencpn:shared>
+      </extensions>
+    </rtept>
+    <rtept lat="-43.606981395" lon="172.740146495">
+      <time>2014-02-22T18:24:29Z</time>
+      <name>NPCL 3 Battery Point</name>
+      <sym>triangle</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>2c5a564f-f837-4d98-b179-973120467605</opencpn:guid>
+        <opencpn:viz_name>1</opencpn:viz_name>
+        <opencpn:shared>1</opencpn:shared>
+      </extensions>
+    </rtept>
+    <rtept lat="-43.623223670" lon="172.728237533">
+      <time>2014-02-22T18:24:29Z</time>
+      <name>NPCL 4 Scotts</name>
+      <sym>triangle</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>7a76d3c8-934a-4050-85ad-351d3ec15f72</opencpn:guid>
+        <opencpn:viz_name>1</opencpn:viz_name>
+        <opencpn:shared>1</opencpn:shared>
+      </extensions>
+    </rtept>
+    <rtept lat="-43.614108333" lon="172.713816667">
+      <time>2014-02-22T18:24:29Z</time>
+      <name>NPCL 1 Eastern Light</name>
+      <sym>triangle</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>40cbed8d-36eb-4593-a475-ef4a46d7c476</opencpn:guid>
+        <opencpn:viz_name>1</opencpn:viz_name>
+        <opencpn:shared>1</opencpn:shared>
+      </extensions>
+    </rtept>
+    <rtept lat="-43.611427343" lon="172.709420835">
+      <time>2014-02-22T18:30:55Z</time>
+      <name>NPCL Finish</name>
+      <sym>triangle</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>24980aa5-53a0-426d-a9cc-929a539d4a43</opencpn:guid>
+        <opencpn:viz_name>1</opencpn:viz_name>
+        <opencpn:shared>1</opencpn:shared>
+      </extensions>
+    </rtept>
+  </rte>
+  <rte>
+    <name>NPCL Course 26</name>
+    <extensions>
+      <opencpn:guid>420379aa-e27f-4dde-b3b7-23d80efdbdea</opencpn:guid>
+      <opencpn:viz>1</opencpn:viz>
+      <opencpn:time_display>PC</opencpn:time_display>
+    </extensions>
+    <rtept lat="-43.611846667" lon="172.709633333">
+      <time>2014-02-22T18:24:29Z</time>
+      <name>NPCL Start</name>
+      <sym>triangle</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>733f1e34-7406-4d08-8d0b-f41c7cb1c8bf</opencpn:guid>
+        <opencpn:viz_name>1</opencpn:viz_name>
+        <opencpn:shared>1</opencpn:shared>
+      </extensions>
+    </rtept>
+    <rtept lat="-43.610961948" lon="172.733866557">
+      <time>2014-02-22T21:43:02Z</time>
+      <name>002</name>
+      <sym>diamond</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>3ec0b32a-90a7-4c1c-9556-bd4a4309a5b9</opencpn:guid>
+        <opencpn:auto_name>1</opencpn:auto_name>
+      </extensions>
+    </rtept>
+    <rtept lat="-43.601956340" lon="172.826253715">
+      <time>2014-02-22T21:43:17Z</time>
+      <name>003</name>
+      <sym>diamond</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>63e25ae3-45ed-4dc5-b127-a7fd7cfe3294</opencpn:guid>
+        <opencpn:auto_name>1</opencpn:auto_name>
+      </extensions>
+    </rtept>
+    <rtept lat="-43.604367061" lon="172.851311193">
+      <time>2014-02-22T18:24:29Z</time>
+      <name>NPCL 9 Baleine Point</name>
+      <sym>triangle</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>3cb65574-1877-4fac-9e1d-264d486958bf</opencpn:guid>
+        <opencpn:viz_name>1</opencpn:viz_name>
+        <opencpn:shared>1</opencpn:shared>
+      </extensions>
+    </rtept>
+    <rtept lat="-43.608740516" lon="172.845920926">
+      <time>2014-02-22T21:44:16Z</time>
+      <name>005</name>
+      <sym>diamond</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>7679fbc7-b54c-4362-b197-f14152355402</opencpn:guid>
+        <opencpn:auto_name>1</opencpn:auto_name>
+      </extensions>
+    </rtept>
+    <rtept lat="-43.639460621" lon="172.831297779">
+      <time>2014-02-22T21:44:24Z</time>
+      <name>006</name>
+      <sym>diamond</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>278c625c-151a-4265-8ca5-8e8270f71957</opencpn:guid>
+        <opencpn:auto_name>1</opencpn:auto_name>
+      </extensions>
+    </rtept>
+    <rtept lat="-43.646246667" lon="172.830240000">
+      <time>2014-02-22T18:24:29Z</time>
+      <name>NPCL 11 Port Levy</name>
+      <sym>triangle</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>50f6566f-a7fd-4cc6-a7dc-7335255ddeb4</opencpn:guid>
+        <opencpn:viz_name>1</opencpn:viz_name>
+        <opencpn:shared>1</opencpn:shared>
+      </extensions>
+    </rtept>
+    <rtept lat="-43.639506339" lon="172.829847582">
+      <time>2014-02-22T21:44:53Z</time>
+      <name>008</name>
+      <sym>diamond</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>7e222e43-4bcd-4801-8391-75c61ab3b184</opencpn:guid>
+        <opencpn:auto_name>1</opencpn:auto_name>
+      </extensions>
+    </rtept>
+    <rtept lat="-43.601416923" lon="172.833380468">
+      <time>2014-02-22T21:45:11Z</time>
+      <name>009</name>
+      <sym>diamond</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>5c9592e0-1dc4-4f64-bf7c-da025d9cd6c8</opencpn:guid>
+        <opencpn:auto_name>1</opencpn:auto_name>
+      </extensions>
+    </rtept>
+    <rtept lat="-43.601234512" lon="172.820967083">
+      <time>2014-02-22T21:45:23Z</time>
+      <name>010</name>
+      <sym>diamond</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>0af8659e-ddcb-4ad8-8393-ee3a39efd6d9</opencpn:guid>
+        <opencpn:auto_name>1</opencpn:auto_name>
+      </extensions>
+    </rtept>
+    <rtept lat="-43.616831667" lon="172.782898333">
+      <time>2014-02-22T18:24:29Z</time>
+      <name>NPCL 7 Camp Bay</name>
+      <sym>triangle</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>3fc7ee60-8c01-42d4-b46c-345d1ffebc74</opencpn:guid>
+        <opencpn:viz_name>1</opencpn:viz_name>
+        <opencpn:shared>1</opencpn:shared>
+      </extensions>
+    </rtept>
+    <rtept lat="-43.613460132" lon="172.776667138">
+      <time>2014-02-22T21:45:43Z</time>
+      <name>012</name>
+      <sym>diamond</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>1572531a-df7c-484a-baf4-dab0234bcafc</opencpn:guid>
+        <opencpn:auto_name>1</opencpn:auto_name>
+      </extensions>
+    </rtept>
+    <rtept lat="-43.613433333" lon="172.752155000">
+      <time>2014-02-22T18:24:29Z</time>
+      <name>NPCL 2 Parsons Rock Light</name>
+      <sym>triangle</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>79a97a5c-1ae5-4c3d-83cc-940f56437414</opencpn:guid>
+        <opencpn:viz_name>1</opencpn:viz_name>
+        <opencpn:shared>1</opencpn:shared>
+      </extensions>
+    </rtept>
+    <rtept lat="-43.623223670" lon="172.728237533">
+      <time>2014-02-22T18:24:29Z</time>
+      <name>NPCL 4 Scotts</name>
+      <sym>triangle</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>7a76d3c8-934a-4050-85ad-351d3ec15f72</opencpn:guid>
+        <opencpn:viz_name>1</opencpn:viz_name>
+        <opencpn:shared>1</opencpn:shared>
+      </extensions>
+    </rtept>
+    <rtept lat="-43.614108333" lon="172.713816667">
+      <time>2014-02-22T18:24:29Z</time>
+      <name>NPCL 1 Eastern Light</name>
+      <sym>triangle</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>40cbed8d-36eb-4593-a475-ef4a46d7c476</opencpn:guid>
+        <opencpn:viz_name>1</opencpn:viz_name>
+        <opencpn:shared>1</opencpn:shared>
+      </extensions>
+    </rtept>
+    <rtept lat="-43.611427343" lon="172.709420835">
+      <time>2014-02-22T18:30:55Z</time>
+      <name>NPCL Finish</name>
+      <sym>triangle</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>24980aa5-53a0-426d-a9cc-929a539d4a43</opencpn:guid>
+        <opencpn:viz_name>1</opencpn:viz_name>
+        <opencpn:shared>1</opencpn:shared>
+      </extensions>
+    </rtept>
+  </rte>
+  <rte>
+    <name>NPCL Course 27</name>
+    <extensions>
+      <opencpn:guid>052c5096-63a2-4d84-b543-45ce579d5925</opencpn:guid>
+      <opencpn:viz>1</opencpn:viz>
+      <opencpn:time_display>PC</opencpn:time_display>
+    </extensions>
+    <rtept lat="-43.611846667" lon="172.709633333">
+      <time>2014-02-22T18:24:29Z</time>
+      <name>NPCL Start</name>
+      <sym>triangle</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>733f1e34-7406-4d08-8d0b-f41c7cb1c8bf</opencpn:guid>
+        <opencpn:viz_name>1</opencpn:viz_name>
+        <opencpn:shared>1</opencpn:shared>
+      </extensions>
+    </rtept>
+    <rtept lat="-43.610963067" lon="172.733638320">
+      <time>2014-02-22T18:46:59Z</time>
+      <name>002</name>
+      <sym>diamond</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>7ac4ea0d-3a3a-4929-8453-b18359e1dc55</opencpn:guid>
+        <opencpn:auto_name>1</opencpn:auto_name>
+      </extensions>
+    </rtept>
+    <rtept lat="-43.600026667" lon="172.795113333">
+      <time>2014-02-22T18:24:29Z</time>
+      <name>NPCL 8 Mechanics Bay</name>
+      <sym>triangle</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>5896199e-ecb3-4917-ae35-b8a73da397b9</opencpn:guid>
+        <opencpn:viz_name>1</opencpn:viz_name>
+        <opencpn:shared>1</opencpn:shared>
+      </extensions>
+    </rtept>
+    <rtept lat="-43.599114570" lon="172.863730781">
+      <time>2014-02-22T21:48:24Z</time>
+      <name>004</name>
+      <sym>diamond</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>1bdbae22-207f-45d1-9189-1e583456f11c</opencpn:guid>
+        <opencpn:auto_name>1</opencpn:auto_name>
+      </extensions>
+    </rtept>
+    <rtept lat="-43.621625696" lon="172.934233507">
+      <time>2014-02-22T21:48:50Z</time>
+      <name>005</name>
+      <sym>diamond</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>1f59a35e-aedf-4354-85b4-536242ab7c9a</opencpn:guid>
+        <opencpn:auto_name>1</opencpn:auto_name>
+      </extensions>
+    </rtept>
+    <rtept lat="-43.600571427" lon="172.863547895">
+      <time>2014-02-22T21:49:05Z</time>
+      <name>006</name>
+      <sym>diamond</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>6c9f6a84-12d4-44ac-baac-bf3a18669061</opencpn:guid>
+        <opencpn:auto_name>1</opencpn:auto_name>
+      </extensions>
+    </rtept>
+    <rtept lat="-43.600026667" lon="172.795113333">
+      <time>2014-02-22T18:24:29Z</time>
+      <name>NPCL 8 Mechanics Bay</name>
+      <sym>triangle</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>5896199e-ecb3-4917-ae35-b8a73da397b9</opencpn:guid>
+        <opencpn:viz_name>1</opencpn:viz_name>
+        <opencpn:shared>1</opencpn:shared>
+      </extensions>
+    </rtept>
+    <rtept lat="-43.616831667" lon="172.782898333">
+      <time>2014-02-22T18:24:29Z</time>
+      <name>NPCL 7 Camp Bay</name>
+      <sym>triangle</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>3fc7ee60-8c01-42d4-b46c-345d1ffebc74</opencpn:guid>
+        <opencpn:viz_name>1</opencpn:viz_name>
+        <opencpn:shared>1</opencpn:shared>
+      </extensions>
+    </rtept>
+    <rtept lat="-43.614078787" lon="172.775670957">
+      <time>2014-02-22T21:49:40Z</time>
+      <name>009</name>
+      <sym>diamond</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>11c49f29-34a2-4a71-ae98-17f5318f936f</opencpn:guid>
+        <opencpn:auto_name>1</opencpn:auto_name>
+      </extensions>
+    </rtept>
+    <rtept lat="-43.611427343" lon="172.709420835">
+      <time>2014-02-22T18:30:55Z</time>
+      <name>NPCL Finish</name>
+      <sym>triangle</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>24980aa5-53a0-426d-a9cc-929a539d4a43</opencpn:guid>
+        <opencpn:viz_name>1</opencpn:viz_name>
+        <opencpn:shared>1</opencpn:shared>
+      </extensions>
+    </rtept>
+  </rte>
+</gpx>

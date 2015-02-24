@@ -1,0 +1,164 @@
+<?xml version="1.0"?>
+<gpx version="1.1" creator="OpenCPN" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.topografix.com/GPX/1/1" xmlns:gpxx="http://www.garmin.com/xmlschemas/GpxExtensions/v3" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd" xmlns:opencpn="http://www.opencpn.org">
+  <wpt lat="-43.503079000" lon="172.745676000">
+    <time>2014-02-22T18:24:29Z</time>
+    <name>New Brighton</name>
+    <sym>triangle</sym>
+    <type>WPT</type>
+    <extensions>
+      <opencpn:guid>1e7c03c9-a7ef-4073-bb0d-dee16ead4b1f</opencpn:guid>
+      <opencpn:viz_name>1</opencpn:viz_name>
+    </extensions>
+  </wpt>
+  <wpt lat="-43.614108333" lon="172.713816667">
+    <time>2014-02-22T18:24:29Z</time>
+    <name>NPCL 1 Eastern Light</name>
+    <sym>triangle</sym>
+    <type>WPT</type>
+    <extensions>
+      <opencpn:guid>40cbed8d-36eb-4593-a475-ef4a46d7c476</opencpn:guid>
+      <opencpn:viz_name>1</opencpn:viz_name>
+    </extensions>
+  </wpt>
+  <wpt lat="-43.614156667" lon="172.688263333">
+    <time>2014-02-22T18:24:29Z</time>
+    <name>NPCL 10 Cass Bay</name>
+    <sym>triangle</sym>
+    <type>WPT</type>
+    <extensions>
+      <opencpn:guid>56a2c333-259c-479e-8535-067071895dc5</opencpn:guid>
+      <opencpn:viz_name>1</opencpn:viz_name>
+    </extensions>
+  </wpt>
+  <wpt lat="-43.646246667" lon="172.830240000">
+    <time>2014-02-22T18:24:29Z</time>
+    <name>NPCL 11 Port Levy</name>
+    <sym>triangle</sym>
+    <type>WPT</type>
+    <extensions>
+      <opencpn:guid>50f6566f-a7fd-4cc6-a7dc-7335255ddeb4</opencpn:guid>
+      <opencpn:viz_name>1</opencpn:viz_name>
+    </extensions>
+  </wpt>
+  <wpt lat="-43.563780000" lon="172.769556667">
+    <time>2014-02-22T18:24:29Z</time>
+    <name>NPCL 12 Sumner Bay</name>
+    <sym>triangle</sym>
+    <type>WPT</type>
+    <extensions>
+      <opencpn:guid>7f0c19d5-9d08-4d8b-b7a7-fd7a28cebf7a</opencpn:guid>
+      <opencpn:viz_name>1</opencpn:viz_name>
+      <opencpn:shared>1</opencpn:shared>
+    </extensions>
+  </wpt>
+  <wpt lat="-43.598923333" lon="172.766111667">
+    <time>2014-02-22T18:25:00Z</time>
+    <name>NPCL 13 Livingstones</name>
+    <sym>triangle</sym>
+    <type>WPT</type>
+    <extensions>
+      <opencpn:guid>6ef5b4d9-0f9c-4a6b-9786-df283afff0b8</opencpn:guid>
+      <opencpn:viz_name>1</opencpn:viz_name>
+    </extensions>
+  </wpt>
+  <wpt lat="-43.613433333" lon="172.752155000">
+    <time>2014-02-22T18:24:29Z</time>
+    <name>NPCL 2 Parsons Rock Light</name>
+    <sym>triangle</sym>
+    <type>WPT</type>
+    <extensions>
+      <opencpn:guid>79a97a5c-1ae5-4c3d-83cc-940f56437414</opencpn:guid>
+      <opencpn:viz_name>1</opencpn:viz_name>
+    </extensions>
+  </wpt>
+  <wpt lat="-43.606981395" lon="172.740146495">
+    <time>2014-02-22T18:24:29Z</time>
+    <name>NPCL 3 Battery Point</name>
+    <sym>triangle</sym>
+    <type>WPT</type>
+    <extensions>
+      <opencpn:guid>2c5a564f-f837-4d98-b179-973120467605</opencpn:guid>
+      <opencpn:viz_name>1</opencpn:viz_name>
+    </extensions>
+  </wpt>
+  <wpt lat="-43.623223670" lon="172.728237533">
+    <time>2014-02-22T18:24:29Z</time>
+    <name>NPCL 4 Scotts</name>
+    <sym>triangle</sym>
+    <type>WPT</type>
+    <extensions>
+      <opencpn:guid>7a76d3c8-934a-4050-85ad-351d3ec15f72</opencpn:guid>
+      <opencpn:viz_name>1</opencpn:viz_name>
+    </extensions>
+  </wpt>
+  <wpt lat="-43.624875000" lon="172.702526667">
+    <time>2014-02-22T18:24:29Z</time>
+    <name>NPCL 5 Quail Island</name>
+    <sym>triangle</sym>
+    <type>WPT</type>
+    <extensions>
+      <opencpn:guid>11e2194e-53bf-493e-85fa-3afc3c0b19ac</opencpn:guid>
+      <opencpn:viz_name>1</opencpn:viz_name>
+    </extensions>
+  </wpt>
+  <wpt lat="-43.616413333" lon="172.708390000">
+    <time>2014-02-22T18:24:29Z</time>
+    <name>NPCL 6 Reef</name>
+    <sym>triangle</sym>
+    <type>WPT</type>
+    <extensions>
+      <opencpn:guid>51f0dfb0-96e7-4de8-8a35-e08930c42e02</opencpn:guid>
+      <opencpn:viz_name>1</opencpn:viz_name>
+    </extensions>
+  </wpt>
+  <wpt lat="-43.616831667" lon="172.782898333">
+    <time>2014-02-22T18:24:29Z</time>
+    <name>NPCL 7 Camp Bay</name>
+    <sym>triangle</sym>
+    <type>WPT</type>
+    <extensions>
+      <opencpn:guid>3fc7ee60-8c01-42d4-b46c-345d1ffebc74</opencpn:guid>
+      <opencpn:viz_name>1</opencpn:viz_name>
+    </extensions>
+  </wpt>
+  <wpt lat="-43.600026667" lon="172.795113333">
+    <time>2014-02-22T18:24:29Z</time>
+    <name>NPCL 8 Mechanics Bay</name>
+    <sym>triangle</sym>
+    <type>WPT</type>
+    <extensions>
+      <opencpn:guid>5896199e-ecb3-4917-ae35-b8a73da397b9</opencpn:guid>
+      <opencpn:viz_name>1</opencpn:viz_name>
+    </extensions>
+  </wpt>
+  <wpt lat="-43.604367061" lon="172.851311193">
+    <time>2014-02-22T18:24:29Z</time>
+    <name>NPCL 9 Baleine Point</name>
+    <sym>triangle</sym>
+    <type>WPT</type>
+    <extensions>
+      <opencpn:guid>3cb65574-1877-4fac-9e1d-264d486958bf</opencpn:guid>
+      <opencpn:viz_name>1</opencpn:viz_name>
+    </extensions>
+  </wpt>
+  <wpt lat="-43.611427343" lon="172.709420835">
+    <time>2014-02-22T18:30:55Z</time>
+    <name>NPCL Finish</name>
+    <sym>triangle</sym>
+    <type>WPT</type>
+    <extensions>
+      <opencpn:guid>24980aa5-53a0-426d-a9cc-929a539d4a43</opencpn:guid>
+      <opencpn:viz_name>1</opencpn:viz_name>
+    </extensions>
+  </wpt>
+  <wpt lat="-43.611846667" lon="172.709633333">
+    <time>2014-02-22T18:24:29Z</time>
+    <name>NPCL Start</name>
+    <sym>triangle</sym>
+    <type>WPT</type>
+    <extensions>
+      <opencpn:guid>733f1e34-7406-4d08-8d0b-f41c7cb1c8bf</opencpn:guid>
+      <opencpn:viz_name>1</opencpn:viz_name>
+    </extensions>
+  </wpt>
+</gpx>
